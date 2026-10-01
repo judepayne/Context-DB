@@ -85,7 +85,11 @@ async fn ingest_start_accepts_a_file_and_a_non_recursive_folder() {
     tokio::task::spawn_blocking(move || {
         for (flag, path, count) in [("--file", first, 1), ("--folder", folder, 2)] {
             let mut command = Command::new(env!("CARGO_BIN_EXE_cdb"));
-            command.args(["ingest", "start"]);
+            command
+                .args(["ingest", "start"])
+                // The fixture launches fake Pi; never depend on a developer's key.
+                .env("OPENROUTER_API_KEY", "ctxql-hermetic-fake-provider-key")
+                .env("CDB_DEBUG_ERRORS", "1");
             if flag == "--file" {
                 command
                     .args(["--config"])
