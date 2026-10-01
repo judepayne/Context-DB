@@ -50,6 +50,7 @@ See:
 - [`docs/service.md`](docs/service.md) — current CLI, HTTP, configuration, acquisition, replay, and chat behavior;
 - [`docs/contracts/`](docs/contracts/) — versioned implemented and compatibility contracts;
 - [`docs/roadmap.md`](docs/roadmap.md) — future P7–P9 work, clearly separated from current support;
+- [`docs/releases.md`](docs/releases.md) — Apple Silicon/Linux x86-64 CI, packages and release procedure;
 - [`third_party/README.md`](third_party/README.md) — dependency, license, and attribution information.
 
 No project-wide license has been selected by this documentation cleanup. Do not infer one from third-party license files.
