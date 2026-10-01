@@ -1,84 +1,7 @@
 {
-  "schema": "cdb.third-party-license-files/v1",
+  "schema": "cdb.third-party-license-files/v2",
   "basis": "Cargo.lock/current Fluree 4.2.1 all-feature workspace inventory",
   "package_count": 412,
-  "packages_with_no_retained_named_text": [
-    {
-      "name": "base256emoji",
-      "version": "1.0.2",
-      "license_metadata": "MIT"
-    },
-    {
-      "name": "base45",
-      "version": "3.2.0",
-      "license_metadata": "MIT"
-    },
-    {
-      "name": "bitmaps",
-      "version": "3.2.1",
-      "license_metadata": "MPL-2.0+"
-    },
-    {
-      "name": "cid",
-      "version": "0.11.3",
-      "license_metadata": "MIT"
-    },
-    {
-      "name": "imbl",
-      "version": "3.0.0",
-      "license_metadata": "MPL-2.0+"
-    },
-    {
-      "name": "imbl-sized-chunks",
-      "version": "0.1.3",
-      "license_metadata": "MPL-2.0+"
-    },
-    {
-      "name": "oxilangtag",
-      "version": "0.1.6",
-      "license_metadata": "MIT"
-    },
-    {
-      "name": "oxiri",
-      "version": "0.2.11",
-      "license_metadata": "MIT OR Apache-2.0"
-    },
-    {
-      "name": "oxrdf",
-      "version": "0.3.4",
-      "license_metadata": "MIT OR Apache-2.0"
-    },
-    {
-      "name": "oxrdfxml",
-      "version": "0.2.4",
-      "license_metadata": "MIT OR Apache-2.0"
-    },
-    {
-      "name": "quick-xml",
-      "version": "0.37.5",
-      "license_metadata": "MIT"
-    },
-    {
-      "name": "rhai_codegen",
-      "version": "3.2.0",
-      "license_metadata": "MIT OR Apache-2.0"
-    },
-    {
-      "name": "seahash",
-      "version": "4.1.0",
-      "license_metadata": "MIT"
-    },
-    {
-      "name": "winapi-i686-pc-windows-gnu",
-      "version": "0.4.0",
-      "license_metadata": "MIT/Apache-2.0"
-    },
-    {
-      "name": "winapi-x86_64-pc-windows-gnu",
-      "version": "0.4.0",
-      "license_metadata": "MIT/Apache-2.0"
-    }
-  ],
   "packages": [
     {
       "name": "adler2",
@@ -353,14 +276,40 @@
       "version": "1.0.2",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#base256emoji@1.0.2",
       "license_metadata": "MIT",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/base256emoji-1.0.2/DECLARATION-Cargo.toml",
+          "sha256": "b3992cebc64caf18ef80bf4d9e3488e78ffb70e1860d519a6b2afe0968722673"
+        },
+        {
+          "path": "third_party/licenses/base256emoji-1.0.2/NOTICE-README.md",
+          "sha256": "1b15efee3ccb354787b0d74912cec33844bda6134d5d93d311bde37076ed49c9"
+        },
+        {
+          "path": "third_party/licenses/base256emoji-1.0.2/STANDARD-MIT.txt",
+          "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0"
+        }
+      ]
     },
     {
       "name": "base45",
       "version": "3.2.0",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#base45@3.2.0",
       "license_metadata": "MIT",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/base45-3.2.0/DECLARATION-Cargo.toml",
+          "sha256": "c879aa7b3c00d09e0b3cb19752b06c0d6f3802949bbaca633ed0b4c1b06c8e22"
+        },
+        {
+          "path": "third_party/licenses/base45-3.2.0/NOTICE-README.md",
+          "sha256": "ba2162f894e2eaea66c09b96e5cc7e7b5c972bfd6274bae20e9d5f413e58159e"
+        },
+        {
+          "path": "third_party/licenses/base45-3.2.0/STANDARD-MIT.txt",
+          "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0"
+        }
+      ]
     },
     {
       "name": "base64",
@@ -451,7 +400,16 @@
       "version": "3.2.1",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#bitmaps@3.2.1",
       "license_metadata": "MPL-2.0+",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/bitmaps-3.2.1/LICENSE-MPL-2.0",
+          "sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172"
+        },
+        {
+          "path": "third_party/licenses/bitmaps-3.2.1/NOTICE-README.md",
+          "sha256": "d6783b57b194d82de11e8e2f78204ef93272a85915d9060ab7e0806b3b2c336f"
+        }
+      ]
     },
     {
       "name": "bitvec",
@@ -726,7 +684,20 @@
       "version": "0.11.3",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#cid@0.11.3",
       "license_metadata": "MIT",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/cid-0.11.3/DECLARATION-Cargo.toml",
+          "sha256": "8bfc938e731566c0f7c4f5dd92f296bdc682787fb2fd9538e291d043b3cf67c3"
+        },
+        {
+          "path": "third_party/licenses/cid-0.11.3/NOTICE-README.md",
+          "sha256": "149ab002956f62afd6b94dae042c422ddb479851a9dffe377223df81b50caa1a"
+        },
+        {
+          "path": "third_party/licenses/cid-0.11.3/STANDARD-MIT.txt",
+          "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0"
+        }
+      ]
     },
     {
       "name": "cipher",
@@ -2561,14 +2532,32 @@
       "version": "3.0.0",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#imbl@3.0.0",
       "license_metadata": "MPL-2.0+",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/imbl-3.0.0/LICENSE-MPL-2.0",
+          "sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172"
+        },
+        {
+          "path": "third_party/licenses/imbl-3.0.0/NOTICE-README.md",
+          "sha256": "98598ddf45c1bbef09f4e7f3e67f7d9c3a30858aaff254852a18cff3fbf0a4c1"
+        }
+      ]
     },
     {
       "name": "imbl-sized-chunks",
       "version": "0.1.3",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#imbl-sized-chunks@0.1.3",
       "license_metadata": "MPL-2.0+",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/imbl-sized-chunks-0.1.3/LICENSE-MPL-2.0",
+          "sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172"
+        },
+        {
+          "path": "third_party/licenses/imbl-sized-chunks-0.1.3/NOTICE-README.md",
+          "sha256": "7ce4c8446bc52fd643266fe869c2808d97f11de851c56bc18a164edf98017c7d"
+        }
+      ]
     },
     {
       "name": "indexmap",
@@ -3091,28 +3080,60 @@
       "version": "0.1.6",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#oxilangtag@0.1.6",
       "license_metadata": "MIT",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/oxilangtag-0.1.6/LICENSE",
+          "sha256": "3fe41c99abc306c2cd34a9365b1810035ae93335ebf4736c0240b469b3f410eb"
+        }
+      ]
     },
     {
       "name": "oxiri",
       "version": "0.2.11",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#oxiri@0.2.11",
       "license_metadata": "MIT OR Apache-2.0",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/oxiri-0.2.11/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/oxiri-0.2.11/LICENSE-MIT",
+          "sha256": "1f4f6736adc52ebfda18bb84947e0ef492bd86a408c0e83872efb75ed5e02838"
+        }
+      ]
     },
     {
       "name": "oxrdf",
       "version": "0.3.4",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#oxrdf@0.3.4",
       "license_metadata": "MIT OR Apache-2.0",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/oxrdf-0.3.4/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/oxrdf-0.3.4/LICENSE-MIT",
+          "sha256": "1f4f6736adc52ebfda18bb84947e0ef492bd86a408c0e83872efb75ed5e02838"
+        }
+      ]
     },
     {
       "name": "oxrdfxml",
       "version": "0.2.4",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#oxrdfxml@0.2.4",
       "license_metadata": "MIT OR Apache-2.0",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/oxrdfxml-0.2.4/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/oxrdfxml-0.2.4/LICENSE-MIT",
+          "sha256": "1f4f6736adc52ebfda18bb84947e0ef492bd86a408c0e83872efb75ed5e02838"
+        }
+      ]
     },
     {
       "name": "parking_lot",
@@ -3347,7 +3368,12 @@
       "version": "0.37.5",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#quick-xml@0.37.5",
       "license_metadata": "MIT",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/quick-xml-0.37.5/LICENSE-MIT.md",
+          "sha256": "5b2c207dcf571267ebe0bbdd5bf321f561ddc22ff597e7b363e96f4539507a29"
+        }
+      ]
     },
     {
       "name": "quinn",
@@ -3814,7 +3840,16 @@
       "version": "3.2.0",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#rhai_codegen@3.2.0",
       "license_metadata": "MIT OR Apache-2.0",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/rhai_codegen-3.2.0/LICENSE-APACHE.txt",
+          "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+        },
+        {
+          "path": "third_party/licenses/rhai_codegen-3.2.0/LICENSE-MIT.txt",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
     },
     {
       "name": "ring",
@@ -4097,7 +4132,20 @@
       "version": "4.1.0",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#seahash@4.1.0",
       "license_metadata": "MIT",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/seahash-4.1.0/DECLARATION-Cargo.toml",
+          "sha256": "1d610f6d1bce065add6ec5f2fb764e97eeda505afbe26271acc5f3d73a8c410a"
+        },
+        {
+          "path": "third_party/licenses/seahash-4.1.0/NOTICE-README.md",
+          "sha256": "38357210ef69a97bf9858ff22661cb1c2384179f5e6b73143cb33193e36c6473"
+        },
+        {
+          "path": "third_party/licenses/seahash-4.1.0/STANDARD-MIT.txt",
+          "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0"
+        }
+      ]
     },
     {
       "name": "semver",
@@ -5324,14 +5372,32 @@
       "version": "0.4.0",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#winapi-i686-pc-windows-gnu@0.4.0",
       "license_metadata": "MIT/Apache-2.0",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/winapi-i686-pc-windows-gnu-0.4.0/LICENSE-APACHE",
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+        },
+        {
+          "path": "third_party/licenses/winapi-i686-pc-windows-gnu-0.4.0/LICENSE-MIT",
+          "sha256": "ce7bc3499fee93d5022ef430d5e4201e79a6d9154f3974e42f41349f0569e09b"
+        }
+      ]
     },
     {
       "name": "winapi-x86_64-pc-windows-gnu",
       "version": "0.4.0",
       "cargo_id": "registry+https://github.com/rust-lang/crates.io-index#winapi-x86_64-pc-windows-gnu@0.4.0",
       "license_metadata": "MIT/Apache-2.0",
-      "files": []
+      "files": [
+        {
+          "path": "third_party/licenses/winapi-x86_64-pc-windows-gnu-0.4.0/LICENSE-APACHE",
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+        },
+        {
+          "path": "third_party/licenses/winapi-x86_64-pc-windows-gnu-0.4.0/LICENSE-MIT",
+          "sha256": "ce7bc3499fee93d5022ef430d5e4201e79a6d9154f3974e42f41349f0569e09b"
+        }
+      ]
     },
     {
       "name": "windows",
@@ -6144,6 +6210,36 @@
           "sha256": "bf7017a73a95ea63bf3716b13ec2bcd79c92942356e3408c6fb66332bad6d977"
         }
       ]
+    }
+  ],
+  "packages_with_no_verified_license_text": [
+    {
+      "name": "base256emoji",
+      "version": "1.0.2",
+      "license_metadata": "MIT",
+      "upstream_text_missing": true,
+      "reason": "The published Cargo.toml explicitly says MIT, but neither the registry package nor recorded upstream revision contains a standalone license text or copyright notice. The retained STANDARD-MIT.txt is canonical SPDX standard terms, not a verified upstream file."
+    },
+    {
+      "name": "base45",
+      "version": "3.2.0",
+      "license_metadata": "MIT",
+      "upstream_text_missing": true,
+      "reason": "The published Cargo.toml explicitly says MIT, but neither the registry package nor recorded upstream revision contains a standalone license text or copyright notice; .cargo_vcs_info.json also marks the packaged source dirty. The retained STANDARD-MIT.txt is canonical SPDX standard terms, not a verified upstream file."
+    },
+    {
+      "name": "cid",
+      "version": "0.11.3",
+      "license_metadata": "MIT",
+      "upstream_text_missing": true,
+      "reason": "The published Cargo.toml explicitly says MIT and the retained README says '[MIT](LICENSE) © 2017 Friedel Ziegelmayer', but the LICENSE target is absent at the recorded revision. The retained STANDARD-MIT.txt is canonical SPDX standard terms, not a verified upstream file."
+    },
+    {
+      "name": "seahash",
+      "version": "4.1.0",
+      "license_metadata": "MIT",
+      "upstream_text_missing": true,
+      "reason": "The published Cargo.toml explicitly says MIT, but neither the registry package nor recorded GitLab revision contains a standalone license text or copyright notice. The retained STANDARD-MIT.txt is canonical SPDX standard terms, not a verified upstream file."
     }
   ]
 }

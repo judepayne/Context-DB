@@ -53,4 +53,7 @@ See:
 - [`docs/releases.md`](docs/releases.md) — Apple Silicon/Linux x86-64 CI, packages and release procedure;
 - [`third_party/README.md`](third_party/README.md) — dependency, license, and attribution information.
 
-No project-wide license has been selected by this documentation cleanup. Do not infer one from third-party license files.
+Context DB's own code is licensed under the [MIT License](LICENSE).
+Third-party components retain their own terms; in particular, embedded Fluree
+4.2.1 remains BUSL-1.1, not MIT or Apache-2.0. See [NOTICE.md](NOTICE.md),
+[LICENSE-FLUREE](LICENSE-FLUREE) and [third-party notices](third_party/README.md).

@@ -44,8 +44,8 @@ reviewed packages rather than rely on expiring CI storage.
 
 1. Confirm the exact `main` commit is green on both platforms and review the retained
    linking/validation evidence. Resolve distribution/license obligations: a green
-   build is not legal clearance. Context DB's own license is not yet selected;
-   outstanding third-party gaps are described in `third_party/README.md`.
+   build is not legal clearance. Context DB's own code is MIT-licensed; embedded
+   dependencies retain their terms, as described in `third_party/README.md`.
 2. Ensure `[workspace.package].version` in `Cargo.toml` is the intended version and
    update `docs/release-notes.md`. Tags must match it exactly (for example `v0.1.0`).
 3. Create and push the version tag. The tag run repeats both complete test/build

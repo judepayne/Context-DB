@@ -27,10 +27,15 @@ access isolation is required. Model-backed operations can incur provider charges
 CI uses deterministic fake/loopback providers. Ignored paid-provider and external
 ontology acceptance tests are not implied by a green build.
 
-## Publication gate
+## Licensing
 
-This draft must not be published until project licensing and third-party notice
-obligations are resolved. Context DB's own license has not yet been selected.
-Fluree 4.2.1 remains BUSL-1.1, not Apache-2.0 today; retained notices and unresolved
-gaps are documented in `third_party/README.md`. Green CI is not redistribution
-clearance. Review this section and update it before publication.
+Context DB's own code is licensed under MIT; the license is included in each
+archive. Third-party components retain their respective licenses. Embedded Fluree
+4.2.1 remains BUSL-1.1, not MIT or Apache-2.0 today. Review `third_party/README.md`
+and the included license texts for attribution, source availability and use
+restrictions. This alpha release does not override upstream terms.
+
+Four dependencies explicitly declare MIT but omit standalone upstream license
+texts. Their exact published declarations, existing notices and clearly labeled
+canonical MIT terms are retained; `third_party/license-sources.json` records the
+provenance and these upstream omissions without claiming legal clearance.

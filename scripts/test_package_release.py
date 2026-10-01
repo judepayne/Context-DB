@@ -22,6 +22,9 @@ class ReleasePackaging(unittest.TestCase):
         )
         (self.root / "README.md").write_text("project readme\n", encoding="utf-8")
         (self.root / "AGENTS.md").write_text("build instructions\n", encoding="utf-8")
+        (self.root / "LICENSE").write_text("MIT License\n", encoding="utf-8")
+        (self.root / "LICENSE-FLUREE").write_text("Business Source License\n", encoding="utf-8")
+        (self.root / "NOTICE.md").write_text("third-party notices\n", encoding="utf-8")
         (self.root / "Cargo.lock").write_text("lock data\n", encoding="utf-8")
         (self.root / "rust-toolchain.toml").write_text('[toolchain]\nchannel = "1.94.0"\n', encoding="utf-8")
         (self.root / "docs").mkdir()
@@ -59,6 +62,9 @@ class ReleasePackaging(unittest.TestCase):
             f"{top}/assets/pi/prompts/system.md",
             f"{top}/README.md",
             f"{top}/AGENTS.md",
+            f"{top}/LICENSE",
+            f"{top}/LICENSE-FLUREE",
+            f"{top}/NOTICE.md",
             f"{top}/docs/service.md",
             f"{top}/docs/contracts/chat-v1.md",
             f"{top}/third_party/README.md",
@@ -88,7 +94,8 @@ class ReleasePackaging(unittest.TestCase):
         self.assertIn("unsigned", notice)
         self.assertIn("Ubuntu 24.04 / glibc 2.39", notice)
         self.assertIn("macOS 15", notice)
-        self.assertIn("No project license", notice)
+        self.assertIn("MIT-licensed; see LICENSE", notice)
+        self.assertNotIn("No project license", notice)
         self.assertIn("BUSL-1.1", notice)
         self.assertIn("not treated as Apache-2.0", notice)
         expected_checksum = hashlib.sha256(archive_path.read_bytes()).hexdigest()

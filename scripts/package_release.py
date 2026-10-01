@@ -120,9 +120,10 @@ assets/pi directory. Documentation links into fixtures, crates or scripts refer
 to the source checkout at https://github.com/judepayne/Context-DB, not this binary
 package; no demo or populated stores are included.
 
-No project license has been chosen. The retained third-party notices apply only
-to their respective works. Upstream Fluree 4.2.1 remains subject to BUSL-1.1
-restrictions and is not treated as Apache-2.0 today. Review third_party/README.md.
+Context DB's own code is MIT-licensed; see LICENSE. Third-party components retain
+their respective licenses; MIT does not replace those terms. Upstream Fluree 4.2.1 remains subject to BUSL-1.1
+restrictions and is not treated as Apache-2.0 today. Read LICENSE-FLUREE, NOTICE.md
+and third_party/README.md before use.
 """.encode("utf-8")
 
 
@@ -146,7 +147,7 @@ def _archive_contents(root: Path, binary: Path) -> tuple[list[tuple[str, Path, i
         files.append((archive_name, source, 0o644))
         directories.update(parent.as_posix() for parent in Path(archive_name).parents if parent.as_posix() != ".")
 
-    for name in ("README.md", "AGENTS.md", "Cargo.lock", "rust-toolchain.toml"):
+    for name in ("README.md", "LICENSE", "LICENSE-FLUREE", "NOTICE.md", "AGENTS.md", "Cargo.lock", "rust-toolchain.toml"):
         source = root / name
         if source.resolve(strict=True) != source:
             raise ValueError(f"release input has a symbolic link ancestor: {source}")
