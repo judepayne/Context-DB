@@ -1,0 +1,12 @@
+[package]
+name = "cdb-engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+cdb-core = { path = "../cdb-core" }
+
+[build-dependencies]
+cdb-core = { path = "../cdb-core" }

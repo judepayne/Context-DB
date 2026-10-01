@@ -1,0 +1,147 @@
+{
+  "schema_version": "ctxql-poc.replay-inventory.v1",
+  "execution_status": "not_executed",
+  "note": "Symbolic pin/manifest references are fixture identities, not verified Fluree receipts or digests. Verdict preconditions are declarative.",
+  "run": {
+    "id": "run:one",
+    "resolved_plan": {
+      "query": "artifact:q@1",
+      "profile": "artifact:p@1",
+      "config": "artifact:c@1",
+      "as_of": "2026-03-01T00:00:00Z"
+    },
+    "db_time": {
+      "authority": "fixture:one",
+      "ledger": "tiny",
+      "t": 1,
+      "commit_cid": "fixture:commit-A"
+    },
+    "landing_nodes": [
+      {
+        "block_index": 0,
+        "role": "from",
+        "anchor": "A",
+        "id": "https://example.test/A",
+        "score": 1.0
+      },
+      {
+        "block_index": 0,
+        "role": "to",
+        "anchor": "C",
+        "id": "https://example.test/C",
+        "score": 1.0
+      }
+    ],
+    "engine": {
+      "name": "fixture-unimplemented",
+      "version": "0"
+    },
+    "external_calls": [
+      {
+        "name": "tiny/score",
+        "version": "1",
+        "manifest_uri": "fixture:function@1",
+        "manifest_hash": null,
+        "call_count": 2,
+        "input_hash_root": null,
+        "output_hash_root": null,
+        "replay_mode": "manifest"
+      }
+    ],
+    "response_hash": null
+  },
+  "preflight_required": [
+    "run",
+    "resolved_plan",
+    "artifact refs",
+    "db_time",
+    "graph snapshot",
+    "function manifests",
+    "call summaries"
+  ],
+  "variants": [
+    {
+      "id": "exact",
+      "conditions": "All pins honored and canonical hashes match",
+      "expected": "reproduced",
+      "status": "derived"
+    },
+    {
+      "id": "trust",
+      "conditions": "Hashes match but one or more pins trust-based",
+      "expected": "reproduced_best_effort",
+      "status": "derived"
+    },
+    {
+      "id": "mismatch",
+      "conditions": "Response or ordered broker hash roots differ",
+      "expected": "diverged",
+      "status": "derived"
+    },
+    {
+      "id": "missing",
+      "conditions": "Remove each required preflight resource in turn, including pruned snapshot",
+      "expected": "not_replayable",
+      "status": "derived"
+    },
+    {
+      "id": "source-missing",
+      "conditions": "Core prerequisites intact; source unavailable",
+      "expected": "Graph replay remains independently decidable; evidence dereference failure, not graph replay failure",
+      "status": "derived"
+    },
+    {
+      "id": "source-changed",
+      "conditions": "Source bytes differ from available content_hash",
+      "expected": "Verification failure; never silently return verified evidence",
+      "status": "derived"
+    },
+    {
+      "id": "permission-revoked",
+      "conditions": "Required footprint denied by current policy",
+      "expected": "Fail closed, not reproduced from a pruned footprint; exact error/verdict mapping Packet7 C4",
+      "status": "derived"
+    },
+    {
+      "id": "live-unpinned",
+      "conditions": "Unpersisted Iceberg rows without independent retained snapshot/data/mapping",
+      "expected": "not_replayable; fresh re-run is separate",
+      "status": "derived"
+    }
+  ],
+  "clock_discriminators": [
+    "writer staged before capture admitted after capture",
+    "equal wall readings",
+    "idle capture then later admission",
+    "clock rollback",
+    "restart after persisted closure",
+    "failed capture write",
+    "lost response and idempotent retry",
+    "explicit future as_of",
+    "submillisecond as_of",
+    "wrong ledger pin",
+    "new db_time changes ontology, same as_of excludes new admissions"
+  ],
+  "assembly_inputs": {
+    "status": "proposed",
+    "contract_packet": 7,
+    "ordered_inputs": [
+      {
+        "name": "first",
+        "run": "run:one"
+      },
+      {
+        "name": "second",
+        "run": "run:two"
+      }
+    ],
+    "variants": [
+      "reverse input order",
+      "duplicate input name",
+      "missing run:two",
+      "source denied after original query",
+      "input notices must survive",
+      "assembly version changes product but not query plans"
+    ]
+  }
+}

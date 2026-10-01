@@ -1,0 +1,100 @@
+{
+  "schema": "ctxql.p5-independent-vectors/v1",
+  "oracle": "Independently authored Python decimal/json/hashlib vectors; no Rust output was consumed.",
+  "decimal": [
+    {
+      "expression": "0.1 + 0.2",
+      "expected": "0.3"
+    },
+    {
+      "expression": "decimal(1) / decimal(3)",
+      "precision": 28,
+      "expected": "0.3333333333333333333333333333"
+    },
+    {
+      "expression": "int(1) / int(3)",
+      "expected_integer": 0
+    },
+    {
+      "expression": "INT index identity",
+      "input": 1,
+      "expected_index_value": 20
+    }
+  ],
+  "function_calls": [
+    {
+      "id": "input-decimal",
+      "output": false,
+      "index": 0,
+      "value": "0.1000000000000000000000000001",
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input\",\"payload\":{\"call_index\":0,\"manifest_hash\":\"sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"name\":\"fn:\\\"\\\\雪\",\"value\":0.1000000000000000000000000001,\"version\":\"v\\\"\\\\雪\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:b4cc90e3b12f2ec8639c532918626cb23a21547f5820fbadc28f2ff15b941f01"
+    }
+  ],
+  "function_roots": [
+    {
+      "id": "empty-input",
+      "output": false,
+      "call_hashes": [],
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input-root\",\"payload\":{\"hashes\":[],\"manifest_hash\":\"sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"name\":\"fn:\\\"\\\\雪\",\"version\":\"v\\\"\\\\雪\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:e9d0774db37e9c244188a121dfaec8d929aa93c386594b0377fe00900dc14d73"
+    },
+    {
+      "id": "single-input",
+      "output": false,
+      "call_hashes": [
+        "sha256:0967115f2813a3541eaef77de9d9d5773f1c0c04314b0bbfe4ff3b3b1c55b5d5"
+      ],
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input-root\",\"payload\":{\"hashes\":[\"sha256:0967115f2813a3541eaef77de9d9d5773f1c0c04314b0bbfe4ff3b3b1c55b5d5\"],\"manifest_hash\":\"sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"name\":\"fn:\\\"\\\\雪\",\"version\":\"v\\\"\\\\雪\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:a568f6e077ec98a292a33828f573a2c80f8c7ba3b04ddc9f5da51b95fd8636be"
+    },
+    {
+      "id": "100k-input",
+      "output": false,
+      "repeat_hash": "sha256:0967115f2813a3541eaef77de9d9d5773f1c0c04314b0bbfe4ff3b3b1c55b5d5",
+      "count": 100000,
+      "canonical_utf8": null,
+      "sha256": "sha256:46ac221765515b0262e80dc2abbe7aad196b11c8e5ceba033e5dead6d47b88e5"
+    }
+  ],
+  "lexical": [
+    {
+      "anchor": "bank risk",
+      "resource": "https://example.test/bank-risk",
+      "labels": [
+        "RISK BANK",
+        "Bank Risk"
+      ],
+      "expected": 5
+    },
+    {
+      "anchor": "bank bank risk",
+      "resource": "https://example.test/bank-risk",
+      "labels": [
+        "bank"
+      ],
+      "expected": 1
+    },
+    {
+      "anchor": "https://example.test/bank-risk",
+      "resource": "https://example.test/bank-risk",
+      "labels": [],
+      "expected": 11
+    }
+  ],
+  "frontend": {
+    "json_utf8": "{\"about\":[{\"from\":[\"A\"],\"match\":\"exact\"}],\"bounds\":{\"max_depth\":1}}",
+    "text_utf8": "QUERY\nABOUT\n  FROM A MATCH exact\nBOUNDS\n  max_depth = 1\n",
+    "json_sha256": "sha256:8148fde46833aa76bf2dc7578658e28ce39929bf1c9d9f68a8788f5d35033fc9",
+    "text_sha256": "sha256:4825bb2655b757dfa1bcfe2656a9cd7223c315d37eb37761626b3ba55c7f09c5"
+  },
+  "broker_recording_scale": {
+    "id": "pick-last-sequential-100k",
+    "count": 100000,
+    "input": "positional arrays [0] through [99999]",
+    "output": "integers 0 through 99999",
+    "manifest_sha256": "sha256:2bc81513651797e4cac85bedf6cd4741debd0bf89e3459bc764be2dfe077bba8",
+    "input_root": "sha256:a8bbca9eb97766eab73479405dc3078ada947426f4b48cf7d48b3d24801ac433",
+    "output_root": "sha256:a65736ddd4379032c4fd5401c227371860e9e8532d3e18d320abcb4b959fcd87"
+  }
+}

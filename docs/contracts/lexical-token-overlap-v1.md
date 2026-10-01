@@ -1,0 +1,9 @@
+# Lexical token overlap v1
+
+`ctxql.lexical-token-overlap/v1` is a deterministic, local scoring primitive in `cdb-engine::lexical`. Configuration must explicitly bind this resolver, the compiled Rust `char::UNICODE_VERSION` tuple, and a positive minimum overlap (initial default selection: 1). A different table/resolver identity is Unsupported; zero threshold is Invalid. This primitive is not yet the authorized native landing-provider integration.
+
+Lowercase Unicode scalars using Rust's pinned tables, then tokenize maximal alphanumeric sequences. Tokens are distinct. Do not trim, normalize, stem, consult corpus statistics, or partially match IRI components. For query token set Q and label tokens L, a partial score is `|Q ∩ L|` when it meets the positive threshold. Exact raw ID equality or full lowercased label-string equality scores `2*|Q|+1`. All arithmetic is checked integer arithmetic. Empty token sets cannot partially match, but exact ID/full-label equality remains valid. Best score across labels wins.
+
+The pure scorer takes only explicit input values and confers no permissions. The controller must authorize each candidate and every label/ranking dependency before semantic caps; retain full snapshot/as_of and resolver evidence; deduplicate by best score/earliest anchor and rank descending score then ascending ID. Targets remain independent of seed caps. Replay must use recorded landings, not invoke this scorer again. Old published configs do not implicitly select this resolver.
+
+All inputs/lowercase expansion/tokens are charged to finite operational budgets, including labels after an exact match. Overflow/exhaustion fails rather than yielding an incomplete score. These are logical work/storage limits, not a hard RSS guarantee. Tests distinguish Unicode case expansion from normalization, repeated tokens, empty/punctuation queries, full-label whitespace, IRI-only nonmatches, exact bonuses, threshold and rejecting budgets.

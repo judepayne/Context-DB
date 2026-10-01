@@ -1,0 +1,30 @@
+# Build products and local validation output
+/target/
+**/target/
+/out/
+/newout/
+/dist/
+
+# Local agent/session state and populated demo runtime
+/.pi/
+/demo
+
+# Credentials, local instance settings, stores and diagnostics
+.env
+.env.*
+!.env.example
+*.secret
+*.key
+*.pem
+*.log
+/cdb.toml
+/.cdb/
+
+# Tool caches and editor/OS noise
+**/__pycache__/
+*.py[cod]
+node_modules/
+.DS_Store
+*.swp
+*.swo
+*conflicted copy*

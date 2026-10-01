@@ -1,0 +1,12 @@
+schema = "ctxql.pi-profile/v1"
+profile = "chat"
+model = "openrouter/deepseek/deepseek-v4.1-flash"
+thinking = "high"
+session = "ephemeral-conversation"
+context_files = false
+skills = false
+prompt_templates = false
+ambient_extensions = false
+built_in_tools = false
+extensions = ["extensions/ctxql-ontology-tool.ts"]
+tools = ["ctxql_capabilities", "ctxql_ontology", "ctxql_graph_query", "ctxql_source"]

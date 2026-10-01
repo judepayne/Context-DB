@@ -1,0 +1,87 @@
+ALIAS:
+Entity: e1
+Name: Orion | "Facility": {A} \\ B
+EVIDENCE:
+Range: h1
+Occurrence: 0
+Quote: Orion | "Facility": {A} \\ B
+---
+CLAIM:
+Kind: classification
+Subject: local e1
+Term: urn:test:Borrower
+Term note: class candidate
+Term: Borrower
+Term note:
+Term selected: 0
+CLAIM_METADATA:
+Source mode: affirmative
+Fit: supported
+Fit note:
+EVIDENCE:
+Range: h1
+Occurrence: 1
+Quote: Orion
+---
+ENTITY:
+Id: e1
+Name: Orion
+Known entity: iri urn:test:Orion
+EVIDENCE:
+Range: h1
+Occurrence: 1
+Quote: Orion
+---
+CLAIM:
+Kind: attribute
+Subject: document doc-1
+Predicate: urn:test:name
+Predicate note:
+Predicate selected: none
+Value: literal: | "quoted" {braced} \\ slash
+Datatype: http://www.w3.org/2001/XMLSchema#string
+Datatype note:
+Datatype selected: 0
+CLAIM_METADATA:
+Source mode: attributed
+Fit: not_evaluated
+Fit note: advisory
+Qualifier: according to schedule
+EVIDENCE:
+Range: h1
+Occurrence: 0
+Quote: ---
+---
+CLAIM:
+Kind: relation
+Subject: local e1
+Predicate: urn:test:hasLender
+Predicate note:
+Predicate selected: 0
+Object: known urn:test:Acme
+CLAIM_METADATA:
+Source mode: conditional
+Fit: uncertain
+Fit note:
+Qualifier: if funded
+EVIDENCE:
+Range: h1
+Occurrence: 0
+Quote: Acme
+---
+CLAIM:
+Kind: relation
+Subject: known urn:test:Orion
+Predicate: urn:test:mentions
+Predicate note:
+Predicate selected: 0
+Object: unresolved the lender: {unknown}
+CLAIM_METADATA:
+Source mode: unknown
+Fit: uncertain
+Fit note:
+EVIDENCE:
+Range: h1
+Occurrence: 0
+Quote: lender
+---

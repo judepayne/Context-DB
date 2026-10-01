@@ -1,0 +1,22 @@
+QUERY
+USE PROFILE tiny/default
+CONTEXT
+  ex = "https://example.test/"
+ABOUT
+  FROM "https://example.test/A" TO "https://example.test/C" MATCH exact
+BOUNDS
+  max_depth = 2
+  as_of = "2026-03-01T00:00:00Z"
+WALK outgoing
+  PREDICATE floor
+    BIND
+      c = meta:confidence
+    KEEP c >= 0.75
+  PREDICATE depth
+    BIND
+      d = meta:depth
+    KEEP d <= 2
+RETURN
+  claims
+  paths
+  evidence

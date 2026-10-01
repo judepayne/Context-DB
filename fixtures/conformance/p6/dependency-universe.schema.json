@@ -1,0 +1,43 @@
+{
+  "$defs": {
+    "ownership": {
+      "additionalProperties": false,
+      "properties": {
+        "authoritative_file_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+        "authoritative_path": {"minLength": 1, "type": "string"},
+        "conversion_root": {"$ref": "#/$defs/root"},
+        "ontology_iri": {"format": "uri", "type": "string"},
+        "source_release_id": {"$ref": "#/$defs/root"},
+        "version_iri": {"oneOf": [{"format": "uri", "type": "string"}, {"type": "null"}]}
+      },
+      "required": ["ontology_iri", "source_release_id", "authoritative_path", "authoritative_file_sha256", "version_iri", "conversion_root"],
+      "type": "object"
+    },
+    "root": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"},
+    "source_release": {
+      "additionalProperties": false,
+      "properties": {
+        "inventory_root": {"$ref": "#/$defs/root"},
+        "source_release_id": {"$ref": "#/$defs/root"}
+      },
+      "required": ["source_release_id", "inventory_root"],
+      "type": "object"
+    }
+  },
+  "$id": "ctxql.p6-dependency-universe.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "algorithm_identity": {"$ref": "#/$defs/root"},
+    "analyzer_identity": {"$ref": "#/$defs/root"},
+    "dependency_universe_root": {"$ref": "#/$defs/root"},
+    "limits_identity": {"$ref": "#/$defs/root"},
+    "ontology_ownership": {"items": {"$ref": "#/$defs/ownership"}, "minItems": 1, "type": "array", "uniqueItems": true},
+    "reference_root": {"$ref": "#/$defs/root"},
+    "schema": {"const": "ctxql.p6-dependency-universe/v1"},
+    "source_policy_identity": {"$ref": "#/$defs/root"},
+    "source_releases": {"items": {"$ref": "#/$defs/source_release"}, "minItems": 2, "type": "array", "uniqueItems": true}
+  },
+  "required": ["schema", "dependency_universe_root", "reference_root", "source_releases", "ontology_ownership", "source_policy_identity", "limits_identity", "analyzer_identity", "algorithm_identity"],
+  "type": "object"
+}

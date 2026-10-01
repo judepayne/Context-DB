@@ -1,0 +1,20 @@
+[package]
+name = "cdb-testkit"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+cdb-core = { path = "../cdb-core" }
+cdb-engine = { path = "../cdb-engine" }
+serde_json.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true
+cdb-backend-fluree = { path = "../cdb-backend-fluree" }
+cdb-projection-redb = { path = "../cdb-projection-redb" }
+tempfile.workspace = true
+cdb-service = { path = "../cdb-service" }
+fluree-db-api.workspace = true
+fluree-db-core.workspace = true

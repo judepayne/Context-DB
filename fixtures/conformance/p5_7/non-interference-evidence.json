@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "ctxql.p5-7-non-interference-evidence/v1",
+  "profile": "ctxql-ontology-profile/fluree-4.2-603974fad5c13efed9d147d214d613849fb43c73/v3-supported-subset",
+  "registered_family_count": 14,
+  "direct_test": "every_registered_family_is_directly_inference_inert",
+  "official_scope_test": "complete_official_scopes_are_directly_inference_inert",
+  "scopes": ["FND/Relations/Relations", "FND/Agreements/Agreements"],
+  "comparison": ["supported_iri_facts", "normalized_public_diagnostics"],
+  "result": "pass"
+}

@@ -1,0 +1,13 @@
+{
+  "hmem_source_hashes": {
+    "agent_bundle": "sha256:e638e0a072c12e5a67ffa07d57c2fcf76f29e5cc50bb9b13204ac9e0741043d2",
+    "compact_parser": "sha256:f77f0a885aeae0262b86afc8311aa42561ce460badd419f2b31841e376c40c99",
+    "evaluation": "sha256:da8f4319075ecbb1526288bae8e2801d64f48e415de1cc0ea11f2311169ba5a0",
+    "fragmenter": "sha256:d686b7f26f730a32673ae355b92002d1a611c5fa43df1dc629d2fde8349ad7e0",
+    "pi_provider": "sha256:a1e31802f33cb8f734abfa6b13cf90a6f2b14e86fccb7e8dbc533ad5d1e1b8c9",
+    "recorder_prompt": "sha256:cb395103b4821d13e607adb1fa43ec4f730768e1e9ff9a7d73958b07a1f96ade",
+    "worker": "sha256:185d7623f5def9c3e9043c60bce2117df53dce2a525f49a823e67509e3fe0481"
+  },
+  "oracle": "Packet 0 independent source-hash bindings; no runtime or gate verdict",
+  "schema": "ctxql.p6-independent-vectors/v1"
+}

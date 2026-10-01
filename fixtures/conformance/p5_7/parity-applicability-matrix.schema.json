@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctxql.example/schemas/p5-7/parity-applicability-matrix.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema","schema","profile","fluree_revision","reasoner_inventory","rows","omission_policy"],
+  "properties": {
+    "$schema": {"const":"https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const":"ctxql.p5-7-parity-applicability-matrix/v1"},
+    "profile": {"const":"ctxql-ontology-profile/fluree-4.2-603974fad5c13efed9d147d214d613849fb43c73/v3-supported-subset"},
+    "fluree_revision": {"const":"603974fad5c13efed9d147d214d613849fb43c73"},
+    "reasoner_inventory": {"const":"fixtures/conformance/p5_6/direct-reasoner-inventory.json"},
+    "rows": {
+      "type":"array", "minItems":14, "maxItems":14,
+      "items": {
+        "type":"object", "additionalProperties":false,
+        "required":["family","interaction","direct_with_without","sealed_required"],
+        "properties": {
+          "family":{"type":"string","minLength":1},
+          "interaction":{"enum":["restriction-cardinality","restriction-cardinality-class","restriction-cardinality-datatype","datatype-declaration","datatype-rdf-list","datatype-facet-rdf-list","class-hierarchy","property-hierarchy"]},
+          "direct_with_without":{"const":true},
+          "sealed_required":{"const":true}
+        }
+      }
+    },
+    "omission_policy": {"const":"pairs without shared structural input are omitted; every registered family still has direct and sealed evidence"}
+  }
+}

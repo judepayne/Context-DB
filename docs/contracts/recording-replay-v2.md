@@ -1,0 +1,29 @@
+# Native recording and replay — v2 compatibility
+
+Status: supported compatibility contract; newer executions use the current recording schema.
+
+The immutable `ctxql-recorded-run/v2` envelope retains `ctxql-replay-data/v2`: exact requested/actual backend-inclusive pins, concrete cutoff, canonical resolved plan and response, exact published artifact references, engine source-build identity/ABI, ordered landings, ordered complete catalog, policy decisions, ordered raw-read commitments, and four required read scopes. Envelope integrity is a raw canonical-byte SHA-256, **not a tenth CTXQL semantic domain**. Existing v1 summaries remain a separate unsealed codec/storage path; decoding either format grants no permission.
+
+Catalogs are ordered entries, not maps. Null labels, empty labels/dependencies, repeated entity IDs and repeated entries are retained exactly. Replay does not re-run landing resolution. Its `ctxql-landing-boundary/v2` observation records the raw-read prefix, landing/compile notices and ordered per-block/role **pre-cap authorized match counts**. Replay validates every role/count against retained counts and derives emptiness/seed-limit notices from pre-cap outcomes, not from zero retained seeds. This preserves matching and missing anchors when `seed_limit` is zero. Replay revalidates that prefix directly, injects recorded landings, then consumes the remaining exact raw trace through the same evaluator. Negative lookup/empty page, page identity/cursor, ranking/filter/cycle candidates and interpretation absence are recorded. Positive policy dependencies are preflighted under current permissions; original false decisions remain false even after new grants. Revoked original dependencies deny the whole result, not a pruned reproduction.
+
+`PreparedExecution` and `PreparedReplay` have private constructors. The service accepts artifact references/run IDs, never caller-provided plans, envelopes, principal handles or traces. Native host recording APIs are trusted Rust composition interfaces, not authenticated public endpoints. Managed run descriptors cannot be used as generic graph interpretation/source records, nor loaded through the service's artifact route. Run access requires owner/admin, operation, descriptor, payload-predicate and original positive-footprint permissions.
+
+## Guarded recording and delivery
+
+Acquire the owned authenticated session read lease before the authority mutation gate. Move the lease, concurrency permit, cancellation flag and deadline into the detached native operation. Keep the same authority guard through validation, prospective limits, durable admission, policy-epoch publication, final authorization and whole-buffer enqueue. No asynchronous commit is hidden inside the old synchronous policy callback. Only the known recording commit may change the expected head. Retry binds owner, run ID and original operation hash; its sink receives the durable original, never a newly calculated replacement.
+
+The enqueue is the local publication linearization point. Commit and network receipt are not globally atomic. A canceled/lost-acknowledgement run may remain durable. No post-enqueue timeout pretends to undo delivery. Shutdown stops admission, drains session leases, and joins the shared coordinator without reversing lock order.
+
+## Artifacts and sources
+
+Replayable service queries require published bytes. A protected exact head preload discovers authored cutoff/profile selection; preparation rechecks all references at the actual captured pin with a new current context. The local service has no mutable alias registry: a selected published profile must carry `name` equal to its authored selector. Immutable hash revalidation preserves that binding. No latest/default/profile substitution is used during replay.
+
+A text selector has three independent immutable metadata grants: the source identity resource, a source/version descriptor, and the exact selector descriptor. Whole-document and span selectors are distinct, including empty spans. The reader receives a private issuer/request-bound capability; all metadata facts are authorized before file access, and freshness is checked again after reading. Full-version integrity verification does not widen the output span. Only trusted explicit provisioning populates the private content-addressed store; request paths/URIs never become filesystem locators. Full source and fragment hashes remain distinct. Invalid UTF-8/boundaries, replacement and symlink identities fail.
+
+Graph-only replay requires no external bytes and returns no cached evidence. Explicit replay hydration uses freshly evaluated source references and current selector authorization. Missing bytes change evidence status only; Denied/PolicyChanged are never converted to unavailable. Direct source requests reject unsupported supplementary witnesses; query hydration does not claim them verified. Retry returns the original graph and explicitly unavailable evidence rather than cached source bytes.
+
+## Scope and limits
+
+Native supported execution yields reproduced/diverged/not_replayable, with denial as a redacted access error. There is no fabricated native best-effort path. External functions, mapped/computed providers and acquisition/preparation capabilities remain unsupported for recording unless fully implemented later. Product status is not_requested; assemblies remain unsupported.
+
+Body, trace-count/bytes, run, concurrency, work and cooperative time budgets are operational, not semantic defaults. Zero work is a valid rejecting budget. They are not hard RSS/disk/sandbox guarantees. The engine build commitment covers core/engine Rust sources, manifests, lock resolution and target/features. This schema assumes single-owner local operation, not multiwriter or remote-service certification.

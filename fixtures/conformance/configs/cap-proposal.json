@@ -1,0 +1,17 @@
+{
+  "schema_version": "ctxql-poc.runtime-proposal.v1",
+  "status": "proposed",
+  "not_a_ctxql_config_schema": true,
+  "decision": "C3c",
+  "proposed_defaults": {
+    "path_limit": 8,
+    "seed_limit": 2,
+    "fanout_limit": 4,
+    "max_claims": 16
+  },
+  "aggregation": {
+    "confidence": "product of per-claim confidence; no duplicate aggregation",
+    "grounding": "minimum tier across path; proposed tier list in semantic-decisions.md"
+  },
+  "cycle_alternative": "bounded_repeated_claim (name illustrative, not established grammar)"
+}

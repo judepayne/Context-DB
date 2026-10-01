@@ -1,0 +1,7 @@
+@prefix ex: <urn:p5-6:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:ancestor owl:propertyChainAxiom _:chain1 .
+_:chain1 rdf:first ex:parent ; rdf:rest _:chain2 .
+_:chain2 rdf:first ex:parent ; rdf:rest rdf:nil .

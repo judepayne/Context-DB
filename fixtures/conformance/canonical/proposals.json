@@ -1,0 +1,156 @@
+{
+  "schema_version": "ctxql-poc.canonical-proposals.v1",
+  "status": "proposed",
+  "decision": "C1",
+  "execution_status": "not_executed",
+  "canonical_bytes": null,
+  "hashes": null,
+  "note": "Inputs and equivalence assertions only. The user accepted C1-response-boundary (exclude timing/hydrated bytes; verify evidence separately) and C1-exact-numeric-principle (exact integer/decimal arithmetic; explicit overflow errors, no silent rounding). Routine numeric details are now selected in numeric-defaults.json under delegated discretion; exact whole-object projections and golden serialization remain proposed. Numeric lexemes are strings to preserve boundary values, not the proposed runtime representation.",
+  "vectors": [
+    {
+      "id": "keys",
+      "left": {
+        "b": 2,
+        "a": 1
+      },
+      "right": {
+        "a": 1,
+        "b": 2
+      },
+      "proposed_relation": "equal"
+    },
+    {
+      "id": "array-order",
+      "left": [
+        1,
+        2
+      ],
+      "right": [
+        2,
+        1
+      ],
+      "proposed_relation": "different"
+    },
+    {
+      "id": "hydration-boundary",
+      "left": {
+        "claims": [
+          "c01"
+        ],
+        "evidence": {
+          "text": "old"
+        },
+        "timing_ms": 1
+      },
+      "right": {
+        "claims": [
+          "c01"
+        ],
+        "evidence": {
+          "text": "changed"
+        },
+        "timing_ms": 9
+      },
+      "proposed_relation": "same semantic-response hash, evidence verification differs; this is not a response wire-shape golden"
+    },
+    {
+      "id": "return-selection",
+      "left": {
+        "return": {
+          "claims": true
+        }
+      },
+      "right": {
+        "return": {
+          "claims": false
+        }
+      },
+      "proposed_relation": "different plan and selected-response projection"
+    },
+    {
+      "id": "assembly-only",
+      "left": {
+        "query": "q",
+        "assembly": "a@1"
+      },
+      "right": {
+        "query": "q",
+        "assembly": "a@2"
+      },
+      "proposed_relation": "same plan hash, potentially different product hash"
+    },
+    {
+      "id": "numeric-equivalence",
+      "status": "accepted",
+      "decision_ref": "docs/contracts/numeric-v1.md",
+      "lexemes": [
+        "1",
+        "1.0",
+        "1e0",
+        "-0",
+        "0"
+      ],
+      "proposed_relation": "first three equal; last two equal"
+    },
+    {
+      "id": "numeric-boundaries",
+      "status": "accepted",
+      "decision_ref": "docs/contracts/numeric-v1.md",
+      "lexemes": [
+        "9007199254740991",
+        "9007199254740992",
+        "9007199254740993",
+        "9223372036854775807",
+        "9223372036854775808",
+        "0.10000000000000001",
+        "1e1000000",
+        "NaN",
+        "Infinity"
+      ],
+      "proposed_relation": "preserve distinct exact decimals within explicit budget; huge exponent and nonfinite rejected"
+    },
+    {
+      "id": "utc",
+      "left": "2026-03-01T01:00:00+01:00",
+      "right": "2026-03-01T00:00:00Z",
+      "proposed_relation": "equal; submillisecond policy C5 pending"
+    },
+    {
+      "id": "text",
+      "left": "café\r\n",
+      "right": "café\n\n",
+      "proposed_relation": "LF normalization only; ensure one final LF without stripping additional content newlines; these remain different"
+    },
+    {
+      "id": "domain",
+      "same_payload": {
+        "a": 1
+      },
+      "domains": [
+        "plan",
+        "response",
+        "function-input",
+        "function-output",
+        "product-json",
+        "product-text"
+      ],
+      "proposed_relation": "different versioned envelopes"
+    },
+    {
+      "id": "self-hash",
+      "left": {
+        "claim_ids": [
+          "c01"
+        ],
+        "response_hash": "old"
+      },
+      "right": {
+        "claim_ids": [
+          "c01"
+        ],
+        "response_hash": "new"
+      },
+      "proposed_relation": "self-hash omitted, equal"
+    }
+  ]
+}

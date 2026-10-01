@@ -1,0 +1,37 @@
+{
+  "schema":"ctxql.p2-execution-cases/v1",
+  "oracle":"Hand-derived individual-claim paths from execution-v1; not captured engine output. Fixture edges are translated by normal CandidateClaim admission, not a production input wire.",
+  "graphs":{
+    "branch":{"entities":{"s":null,"u":null,"t":null},"edges":[{"id":"a","from":"s","to":"u","confidence":0.9},{"id":"b","from":"u","to":"t","confidence":0.8},{"id":"c","from":"s","to":"t","confidence":0.5}]},
+    "cycle":{"entities":{"s":null,"u":null},"edges":[{"id":"a","from":"s","to":"u","confidence":0.9},{"id":"b","from":"u","to":"s","confidence":0.8}]},
+    "parallel":{"entities":{"s":null,"t":null},"edges":[{"id":"a","from":"s","to":"t","confidence":0.1},{"id":"z","from":"s","to":"t","confidence":0.9}]},
+    "loop":{"entities":{"s":null,"t":null},"edges":[{"id":"loop","from":"s","to":"s","confidence":1},{"id":"a","from":"s","to":"t","confidence":0.8}]},
+    "literal":{"entities":{"s":null},"edges":[{"id":"lit","from":"s","to":{"kind":"literal","datatype":"http://www.w3.org/2001/XMLSchema#string","value":"s","language":null},"confidence":0.8}]},
+    "labels":{"entities":{"a":"shared","b":"shared","t":null},"edges":[{"id":"ca","from":"a","to":"t","confidence":0.9},{"id":"cb","from":"b","to":"t","confidence":0.7}]},
+    "single":{"entities":{"s":null,"t":null},"edges":[{"id":"a","from":"s","to":"t","confidence":0.8}]}
+  },
+  "cases":[
+    {"id":"P2-E001","graph":"branch","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":2}},"expected":{"paths":[["a"],["c"],["a","b"]],"nodes":[["s","u"],["s","t"],["s","u","t"]]}},
+    {"id":"P2-E002","graph":"branch","query":{"about":[{"from":["s"],"to":["t"],"match":"exact"}],"bounds":{"max_depth":2}},"expected":{"paths":[["c"],["a","b"]]}},
+    {"id":"P2-E003","graph":"branch","query":{"about":[{"from":["t"],"match":"exact"}],"bounds":{"max_depth":2},"walk":{"direction":"incoming"}},"expected":{"paths":[["b"],["c"],["b","a"]],"nodes":[["t","u"],["t","s"],["t","u","s"]]}},
+    {"id":"P2-E004","graph":"branch","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":2},"walk":{"direction":"both"}},"expected":{"paths":[["a"],["c"],["a","b"],["c","b"]]}},
+    {"id":"P2-E005","graph":"cycle","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":3}},"expected":{"paths":[["a"],["a","b"]]}},
+    {"id":"P2-E006","graph":"cycle","cycle":"no_repeated_node","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":3}},"expected":{"paths":[["a"]]}},
+    {"id":"P2-E007","graph":"cycle","cycle":"allow_repeated_claim","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":3}},"expected":{"paths":[["a"],["a","b"],["a","b","a"]]}},
+    {"id":"P2-E008","graph":"branch","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1,"fanout_limit":1},"walk":{"predicates":[["meta:confidence","<=",0.6]]}},"expected":{"paths":[["c"]]}},
+    {"id":"P2-E009","graph":"parallel","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1,"fanout_limit":1}},"expected":{"paths":[["z"]]}},
+    {"id":"P2-E010","graph":"branch","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":2,"path_limit":1},"filter":{"predicates":[["meta:claim_id","=","b"]]}},"expected":{"paths":[["a","b"]]}},
+    {"id":"P2-E011","graph":"branch","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":2},"filter":{"predicates":[["meta:claim_id","=","a"],["meta:claim_id","=","b"]]}},"expected":{"paths":[["a","b"]]}},
+    {"id":"P2-E012","graph":"single","query":{"about":[{"from":["s"],"match":"exact"},{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1,"max_claims":1}},"expected":{"paths":[["a"],["a"]],"blocks":[0,1]}},
+    {"id":"P2-E013","graph":"loop","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"direction":"both"}},"expected":{"paths":[["loop"],["a"]]}},
+    {"id":"P2-E014","graph":"literal","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":3}},"expected":{"paths":[["lit"]],"nodes":[["s"]],"terminal_literal":true}},
+    {"id":"P2-E015","graph":"single","query":{"about":[{"from":["s"],"to":["s"],"match":"exact"}],"bounds":{"max_depth":1}},"expected":{"paths":[]}},
+    {"id":"P2-E016","graph":"branch","denied":["u"],"query":{"about":[{"from":["s"],"to":["t"],"match":"exact"}],"bounds":{"max_depth":2}},"expected":{"paths":[["c"]]}},
+    {"id":"P2-E017","graph":"labels","denied":["a"],"query":{"about":[{"from":["shared"],"match":"exact"}],"bounds":{"max_depth":1,"seed_limit":1}},"expected":{"paths":[["cb"]]}},
+    {"id":"P2-E018","graph":"single","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":0}},"expected":{"paths":[]}},
+    {"id":"P2-E019","graph":"single","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1,"path_limit":0}},"expected":{"paths":[]}},
+    {"id":"P2-E020","graph":"single","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1,"as_of":"2026-03-31T23:59:59.999Z"}},"expected":{"paths":[]}},
+    {"id":"P2-E021","graph":"single","max_work":0,"query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1}},"expected":{"error":"Limit"}},
+    {"id":"P2-E022","graph":"single","query":{"about":[{"from":["absent"],"match":"exact"}],"bounds":{"max_depth":1}},"expected":{"paths":[]}}
+  ]
+}

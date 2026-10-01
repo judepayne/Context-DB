@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctxql.example/schema/p5-7/business-scope-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "selection_reason", "entry_path", "entry_ontology_iri", "version_iri", "direct_imports", "meaningful_terms", "fallback"],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "ctxql.p5-7-business-scope/v1"},
+    "selection_reason": {"const": "design_selected_poc_scope"},
+    "entry_path": {"const": "fibo/FND/Agreements/Agreements.rdf"},
+    "entry_ontology_iri": {"const": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
+    "version_iri": {"const": "https://spec.edmcouncil.org/fibo/ontology/FND/20260601/Agreements/Agreements/"},
+    "direct_imports": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "prefixItems": [
+        {"const": "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
+        {"const": "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
+        {"const": "https://www.omg.org/spec/Commons/AnnotationVocabulary/"},
+        {"const": "https://www.omg.org/spec/Commons/PartiesAndSituations/"},
+        {"const": "https://www.omg.org/spec/Commons/RolesAndCompositions/"}
+      ],
+      "items": false
+    },
+    "meaningful_terms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["class", "relationship", "inverse_relationship"],
+      "properties": {
+        "class": {"const": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/Agreement"},
+        "relationship": {"const": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/hasObligation"},
+        "inverse_relationship": {"const": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/isObligationOf"}
+      }
+    },
+    "fallback": {"const": "fibo/FND/Agreements/Contracts.rdf"}
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": "ctxql-poc.merge-inventory.v1",
+  "execution_status": "not_executed",
+  "profile_resolution": {
+    "tiny/default": {
+      "json": "fixtures/conformance/profiles/default.json",
+      "text": "fixtures/conformance/profiles/default.ctxql"
+    }
+  },
+  "vectors": [
+    {
+      "id": "replace-append",
+      "query": "fixtures/conformance/queries/paired.json",
+      "expected": {
+        "predicate_names": [
+          "floor",
+          "depth"
+        ],
+        "max_depth": 2,
+        "min_confidence": 0.5
+      },
+      "status": "derived"
+    },
+    {
+      "id": "drop",
+      "query": "fixtures/conformance/queries/drop.json",
+      "expected": {
+        "predicate_names": [],
+        "max_depth": 3
+      },
+      "status": "derived"
+    },
+    {
+      "id": "clear",
+      "query": "fixtures/conformance/queries/clear.json",
+      "expected": {
+        "predicate_names": [],
+        "max_depth": 3
+      },
+      "status": "derived"
+    },
+    {
+      "id": "recursive-and-array",
+      "profile_patch": {
+        "bounds": {
+          "regions": [
+            "EU",
+            "US"
+          ],
+          "limit": 2
+        },
+        "return": {
+          "claims": true,
+          "paths": true
+        }
+      },
+      "query_patch": {
+        "bounds": {
+          "regions": [
+            "APAC"
+          ]
+        },
+        "return": {
+          "paths": false
+        }
+      },
+      "expected": {
+        "bounds": {
+          "regions": [
+            "APAC"
+          ],
+          "limit": 2
+        },
+        "return": {
+          "claims": true,
+          "paths": false
+        }
+      },
+      "status": "derived"
+    },
+    {
+      "id": "unnamed-retained",
+      "profile_patch": {
+        "walk": {
+          "predicates": [
+            [
+              "meta:confidence",
+              ">=",
+              0.1
+            ]
+          ]
+        }
+      },
+      "query_patch": {
+        "walk": {
+          "predicates": [
+            [
+              "meta:confidence",
+              ">=",
+              0.9
+            ]
+          ]
+        }
+      },
+      "expected_description": "Unnamed predicates cannot be individually overridden; exact combined-array handling without names needs clarification (C3-merge).",
+      "status": "proposed"
+    },
+    {
+      "id": "ignored-about",
+      "profile": "fixtures/conformance/profiles/ignored-about.json",
+      "query": "fixtures/conformance/queries/drop.json",
+      "expected_description": "Ignore profile about; recommend explain warning; max_depth inherited before required-bounds semantic validation.",
+      "status": "derived"
+    }
+  ]
+}

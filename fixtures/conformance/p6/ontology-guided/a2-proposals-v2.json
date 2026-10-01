@@ -1,0 +1,96 @@
+{
+  "schema": "ctxql-extraction-proposals/v2",
+  "no_claims": false,
+  "entities": [
+    {
+      "id": "e1",
+      "name": "Orion",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [{"range": "{{LINE_RANGE_1}}", "quote": "Orion", "occurrence": 0}],
+      "classes": [
+        {
+          "id": "c1",
+          "term": {"suggestions": [{"text": "urn:ctxql:a2:CreditAgreement", "note": ""}], "selected": 0},
+          "evidence": [{"range": "{{LINE_RANGE_1}}", "quote": "Orion is a written agreement under which Acme Ltd borrows GBP 1000.", "occurrence": 0}],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Agreement to borrow money"
+        },
+        {
+          "id": "c2",
+          "term": {"suggestions": [{"text": "urn:ctxql:a2:WrittenContract", "note": ""}], "selected": 0},
+          "evidence": [{"range": "{{LINE_RANGE_1}}", "quote": "Orion is a written agreement", "occurrence": 0}],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": ""
+        }
+      ]
+    },
+    {
+      "id": "e2",
+      "name": "Acme Ltd",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [{"range": "{{LINE_RANGE_1}}", "quote": "Acme Ltd", "occurrence": 0}],
+      "classes": [
+        {
+          "id": "c3",
+          "term": {"suggestions": [{"text": "urn:ctxql:a2:Borrower", "note": ""}], "selected": 0},
+          "evidence": [{"range": "{{LINE_RANGE_1}}", "quote": "Acme Ltd borrows GBP 1000", "occurrence": 0}],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Party borrowing the money"
+        }
+      ]
+    }
+  ],
+  "attributes": [
+    {
+      "id": "a1",
+      "subject": {"kind": "local", "id": "e1"},
+      "predicate": {"suggestions": [{"text": "urn:ctxql:a2:executedOn", "note": ""}], "selected": 0},
+      "value": {"lexical": "2022-12-06", "datatype": {"suggestions": [{"text": "http://www.w3.org/2001/XMLSchema#date", "note": ""}], "selected": 0}},
+      "evidence": [{"range": "{{LINE_RANGE_2}}", "quote": "Orion was executed on 2022-12-06.", "occurrence": 0}],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": ""
+    },
+    {
+      "id": "a2",
+      "subject": {"kind": "local", "id": "e1"},
+      "predicate": {"suggestions": [{"text": "urn:ctxql:a2:agreementDate", "note": "Original source heading"}], "selected": 0},
+      "value": {"lexical": "2022-12-06", "datatype": {"suggestions": [{"text": "http://www.w3.org/2001/XMLSchema#date", "note": ""}], "selected": 0}},
+      "evidence": [{"range": "{{LINE_RANGE_3}}", "quote": "Orion agreement date: 2022-12-06.", "occurrence": 0}],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": ""
+    },
+    {
+      "id": "a3",
+      "subject": {"kind": "local", "id": "e1"},
+      "predicate": {"suggestions": [{"text": "urn:ctxql:a2:effectiveOn", "note": "Possible interpretation only"}], "selected": 0},
+      "value": {"lexical": "2022-12-06", "datatype": {"suggestions": [{"text": "http://www.w3.org/2001/XMLSchema#date", "note": ""}], "selected": 0}},
+      "evidence": [{"range": "{{LINE_RANGE_3}}", "quote": "Orion agreement date: 2022-12-06.", "occurrence": 0}],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Heading does not establish effectiveness"
+    }
+  ],
+  "relations": [
+    {
+      "id": "r1",
+      "subject": {"kind": "local", "id": "e1"},
+      "predicate": {"suggestions": [{"text": "has borrower", "note": ""}], "selected": 0},
+      "object": {"kind": "local", "id": "e2"},
+      "evidence": [{"range": "{{LINE_RANGE_1}}", "quote": "Orion is a written agreement under which Acme Ltd borrows GBP 1000.", "occurrence": 0}],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": ""
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Semantic bundle admission v1
+
+The bundle descriptor commits extraction run, exact validation capture, source selectors, candidate topology, and semantic roles before final IDs. Claim IDs are deterministic from descriptor root, role, and canonical claim payload excluding the ID. The payload root and canonical-claim root are computed after final IDs. The admission key commits descriptor and payload roots.
+
+`BundlePrepared` is durably appended before semantic mutation and indexed again on Control-repository reopen. It carries only IDs, roots, expected claim IDs, the full backend-bound capture, selector root, safe counts, and timestamp. Admission preflight verifies capture/history and exact inverse encoding without writing. Restart recovery reads this commitment before conversion or provider work.
+
+The writer holds an exclusive process-wide file lease and performs final history recovery plus admission under one critical section. Immediately before insertion it rechecks current semantic policy authority, exact validation head, ledger identity, and encoding. It admits the entire bundle in one native transaction. Post-commit bounded SPARQL readback must decode to the canonical pre-write claims. Receipts bind canonical payload/decoded roots separately from the Fluree stored-projection root and exact committed snapshot. On uncertain acknowledgement, exact IDs and history select only: all absent (safe to write after payload reconstruction), exact one transaction (reconstruct receipt), or conflict (stop). Blind retry is forbidden.

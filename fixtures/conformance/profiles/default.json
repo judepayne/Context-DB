@@ -1,0 +1,29 @@
+{
+  "name": "tiny/default",
+  "@context": {
+    "ex": "https://example.test/"
+  },
+  "bounds": {
+    "max_depth": 3,
+    "min_confidence": 0.5
+  },
+  "walk": {
+    "direction": "outgoing",
+    "predicates": [
+      {
+        "name": "floor",
+        "bind": {
+          "c": "meta:confidence",
+          "f": "bound:min_confidence"
+        },
+        "keep": "c >= f"
+      }
+    ]
+  },
+  "return": {
+    "claims": true,
+    "paths": true,
+    "evidence": false,
+    "explain": false
+  }
+}

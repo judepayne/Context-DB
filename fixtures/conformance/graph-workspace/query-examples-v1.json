@@ -1,0 +1,57 @@
+{
+  "schema": "ctxql.graph-workspace-query-examples/v1",
+  "examples": [
+    {
+      "id": "exact-party",
+      "purpose": "Start from one exact host-known IRI.",
+      "query": {"about":[{"from":["urn:party:example"],"match":"exact"}],"bounds":{"max_depth":1,"seed_limit":1,"fanout_limit":4,"max_claims":16,"path_limit":8}},
+      "compile": true
+    },
+    {
+      "id": "name-or-identifier",
+      "purpose": "Use bounded approximate landing over authorized explicit label claims, then inspect returned candidates without assuming identity.",
+      "query": {"about":[{"from":["Example Borrower"],"match":"approximate"}],"bounds":{"max_depth":1,"seed_limit":4,"fanout_limit":4,"max_claims":16,"path_limit":8}},
+      "compile": true
+    },
+    {
+      "id": "incoming-borrower-role",
+      "purpose": "Follow incoming claims restricted to a relationship predicate.",
+      "query": {"about":[{"from":["urn:party:example"],"match":"exact"}],"bounds":{"max_depth":2,"seed_limit":1,"fanout_limit":8,"max_claims":32,"path_limit":16},"walk":{"direction":"incoming","predicates":[["meta:relation","=","urn:relation:borrower"]]}},
+      "compile": true
+    },
+    {
+      "id": "broad-before-refinement",
+      "purpose": "An intentionally broad request that may receive query_too_broad; refine explicitly rather than sampling.",
+      "query": {"about":[{"from":["Agreement"],"match":"approximate"}],"bounds":{"max_depth":3,"seed_limit":20,"fanout_limit":20,"max_claims":100,"path_limit":100}},
+      "compile": true,
+      "pair": "agreement-refinement"
+    },
+    {
+      "id": "narrow-after-refinement",
+      "purpose": "A narrower replacement with exact start, relationship filter and smaller bounds.",
+      "query": {"about":[{"from":["urn:agreement:example"],"match":"exact"}],"bounds":{"max_depth":1,"seed_limit":1,"fanout_limit":4,"max_claims":12,"path_limit":6},"walk":{"direction":"outgoing","predicates":[["meta:relation","=","urn:relation:borrower"]]}},
+      "compile": true,
+      "pair": "agreement-refinement"
+    },
+    {
+      "id": "typed-borrower-role",
+      "purpose": "Restrict borrower-role traversal by an explicit subject classification when that classification is relevant and available.",
+      "query": {"about":[{"from":["urn:agreement:example"],"match":"exact"}],"bounds":{"max_depth":1,"seed_limit":1,"fanout_limit":4,"max_claims":12,"path_limit":6},"walk":{"direction":"outgoing","predicates":[["meta:relation","=","urn:relation:borrower"],["meta:subject_type","=","urn:class:LoanAgreement"]]}},
+      "compile": true,
+      "pair": "optional-classification"
+    },
+    {
+      "id": "untyped-borrower-role",
+      "purpose": "Deliberately omit the classification constraint to include assertions with missing or provisional classifications; this includes typed claims too.",
+      "query": {"about":[{"from":["urn:agreement:example"],"match":"exact"}],"bounds":{"max_depth":1,"seed_limit":1,"fanout_limit":4,"max_claims":12,"path_limit":6},"walk":{"direction":"outgoing","predicates":[["meta:relation","=","urn:relation:borrower"]]}},
+      "compile": true,
+      "pair": "optional-classification"
+    },
+    {
+      "id": "unsupported-custom",
+      "purpose": "Custom/native predicates are not available to the graph tool.",
+      "query": {"about":[{"from":["urn:party:example"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"predicates":[{"name":"native","keep":"true"}]}},
+      "compile": false
+    }
+  ]
+}

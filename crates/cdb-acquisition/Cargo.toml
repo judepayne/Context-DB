@@ -1,0 +1,9 @@
+[package]
+name = "cdb-acquisition"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+cdb-core = { path = "../cdb-core" }

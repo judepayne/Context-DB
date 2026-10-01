@@ -1,0 +1,104 @@
+{
+  "$defs": {
+    "classification": {
+      "additionalProperties": false,
+      "properties": {
+        "media_type": {"pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$", "type": "string"},
+        "role": {"enum": ["ontology_rdf", "publisher_catalog", "license", "notice", "release_metadata", "source_package", "other"]}
+      },
+      "required": ["role", "media_type"],
+      "type": "object"
+    },
+    "hash": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"},
+    "inventory_entry": {
+      "additionalProperties": false,
+      "properties": {
+        "classification": {"$ref": "#/$defs/classification"},
+        "hash": {"$ref": "#/$defs/hash"},
+        "path": {"minLength": 1, "type": "string"},
+        "size": {"minimum": 1, "type": "integer"}
+      },
+      "required": ["path", "hash", "size", "classification"],
+      "type": "object"
+    }
+  },
+  "$id": "ctxql.p6-source-release-v2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "classification": {"$ref": "#/$defs/classification"},
+          "hash": {"$ref": "#/$defs/hash"},
+          "path": {"minLength": 1, "type": "string"},
+          "size": {"minimum": 1, "type": "integer"},
+          "source_url": {"pattern": "^https://", "type": "string"}
+        },
+        "required": ["path", "source_url", "hash", "size", "classification"],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "commit": {"oneOf": [{"minLength": 1, "type": "string"}, {"type": "null"}]},
+    "evidence": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "hash": {"$ref": "#/$defs/hash"},
+          "kind": {"enum": ["license", "notice"]},
+          "path": {"minLength": 1, "type": "string"}
+        },
+        "required": ["kind", "path", "hash"],
+        "type": "object"
+      },
+      "minItems": 2,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "immutable_source_evidence": {"minLength": 1, "type": "string"},
+    "inventory": {
+      "additionalProperties": false,
+      "properties": {
+        "classification_policy": {"const": "ctxql-artifact-classification/closed-v1"},
+        "classification_root": {"$ref": "#/$defs/hash"},
+        "entries": {"items": {"$ref": "#/$defs/inventory_entry"}, "minItems": 1, "type": "array", "uniqueItems": true},
+        "role_counts": {
+          "additionalProperties": false,
+          "properties": {
+            "license": {"minimum": 0, "type": "integer"},
+            "notice": {"minimum": 0, "type": "integer"},
+            "ontology_rdf": {"minimum": 0, "type": "integer"},
+            "other": {"minimum": 0, "type": "integer"},
+            "publisher_catalog": {"minimum": 0, "type": "integer"},
+            "release_metadata": {"minimum": 0, "type": "integer"},
+            "source_package": {"minimum": 0, "type": "integer"}
+          },
+          "required": ["ontology_rdf", "publisher_catalog", "license", "notice", "release_metadata", "source_package", "other"],
+          "type": "object"
+        },
+        "root": {"$ref": "#/$defs/hash"},
+        "total_bytes": {"minimum": 1, "type": "integer"}
+      },
+      "required": ["entries", "total_bytes", "role_counts", "classification_policy", "classification_root", "root"],
+      "type": "object"
+    },
+    "manifest_root": {"$ref": "#/$defs/hash"},
+    "product": {"minLength": 1, "type": "string"},
+    "publisher": {"minLength": 1, "type": "string"},
+    "release_form": {"enum": ["archive", "synthetic_artifacts"]},
+    "release_version": {"minLength": 1, "type": "string"},
+    "retrieval_evidence": {"oneOf": [{"minLength": 1, "type": "string"}, {"type": "null"}]},
+    "retrieved_at": {"oneOf": [{"format": "date-time", "type": "string"}, {"type": "null"}]},
+    "safe_extraction_limits_identity": {"oneOf": [{"minLength": 1, "type": "string"}, {"type": "null"}]},
+    "schema": {"const": "ctxql.p6-source-release/v2"},
+    "source_release_id": {"$ref": "#/$defs/hash"},
+    "tag": {"oneOf": [{"minLength": 1, "type": "string"}, {"type": "null"}]},
+    "tree": {"oneOf": [{"minLength": 1, "type": "string"}, {"type": "null"}]}
+  },
+  "required": ["schema", "source_release_id", "publisher", "product", "release_version", "release_form", "tag", "commit", "tree", "retrieved_at", "retrieval_evidence", "artifacts", "evidence", "inventory", "safe_extraction_limits_identity", "immutable_source_evidence", "manifest_root"],
+  "type": "object"
+}

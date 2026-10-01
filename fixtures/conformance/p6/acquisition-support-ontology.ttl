@@ -1,0 +1,74 @@
+@prefix ctxa: <urn:ctxql:acquisition:v1:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<urn:ctxql:ontology:acquisition-support>
+    a owl:Ontology ;
+    owl:versionIRI <urn:ctxql:ontology:acquisition-support:v1> ;
+    rdfs:label "CTXQL acquisition support ontology" .
+
+ctxa:Claim a owl:Class ;
+    rdfs:label "acquisition claim" .
+
+ctxa:ClaimType a owl:Class ;
+    rdfs:label "claim type" .
+
+ctxa:RelationType a owl:Class ;
+    rdfs:label "relation type" .
+
+ctxa:VocabularyStatus a owl:Class ;
+    rdfs:label "vocabulary status" .
+
+ctxa:ConfiguredGraph a owl:Class ;
+    rdfs:label "configured graph" .
+
+ctxa:AcquisitionConfiguration a owl:Class ;
+    rdfs:label "acquisition configuration" .
+
+ctxa:claimType a owl:ObjectProperty ;
+    rdfs:domain ctxa:Claim ;
+    rdfs:range ctxa:ClaimType ;
+    rdfs:label "claim type" .
+
+ctxa:relationType a owl:ObjectProperty ;
+    rdfs:domain ctxa:Claim ;
+    rdfs:range ctxa:RelationType ;
+    rdfs:label "relation type" .
+
+ctxa:vocabularyStatus a owl:ObjectProperty ;
+    rdfs:range ctxa:VocabularyStatus ;
+    rdfs:label "vocabulary status" .
+
+ctxa:TypeAssertionClaimType a ctxa:ClaimType ;
+    rdfs:label "type assertion claim" .
+
+ctxa:BusinessRelationshipClaimType a ctxa:ClaimType ;
+    rdfs:label "business relationship claim" .
+
+ctxa:TypeAssertionRelationType a ctxa:RelationType ;
+    rdfs:label "type assertion relation" .
+
+ctxa:BusinessRelationshipRelationType a ctxa:RelationType ;
+    rdfs:label "business relationship" .
+
+ctxa:Canonical a ctxa:VocabularyStatus ;
+    rdfs:label "canonical" .
+
+ctxa:PermittedExtension a ctxa:VocabularyStatus ;
+    rdfs:label "permitted extension" .
+
+ctxa:Discouraged a ctxa:VocabularyStatus ;
+    rdfs:label "discouraged" .
+
+ctxa:Deprecated a ctxa:VocabularyStatus ;
+    rdfs:label "deprecated" .
+
+ctxa:NotEligible a ctxa:VocabularyStatus ;
+    rdfs:label "not eligible" .
+
+<urn:ctxql:graph:acquisition-claims:v1> a ctxa:ConfiguredGraph ;
+    rdfs:label "fixed acquisition claim graph" .
+
+<urn:ctxql:config:acquisition:v1> a ctxa:AcquisitionConfiguration ;
+    rdfs:label "acquisition configuration" .

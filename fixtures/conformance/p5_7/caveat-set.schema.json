@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://ctxql.example/schemas/p5-7/caveat-set-v1.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["$schema","schema","profile","caveat_set_root","caveats"],
+  "properties":{
+    "$schema":{"const":"https://json-schema.org/draft/2020-12/schema"},
+    "schema":{"const":"ctxql.p5-7-caveat-set/v1"},
+    "profile":{"const":"ctxql-ontology-profile/fluree-4.2-603974fad5c13efed9d147d214d613849fb43c73/v3-supported-subset"},
+    "caveat_set_root":{"const":"sha256:7e6825f8cad41d9bc1a768a1aeeb2b4aa86aead0e5c147b272cf97db349917d8"},
+    "caveats":{"const":[
+      {"code":"minimum_exact_cardinalities_not_enforced","text":"minimum/exact cardinalities are not enforced"},
+      {"code":"data_range_datatype_facets_not_enforced","text":"qualified data-range/datatype facets are not enforced"},
+      {"code":"disjointness_violations_not_detected","text":"disjointness violations are not detected"},
+      {"code":"uninterpreted_axioms_excluded_from_admission","text":"uninterpreted axioms do not drive extraction/admission constraints"},
+      {"code":"answers_may_be_incomplete","text":"answers may be incomplete relative to OWL/FIBO"},
+      {"code":"no_fibo_compliance_inference","text":"absence of inconsistency is not proof of FIBO compliance"},
+      {"code":"poc_revision_profile_specific","text":"evidence is POC-, revision-, and profile-root-specific, not production/legal clearance"},
+      {"code":"fluree_storage_projection_blindly_blessed","text":"POC replay blesses Fluree's complete stored RDF projection even when blank-node identifiers, language-tag case, or typed-literal lexical forms differ from the source-exact bundle"}
+    ]}
+  }
+}

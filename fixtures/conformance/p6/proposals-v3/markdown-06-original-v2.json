@@ -1,0 +1,929 @@
+{
+  "schema": "ctxql-extraction-proposals/v2",
+  "no_claims": false,
+  "entities": [
+    {
+      "id": "e-agreement",
+      "name": "Dignity–Phoenix term loan facility",
+      "aliases": [
+        {
+          "name": "Facility agreement",
+          "evidence": {
+            "range": "sha256:afd38f1f7020018bc669172fd273fdd0c6c6ef9fa0c06b15f29201454da880e3",
+            "quote": "Facility agreement",
+            "occurrence": 0
+          }
+        }
+      ],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:533e1f39c2dfb3ccdaff31d956a19e902852c3ae9eeddedfe5aa1d161979889a",
+          "quote": "Dignity–Phoenix term loan facility",
+          "occurrence": 0
+        },
+        {
+          "range": "sha256:afd38f1f7020018bc669172fd273fdd0c6c6ef9fa0c06b15f29201454da880e3",
+          "quote": "Facility agreement",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "id": "c1",
+          "term": {
+            "suggestions": [
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/CreditAgreement",
+                "note": "credit agreement; contractual agreement to repay with interest"
+              },
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract",
+                "note": "formal signed written contract"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:afd38f1f7020018bc669172fd273fdd0c6c6ef9fa0c06b15f29201454da880e3",
+              "quote": "Facility agreement",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Document type stated as a facility agreement, which supports a credit agreement class."
+        },
+        {
+          "id": "c2",
+          "term": {
+            "suggestions": [
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract",
+                "note": "formal written contract signed by parties"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:533e1f39c2dfb3ccdaff31d956a19e902852c3ae9eeddedfe5aa1d161979889a",
+              "quote": "Dignity–Phoenix term loan facility",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "Passage is described as a derived summary test document, not the governing agreement; written-contract status is inferred from context."
+        }
+      ]
+    },
+    {
+      "id": "e-facility",
+      "name": "Sterling term loan facility",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:ea97f26eb9b28a4aff0ef9e8bc5053e158952c66d1fb084f70329737f995dd9a",
+          "quote": "Sterling term loan facility",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "id": "c1",
+          "term": {
+            "suggestions": [
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/CreditFacility",
+                "note": "credit agreement allowing periodic drawdown over time"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:ea97f26eb9b28a4aff0ef9e8bc5053e158952c66d1fb084f70329737f995dd9a",
+              "quote": "Sterling term loan facility",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Explicit facility type stated."
+        },
+        {
+          "id": "c2",
+          "term": {
+            "suggestions": [
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/CommittedCreditFacility",
+                "note": "committed credit facility; approved inventory member omitted from briefing selection"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:1d5cfd99a2020de5270151aa04ee8c296835cd4f9ef4ba947ca04a1832d7a8ab",
+              "quote": "GBP 50,000,000",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "A stated commitment amount suggests committed status but the word 'committed' does not appear."
+        }
+      ]
+    },
+    {
+      "id": "e-borrower",
+      "name": "Dignity PLC",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:4e523af62ac300de065313ebdfe0f435039364423b0bcefe4840b2db07cb4006",
+          "quote": "Dignity PLC",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "id": "c1",
+          "term": {
+            "suggestions": [
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/Borrower",
+                "note": "party obligated to repay amount borrowed with interest and fees"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:4e523af62ac300de065313ebdfe0f435039364423b0bcefe4840b2db07cb4006",
+              "quote": "Dignity PLC",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Explicitly labelled Borrower."
+        }
+      ]
+    },
+    {
+      "id": "e-lender",
+      "name": "Phoenix UK Fund Ltd",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:6b40a4dc172d3fc420a43fb42aa00ac6a2ba1a1998c84dcc3bd45b265efa1d22",
+          "quote": "Phoenix UK Fund Ltd",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "id": "c1",
+          "term": {
+            "suggestions": [
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/Lender",
+                "note": "party extending credit expecting repayment usually with interest"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:6b40a4dc172d3fc420a43fb42aa00ac6a2ba1a1998c84dcc3bd45b265efa1d22",
+              "quote": "Phoenix UK Fund Ltd",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Explicitly labelled Lender."
+        }
+      ]
+    },
+    {
+      "id": "e-rate",
+      "name": "7% per annum",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:fb415ee4a4fa4379b866587752f3792abf7a731cc7c788ade40707496d0c53c5",
+          "quote": "7% per annum",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "id": "c1",
+          "term": {
+            "suggestions": [
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/InterestRate",
+                "note": "amount charged as percentage of principal for use of assets"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:fb415ee4a4fa4379b866587752f3792abf7a731cc7c788ade40707496d0c53c5",
+              "quote": "7% per annum",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Explicit stated interest rate."
+        },
+        {
+          "id": "c2",
+          "term": {
+            "suggestions": [
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/FixedInterestRate",
+                "note": "interest rate that does not fluctuate over the life of the instrument"
+              },
+              {
+                "text": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/VariableInterestRate",
+                "note": "interest rate allowed to vary over maturity"
+              }
+            ],
+            "selected": null
+          },
+          "evidence": [
+            {
+              "range": "sha256:fb415ee4a4fa4379b866587752f3792abf7a731cc7c788ade40707496d0c53c5",
+              "quote": "7% per annum",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "A single fixed percentage is stated but neither fixed nor variable character is expressly specified."
+        }
+      ]
+    },
+    {
+      "id": "e-date",
+      "name": "6 December 2022",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:aa301a27f4040e492298f86c3542057f4441e86e7b262ca848121fcc3eea4221",
+          "quote": "6 December 2022",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "id": "c1",
+          "term": {
+            "suggestions": [
+              {
+                "text": "https://www.omg.org/spec/Commons/DatesAndTimes/ExplicitDate",
+                "note": "date with required date value"
+              },
+              {
+                "text": "https://www.omg.org/spec/Commons/DatesAndTimes/Date",
+                "note": "calendar day on some calendar"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:aa301a27f4040e492298f86c3542057f4441e86e7b262ca848121fcc3eea4221",
+              "quote": "6 December 2022",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Explicit calendar date stated as the agreement date."
+        }
+      ]
+    }
+  ],
+  "attributes": [
+    {
+      "id": "a1",
+      "subject": {
+        "kind": "local",
+        "id": "e-date"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "https://www.omg.org/spec/Commons/DatesAndTimes/hasDateValue",
+            "note": "literal explicit date value in xsd:date form"
+          }
+        ],
+        "selected": 0
+      },
+      "value": {
+        "lexical": "6 December 2022",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#date",
+              "note": "canonical xsd:date form would be 2022-12-06"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:aa301a27f4040e492298f86c3542057f4441e86e7b262ca848121fcc3eea4221",
+          "quote": "6 December 2022",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": "Exact source spelling preserved; canonical xsd:date proposed separately."
+    },
+    {
+      "id": "a2",
+      "subject": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "commitment amount",
+            "note": "no verified approved datatype property located in the pinned briefing; proposed descriptive predicate"
+          }
+        ],
+        "selected": null
+      },
+      "value": {
+        "lexical": "GBP 50,000,000",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#decimal",
+              "note": "currency amount; GBP denominated"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:1d5cfd99a2020de5270151aa04ee8c296835cd4f9ef4ba947ca04a1832d7a8ab",
+          "quote": "GBP 50,000,000",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [
+        "GBP"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Amount is explicitly stated as the Commitment; no verified approved predicate was found."
+    },
+    {
+      "id": "a3",
+      "subject": {
+        "kind": "local",
+        "id": "e-rate"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "https://www.omg.org/spec/Commons/QuantitiesAndUnits/hasNumericValue",
+            "note": "approved inventory member omitted from briefing selection"
+          }
+        ],
+        "selected": 0
+      },
+      "value": {
+        "lexical": "7% per annum",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#decimal",
+              "note": "percentage rate value"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:fb415ee4a4fa4379b866587752f3792abf7a731cc7c788ade40707496d0c53c5",
+          "quote": "7% per annum",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [
+        "per annum"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Source combines a percentage with an annual basis; datatype canonicalisation is advisory."
+    },
+    {
+      "id": "a4",
+      "subject": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "minimum loan amount",
+            "note": "no verified approved datatype property located; proposed descriptive predicate"
+          }
+        ],
+        "selected": null
+      },
+      "value": {
+        "lexical": "GBP 10,000,000",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#decimal",
+              "note": "currency amount; GBP denominated"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:8657f413f825afbe0b8c5c994c9352b41d2f21af0804a397099e03784edc1562",
+          "quote": "A proposed loan must ordinarily be at least GBP 10,000,000, unless the available commitment is lower.",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "conditional",
+      "qualifiers": [
+        "ordinarily",
+        "unless the available commitment is lower"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Stated with an ordinary-course and lower-available-commitment exception, so not an unqualified minimum."
+    },
+    {
+      "id": "a5",
+      "subject": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "availability period",
+            "note": "no verified approved datatype property located; proposed descriptive predicate"
+          }
+        ],
+        "selected": null
+      },
+      "value": {
+        "lexical": "From the agreement date through the date falling 12 months after the agreement date",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#string",
+              "note": "relative period expressed in source text"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:65cf340eff60af6c84a3030c1debe292c0c4bb5f6082f2b8834dbe66fb9b705a",
+          "quote": "From the agreement date through the date falling 12 months after the agreement date",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Relative period keyed to the agreement date, not an absolute calendar interval."
+    },
+    {
+      "id": "a6",
+      "subject": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/hasTerminationDate",
+            "note": "approved inventory member omitted from briefing selection"
+          }
+        ],
+        "selected": 0
+      },
+      "value": {
+        "lexical": "Three years after the date of the first utilisation request, unless the lender and borrower agree another date in writing",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#string",
+              "note": "relative rule, not an absolute calendar date"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:b73267a5e4da553c2a97e50b58eb98ec16e577cc3e137c209449d57b10effb86",
+          "quote": "Three years after the date of the first utilisation request, unless the lender and borrower agree another date in writing",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "conditional",
+      "qualifiers": [
+        "unless the lender and borrower agree another date in writing"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Relative termination rule with a bilateral written-agreement override; no absolute date asserted."
+    },
+    {
+      "id": "a7",
+      "subject": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "purpose",
+            "note": "no verified approved datatype property located; proposed descriptive predicate"
+          }
+        ],
+        "selected": null
+      },
+      "value": {
+        "lexical": "Providing equity support to the borrower's whole-business securitisation through share subscription, subordinated debt, or both",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#string",
+              "note": "narrative purpose statement"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:adcd732003cbde75c2522f4936e16bbab3abbebfd30b9a020d24f89dc208f91f",
+          "quote": "Providing equity support to the borrower's whole-business securitisation through share subscription, subordinated debt, or both",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Purpose stated affirmatively with alternative permitted means."
+    },
+    {
+      "id": "a8",
+      "subject": {
+        "kind": "local",
+        "id": "e-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "governing law",
+            "note": "no verified approved datatype property located; proposed descriptive predicate"
+          }
+        ],
+        "selected": null
+      },
+      "value": {
+        "lexical": "English law",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#string",
+              "note": "jurisdiction name as stated"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:337869ebe7412fe786bd71fea8bcc455e2e0b17e3d6bcc827f6c6732137cf810",
+          "quote": "English law",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Governing law explicitly stated; no verified approved predicate was found."
+    },
+    {
+      "id": "a9",
+      "subject": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "maximum number of outstanding loans",
+            "note": "no verified approved datatype property located; proposed descriptive predicate"
+          }
+        ],
+        "selected": null
+      },
+      "value": {
+        "lexical": "five",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#integer",
+              "note": "count"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:05521e1170b86846be5f7602fb8f53e49fdff472a55e03e4325a6aa417cbc210",
+          "quote": "No more than five loans may be outstanding.",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [
+        "No more than"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Upper bound on outstanding loans; expressed as a prohibition-style ceiling."
+    },
+    {
+      "id": "a10",
+      "subject": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "reborrowing permitted",
+            "note": "no verified approved datatype property located; proposed descriptive predicate"
+          }
+        ],
+        "selected": null
+      },
+      "value": {
+        "lexical": "cannot be reborrowed",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#boolean",
+              "note": "negative permission; value left in source wording"
+            }
+          ],
+          "selected": null
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:b8defe5f9e2850d6f7dafc0fd6af3b9c4caa3f10661dca63513ecc4ff3dad07c",
+          "quote": "Repaid or prepaid amounts cannot be reborrowed.",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "negative",
+      "qualifiers": [
+        "Repaid or prepaid amounts"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Explicit prohibition preserved as a negative assertion rather than an affirmative edge."
+    },
+    {
+      "id": "a11",
+      "subject": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "interest capitalisation",
+            "note": "no verified approved datatype property located; proposed descriptive predicate"
+          }
+        ],
+        "selected": null
+      },
+      "value": {
+        "lexical": "Interest is automatically capitalised at the end of each interest period and added to principal",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "http://www.w3.org/2001/XMLSchema#string",
+              "note": "narrative provision"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:9953aa5dfb3f356a30ac630818dd0b7760663d51ce2855556d86e30d0a1e84c8",
+          "quote": "Interest is automatically capitalised at the end of each interest period and added to principal",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [
+        "at the end of each interest period"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Automatic capitalisation stated in the summary; no verified approved predicate was found."
+    }
+  ],
+  "relations": [
+    {
+      "id": "r1",
+      "subject": {
+        "kind": "local",
+        "id": "e-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/hasBorrower",
+            "note": "relates a credit agreement to the party incurring the debt; range Borrower"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "e-borrower"
+      },
+      "evidence": [
+        {
+          "range": "sha256:4e523af62ac300de065313ebdfe0f435039364423b0bcefe4840b2db07cb4006",
+          "quote": "Dignity PLC",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": "Borrower role explicitly assigned to Dignity PLC."
+    },
+    {
+      "id": "r2",
+      "subject": {
+        "kind": "local",
+        "id": "e-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/hasLender",
+            "note": "relates a credit agreement to the party financing the debt; range Lender"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "e-lender"
+      },
+      "evidence": [
+        {
+          "range": "sha256:6b40a4dc172d3fc420a43fb42aa00ac6a2ba1a1998c84dcc3bd45b265efa1d22",
+          "quote": "Phoenix UK Fund Ltd",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": "Lender role explicitly assigned to Phoenix UK Fund Ltd."
+    },
+    {
+      "id": "r3",
+      "subject": {
+        "kind": "local",
+        "id": "e-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasEffectiveDate",
+            "note": "date a contract comes into force"
+          },
+          {
+            "text": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasExecutionDate",
+            "note": "date a contract is signed by all necessary parties"
+          }
+        ],
+        "selected": null
+      },
+      "object": {
+        "kind": "local",
+        "id": "e-date"
+      },
+      "evidence": [
+        {
+          "range": "sha256:aa301a27f4040e492298f86c3542057f4441e86e7b262ca848121fcc3eea4221",
+          "quote": "6 December 2022",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [
+        "Agreement date"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Source labels the date only 'Agreement date'; it is not expressly execution or effectiveness."
+    },
+    {
+      "id": "r4",
+      "subject": {
+        "kind": "local",
+        "id": "e-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has facility",
+            "note": "no verified approved object property located; proposed local predicate linking agreement to facility"
+          }
+        ],
+        "selected": null
+      },
+      "object": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "evidence": [
+        {
+          "range": "sha256:ea97f26eb9b28a4aff0ef9e8bc5053e158952c66d1fb084f70329737f995dd9a",
+          "quote": "Sterling term loan facility",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Facility described within the agreement; predicate not verified against the pinned ontology."
+    },
+    {
+      "id": "r5",
+      "subject": {
+        "kind": "local",
+        "id": "e-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has interest rate",
+            "note": "no verified approved object property located; proposed local predicate linking facility to rate"
+          }
+        ],
+        "selected": null
+      },
+      "object": {
+        "kind": "local",
+        "id": "e-rate"
+      },
+      "evidence": [
+        {
+          "range": "sha256:fb415ee4a4fa4379b866587752f3792abf7a731cc7c788ade40707496d0c53c5",
+          "quote": "7% per annum",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Rate stated for the facility; predicate not verified against the pinned ontology."
+    }
+  ]
+}

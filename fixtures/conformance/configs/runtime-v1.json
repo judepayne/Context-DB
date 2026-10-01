@@ -1,0 +1,37 @@
+{
+  "name": "tiny/runtime",
+  "version": "0.1.0-proposed",
+  "runtime": {
+    "candidate_order": [
+      "depth asc",
+      "confidence desc",
+      "transaction_time desc",
+      "claim_id asc"
+    ],
+    "path_ranking": [
+      "shorter_path",
+      "higher_accumulated_confidence",
+      "better_grounding",
+      "newer_claims",
+      "claim_id_tiebreak"
+    ],
+    "cycle_policy": "no_repeated_claim"
+  },
+  "fields": {
+    "meta:ext:risk_band": {
+      "source": "reasoned",
+      "iri": "https://example.test/riskBand",
+      "requires": [
+        "reasoner"
+      ]
+    },
+    "meta:ext:region": {
+      "source": "stored_predicate",
+      "iri": "https://example.test/region"
+    },
+    "meta:ext:authority": {
+      "source": "computed",
+      "resolver": "tiny.authority"
+    }
+  }
+}

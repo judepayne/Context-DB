@@ -1,0 +1,19 @@
+{
+  "$id": "ctxql.p6-executable-profile.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "catalog_root": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"},
+    "complete_source_quad_root": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"},
+    "fluree_revision": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
+    "graph_map_root": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"},
+    "limits_identity": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"},
+    "profile_result_root": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"},
+    "reasoner_projection_root": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"},
+    "reference_root": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"},
+    "schema": {"const": "ctxql.p6-executable-profile/v1"},
+    "selected_files": {"items": {"minLength": 1, "type": "string"}, "minItems": 1, "type": "array", "uniqueItems": true}
+  },
+  "required": ["schema", "reference_root", "selected_files", "graph_map_root", "complete_source_quad_root", "profile_result_root", "reasoner_projection_root", "limits_identity", "catalog_root", "fluree_revision"],
+  "type": "object"
+}

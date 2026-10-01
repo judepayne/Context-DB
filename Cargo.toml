@@ -1,0 +1,39 @@
+[workspace]
+resolver = "2"
+members = ["crates/cdb-core", "crates/cdb-engine", "crates/cdb-testkit", "crates/cdb-backend-fluree", "crates/cdb-projection-redb", "crates/cdb-service", "crates/cdb-source-store", "crates/cdb-acquisition", "crates/cdb-provider-pi"]
+default-members = ["crates/cdb-core", "crates/cdb-engine", "crates/cdb-testkit", "crates/cdb-backend-fluree", "crates/cdb-projection-redb", "crates/cdb-service", "crates/cdb-source-store", "crates/cdb-acquisition", "crates/cdb-provider-pi"]
+
+[workspace.package]
+edition = "2021"
+rust-version = "1.94"
+publish = false
+version = "0.1.0"
+
+[workspace.dependencies]
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = { version = "=1.0.151", features = ["raw_value"] }
+num-bigint = "=0.4.8"
+num-integer = "=0.1.47"
+num-traits = "=0.2.19"
+sha2 = "=0.10.9"
+chrono = { version = "=0.4.45", default-features = false, features = ["std"] }
+url = "=2.5.8"
+oxrdf = "=0.3.4"
+oxrdfxml = "=0.2.4"
+quick-xml = "=0.37.5"
+tokio = { version = "=1.53.1", default-features = false, features = ["macros", "rt", "sync"] }
+redb = "=2.6.3"
+fs2 = "=0.4.3"
+tempfile = "=3.27.0"
+hyper = { version = "=1.11.1", default-features = false, features = ["server", "http1"] }
+hyper-util = { version = "=0.1.20", default-features = false, features = ["tokio"] }
+http-body-util = "=0.1.5"
+subtle = "=2.6.1"
+getrandom = "=0.3.4"
+toml = { version = "=0.8.23", default-features = false, features = ["parse"] }
+fluree-db-api = { git = "https://github.com/fluree/db", rev = "82dbcec3e435d6ed1d45bc0ed929432323b6b201" }
+fluree-db-core = { git = "https://github.com/fluree/db", rev = "82dbcec3e435d6ed1d45bc0ed929432323b6b201" }
+fluree-db-nameservice = { git = "https://github.com/fluree/db", rev = "82dbcec3e435d6ed1d45bc0ed929432323b6b201" }
+fluree-db-query = { git = "https://github.com/fluree/db", rev = "82dbcec3e435d6ed1d45bc0ed929432323b6b201" }
+fluree-graph-ir = { git = "https://github.com/fluree/db", rev = "82dbcec3e435d6ed1d45bc0ed929432323b6b201" }
+fluree-graph-turtle = { git = "https://github.com/fluree/db", rev = "82dbcec3e435d6ed1d45bc0ed929432323b6b201" }

@@ -1,0 +1,30 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://ctxql.example/schemas/p5-7/uninterpreted-semantics-registry-v1.schema.json",
+  "type":"object","additionalProperties":false,
+  "required":["$schema","schema","profile","fluree_revision","registry_root","family_count","families"],
+  "properties":{
+    "$schema":{"const":"https://json-schema.org/draft/2020-12/schema"},
+    "schema":{"const":"ctxql.p5-7-uninterpreted-semantics-registry/v1"},
+    "profile":{"const":"ctxql-ontology-profile/fluree-4.2-603974fad5c13efed9d147d214d613849fb43c73/v3-supported-subset"},
+    "fluree_revision":{"const":"603974fad5c13efed9d147d214d613849fb43c73"},
+    "registry_root":{"const":"sha256:3eb2bc973d5513aeab17a578a276670bf37eebd79b58a4c31a53e07dec3cbbba"},
+    "family_count":{"const":14},
+    "families":{"const":[
+      {"id":"unqualified-min-cardinality-zero/v1","shape":"Restriction;onProperty=IRI;minCardinality=0^^xsd:nonNegativeInteger;no-qualifier","official_relations_components":7},
+      {"id":"qualified-min-cardinality-class-zero/v1","shape":"Restriction;onProperty=IRI;minQualifiedCardinality=0^^xsd:nonNegativeInteger;onClass=IRI","official_relations_components":37},
+      {"id":"qualified-min-cardinality-class-two/v1","shape":"Restriction;onProperty=IRI;minQualifiedCardinality=2^^xsd:nonNegativeInteger;onClass=IRI","official_relations_components":0},
+      {"id":"qualified-min-cardinality-class-three/v1","shape":"Restriction;onProperty=IRI;minQualifiedCardinality=3^^xsd:nonNegativeInteger;onClass=IRI","official_relations_components":0},
+      {"id":"qualified-min-cardinality-data-zero/v1","shape":"Restriction;onProperty=IRI;minQualifiedCardinality=0^^xsd:nonNegativeInteger;onDataRange=IRI","official_relations_components":3},
+      {"id":"qualified-exact-cardinality-class-one/v1","shape":"Restriction;onProperty=IRI;qualifiedCardinality=1^^xsd:nonNegativeInteger;onClass=IRI","official_relations_components":9},
+      {"id":"qualified-exact-cardinality-class-two/v1","shape":"Restriction;onProperty=IRI;qualifiedCardinality=2^^xsd:nonNegativeInteger;onClass=IRI","official_relations_components":0},
+      {"id":"qualified-exact-cardinality-data-one/v1","shape":"Restriction;onProperty=IRI;qualifiedCardinality=1^^xsd:nonNegativeInteger;onDataRange=IRI","official_relations_components":8},
+      {"id":"qualified-max-cardinality-data-one/v1","shape":"Restriction;onProperty=IRI;maxQualifiedCardinality=1^^xsd:nonNegativeInteger;onDataRange=IRI","official_relations_components":4},
+      {"id":"datatype-standalone-declaration/v1","shape":"IRI rdf:type rdfs:Datatype;no-structural-expression","official_relations_components":1},
+      {"id":"datatype-union-expression/v1","shape":"Datatype;equivalentClass;Datatype;unionOf;nonempty-IRI-list","official_relations_components":2},
+      {"id":"datatype-decimal-inclusive-facets/v1","shape":"range;Datatype;onDatatype=xsd:decimal;withRestrictions;two-node min/maxInclusive decimal list","official_relations_components":2},
+      {"id":"class-disjointness-edge/v1","shape":"IRI owl:disjointWith IRI","official_relations_components":8},
+      {"id":"property-disjointness-edge/v1","shape":"IRI owl:propertyDisjointWith IRI","official_relations_components":2}
+    ]}
+  }
+}

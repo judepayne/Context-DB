@@ -1,0 +1,53 @@
+{
+  "schema_version": "ctxql-numeric/v1",
+  "status": "accepted",
+  "decision_basis": "User-approved exact integer/decimal principle; remaining routine defaults selected under explicit delegated discretion.",
+  "execution_status": "not_executed",
+  "contract": "docs/contracts/numeric-v1.md",
+  "lexeme_encoding": "All numeric inputs/outputs below are strings to prevent host JSON float rounding; this fixture is not the production typed-value wire schema.",
+  "limits": {
+    "significant_digits": 128,
+    "min_adjusted_exponent": -1024,
+    "max_adjusted_exponent": 1024,
+    "input_lexeme_bytes": 8192
+  },
+  "normalization": [
+    {"input": "1", "token": "1"},
+    {"input": "1.0", "token": "1"},
+    {"input": "1e0", "token": "1"},
+    {"input": "-0.0", "token": "0"},
+    {"input": "1e3", "token": "1000"},
+    {"input": "1.2300", "token": "1.23"},
+    {"input": "0.0010", "token": "0.001"}
+  ],
+  "comparisons": [
+    {"left": "9007199254740992", "right": "9007199254740993", "ordering": "less"},
+    {"left": "9223372036854775807", "right": "9223372036854775808", "ordering": "less"},
+    {"left": "0.1", "right": "0.10000000000000001", "ordering": "less"},
+    {"left": "1.0", "right": "1e0", "ordering": "equal"},
+    {"left": "-0", "right": "0", "ordering": "equal"}
+  ],
+  "arithmetic": [
+    {"op": "+", "left": "9007199254740992", "right": "1", "token": "9007199254740993"},
+    {"op": "+", "left": "0.1", "right": "0.2", "token": "0.3"},
+    {"op": "/", "left": "1", "right": "8", "token": "0.125"},
+    {"op": "/", "left": "1", "right": "3", "error": "non_terminating_decimal"},
+    {"op": "/", "left": "1", "right": "0", "error": "division_by_zero"},
+    {"op": "+", "left": "1e1024", "right": "1", "error": "precision_limit"},
+    {"op": "*", "left": "1e1024", "right": "10", "error": "exponent_limit"}
+  ],
+  "admission": [
+    {"input": "1e1024", "outcome": "allowed"},
+    {"input": "1e-1024", "outcome": "allowed"},
+    {"input": "1e1025", "outcome": "exponent_limit"},
+    {"input": "1e-1025", "outcome": "exponent_limit"},
+    {"input": "1e1000000", "outcome": "exponent_limit_before_expansion"},
+    {"input": "NaN", "outcome": "invalid_number"},
+    {"input": "Infinity", "outcome": "invalid_number"},
+    {"input_recipe": {"repeat": "1", "count": 128}, "outcome": "allowed"},
+    {"input_recipe": {"repeat": "1", "count": 129}, "outcome": "precision_limit"},
+    {"input_recipe": {"repeat": "1", "count": 8193}, "outcome": "lexeme_limit_before_parsing"}
+  ],
+  "canonical_object_bytes": null,
+  "object_hashes": null
+}

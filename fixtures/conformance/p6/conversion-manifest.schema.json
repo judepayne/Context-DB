@@ -1,0 +1,30 @@
+{
+  "$defs": {
+    "root": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"}
+  },
+  "$id": "ctxql.p6-conversion-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "base_iri": {"format": "uri", "type": "string"},
+    "blank_node_policy": {"minLength": 1, "type": "string"},
+    "conversion_result_root": {"$ref": "#/$defs/root"},
+    "derived_graph_root": {"$ref": "#/$defs/root"},
+    "derived_media_type": {"const": "text/turtle"},
+    "derived_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "graph_assignment": {"format": "uri", "type": "string"},
+    "options": {"items": {"type": "string"}, "type": "array"},
+    "original_graph_root": {"$ref": "#/$defs/root"},
+    "original_media_type": {"const": "application/rdf+xml"},
+    "original_path": {"minLength": 1, "type": "string"},
+    "original_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "parser_features": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+    "parser_package": {"minLength": 1, "type": "string"},
+    "parser_version": {"minLength": 1, "type": "string"},
+    "rdf_version": {"minLength": 1, "type": "string"},
+    "schema": {"const": "ctxql.p6-conversion-manifest/v1"},
+    "source_release_id": {"$ref": "#/$defs/root"}
+  },
+  "required": ["schema", "source_release_id", "original_path", "original_sha256", "original_media_type", "derived_sha256", "derived_media_type", "parser_package", "parser_version", "parser_features", "options", "base_iri", "rdf_version", "blank_node_policy", "graph_assignment", "original_graph_root", "derived_graph_root", "conversion_result_root"],
+  "type": "object"
+}

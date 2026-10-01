@@ -1,0 +1,45 @@
+{
+  "profile": "tiny/default",
+  "@context": {
+    "ex": "https://example.test/"
+  },
+  "about": [
+    {
+      "from": [
+        "https://example.test/A"
+      ],
+      "to": [
+        "https://example.test/C"
+      ],
+      "match": "exact"
+    }
+  ],
+  "bounds": {
+    "max_depth": 2,
+    "as_of": "2026-03-01T00:00:00Z"
+  },
+  "walk": {
+    "direction": "outgoing",
+    "predicates": [
+      {
+        "name": "floor",
+        "bind": {
+          "c": "meta:confidence"
+        },
+        "keep": "c >= 0.75"
+      },
+      {
+        "name": "depth",
+        "bind": {
+          "d": "meta:depth"
+        },
+        "keep": "d <= 2"
+      }
+    ]
+  },
+  "return": {
+    "claims": true,
+    "paths": true,
+    "evidence": true
+  }
+}

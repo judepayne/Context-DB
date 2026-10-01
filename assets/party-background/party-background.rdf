@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+  <owl:ObjectProperty rdf:about="https://ctxql.org/ontology/party-background/hasTaxResidence">
+    <rdfs:label>has tax residence</rdfs:label>
+    <rdfs:domain rdf:resource="https://www.omg.org/spec/Commons/PartiesAndSituations/Party"/>
+    <rdfs:range rdf:resource="https://www.omg.org/spec/Commons/Locations/Country"/>
+    <skos:definition>indicates the country in which a party is stated to be resident for tax purposes</skos:definition>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://ctxql.org/ontology/party-background/hasServiceAddress">
+    <rdfs:label>has service address</rdfs:label>
+    <rdfs:domain rdf:resource="https://www.omg.org/spec/Commons/PartiesAndSituations/Party"/>
+    <rdfs:range rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/PhysicalAddress"/>
+    <skos:definition>indicates a physical address designated by a party for service of contractual correspondence</skos:definition>
+  </owl:ObjectProperty>
+</rdf:RDF>

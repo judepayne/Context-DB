@@ -1,0 +1,10 @@
+schema = "ctxql.pi-profile/v1"
+model = "openrouter/deepseek/deepseek-v4.1-flash"
+thinking = "high"
+session = "fresh-per-request"
+context_files = false
+skills = false
+prompt_templates = false
+ambient_extensions = false
+built_in_tools = false
+extensions = ["extensions/ctxql-ontology-tool.ts"]

@@ -1,0 +1,48 @@
+{
+  "$defs": {
+    "artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "media_type": {"minLength": 1, "type": "string"},
+        "path": {"minLength": 1, "type": "string"},
+        "publisher_url": {"pattern": "^https://", "type": "string"},
+        "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+      },
+      "required": ["path", "publisher_url", "sha256", "media_type"],
+      "type": "object"
+    },
+    "evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {"minLength": 1, "type": "string"},
+        "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+      },
+      "required": ["path", "sha256"],
+      "type": "object"
+    },
+    "root": {"pattern": "^sha256:[0-9a-f]{64}$", "type": "string"}
+  },
+  "$id": "ctxql.p6-source-release.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {"items": {"$ref": "#/$defs/artifact"}, "minItems": 1, "type": "array", "uniqueItems": true},
+    "commit": {"oneOf": [{"pattern": "^[0-9a-f]{40}$", "type": "string"}, {"type": "null"}]},
+    "immutable_source_evidence": {"minLength": 1, "type": "string"},
+    "inventory_root": {"$ref": "#/$defs/root"},
+    "license_evidence": {"items": {"$ref": "#/$defs/evidence"}, "minItems": 1, "type": "array", "uniqueItems": true},
+    "notice_evidence": {"items": {"$ref": "#/$defs/evidence"}, "minItems": 1, "type": "array", "uniqueItems": true},
+    "ontology_inventory_root": {"$ref": "#/$defs/root"},
+    "product": {"minLength": 1, "type": "string"},
+    "publisher": {"minLength": 1, "type": "string"},
+    "release_kind": {"enum": ["official_archive", "official_artifact_set"]},
+    "release_version": {"minLength": 1, "type": "string"},
+    "retrieved_at": {"format": "date-time", "type": "string"},
+    "safe_extraction_limits_root": {"$ref": "#/$defs/root"},
+    "schema": {"const": "ctxql.p6-source-release/v1"},
+    "source_release_id": {"$ref": "#/$defs/root"},
+    "tree": {"oneOf": [{"pattern": "^[0-9a-f]{40}$", "type": "string"}, {"type": "null"}]}
+  },
+  "required": ["schema", "source_release_id", "publisher", "product", "release_version", "release_kind", "commit", "tree", "retrieved_at", "artifacts", "inventory_root", "ontology_inventory_root", "license_evidence", "notice_evidence", "safe_extraction_limits_root", "immutable_source_evidence"],
+  "type": "object"
+}

@@ -1,0 +1,235 @@
+{
+  "schema": "ctxql.p5-6-production-parity-vectors/v1",
+  "vectors": [
+    {
+      "diagnostic_key": "prp-symp",
+      "diagnostic_required": true,
+      "family": "prp-symp",
+      "fixture_selector": "prp-symp",
+      "native_oracle": "p5.6-native-all-families/prp-symp",
+      "production_vector": "p5.6-production-parity/prp-symp",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "prp-trp",
+      "diagnostic_required": true,
+      "family": "prp-trp",
+      "fixture_selector": "prp-trp",
+      "native_oracle": "p5.6-native-all-families/prp-trp",
+      "production_vector": "p5.6-production-parity/prp-trp",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "prp-inv",
+      "diagnostic_required": true,
+      "family": "prp-inv",
+      "fixture_selector": "prp-inv",
+      "native_oracle": "p5.6-native-all-families/prp-inv",
+      "production_vector": "p5.6-production-parity/prp-inv",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "prp-dom",
+      "diagnostic_required": true,
+      "family": "prp-dom",
+      "fixture_selector": "prp-dom",
+      "native_oracle": "p5.6-native-all-families/prp-dom",
+      "production_vector": "p5.6-production-parity/prp-dom",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "prp-rng",
+      "diagnostic_required": true,
+      "family": "prp-rng",
+      "fixture_selector": "prp-rng",
+      "native_oracle": "p5.6-native-all-families/prp-rng",
+      "production_vector": "p5.6-production-parity/prp-rng",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "prp-spo1",
+      "diagnostic_required": true,
+      "family": "prp-spo1",
+      "fixture_selector": "prp-spo1",
+      "native_oracle": "p5.6-native-all-families/prp-spo1",
+      "production_vector": "p5.6-production-parity/prp-spo1",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "prp-spo2",
+      "diagnostic_required": true,
+      "family": "prp-spo2",
+      "fixture_selector": "prp-spo2",
+      "native_oracle": "p5.6-native-all-families/prp-spo2",
+      "production_vector": "p5.6-production-parity/prp-spo2",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "prp-fp",
+      "diagnostic_required": true,
+      "family": "prp-fp",
+      "fixture_selector": "prp-fp",
+      "native_oracle": "p5.6-native-all-families/prp-fp",
+      "production_vector": "p5.6-production-parity/prp-fp",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "prp-ifp",
+      "diagnostic_required": true,
+      "family": "prp-ifp",
+      "fixture_selector": "prp-ifp",
+      "native_oracle": "p5.6-native-all-families/prp-ifp",
+      "production_vector": "p5.6-production-parity/prp-ifp",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "prp-key",
+      "diagnostic_required": true,
+      "family": "prp-key",
+      "fixture_selector": "prp-key",
+      "native_oracle": "p5.6-native-all-families/prp-key",
+      "production_vector": "p5.6-production-parity/prp-key",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cax-sco",
+      "diagnostic_required": true,
+      "family": "cax-sco",
+      "fixture_selector": "cax-sco",
+      "native_oracle": "p5.6-native-all-families/cax-sco",
+      "production_vector": "p5.6-production-parity/cax-sco",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cax-eqc",
+      "diagnostic_required": true,
+      "family": "cax-eqc",
+      "fixture_selector": "cax-eqc",
+      "native_oracle": "p5.6-native-all-families/cax-eqc",
+      "production_vector": "p5.6-production-parity/cax-eqc",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-hv1",
+      "diagnostic_required": true,
+      "family": "cls-hv1",
+      "fixture_selector": "cls-hv1",
+      "native_oracle": "p5.6-native-all-families/cls-hv1",
+      "production_vector": "p5.6-production-parity/cls-hv1",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-hv2",
+      "diagnostic_required": true,
+      "family": "cls-hv2",
+      "fixture_selector": "cls-hv2",
+      "native_oracle": "p5.6-native-all-families/cls-hv2",
+      "production_vector": "p5.6-production-parity/cls-hv2",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-svf1",
+      "diagnostic_required": true,
+      "family": "cls-svf1",
+      "fixture_selector": "cls-svf1",
+      "native_oracle": "p5.6-native-all-families/cls-svf1",
+      "production_vector": "p5.6-production-parity/cls-svf1",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-avf",
+      "diagnostic_required": true,
+      "family": "cls-avf",
+      "fixture_selector": "cls-avf",
+      "native_oracle": "p5.6-native-all-families/cls-avf",
+      "production_vector": "p5.6-production-parity/cls-avf",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-int1",
+      "diagnostic_required": true,
+      "family": "cls-int1",
+      "fixture_selector": "cls-int1",
+      "native_oracle": "p5.6-native-all-families/cls-int1",
+      "production_vector": "p5.6-production-parity/cls-int1",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-int2",
+      "diagnostic_required": true,
+      "family": "cls-int2",
+      "fixture_selector": "cls-int2",
+      "native_oracle": "p5.6-native-all-families/cls-int2",
+      "production_vector": "p5.6-production-parity/cls-int2",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-uni",
+      "diagnostic_required": true,
+      "family": "cls-uni",
+      "fixture_selector": "cls-uni",
+      "native_oracle": "p5.6-native-all-families/cls-uni",
+      "production_vector": "p5.6-production-parity/cls-uni",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-oo",
+      "diagnostic_required": true,
+      "family": "cls-oo",
+      "fixture_selector": "cls-oo",
+      "native_oracle": "p5.6-native-all-families/cls-oo",
+      "production_vector": "p5.6-production-parity/cls-oo",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-maxc2",
+      "diagnostic_required": true,
+      "family": "cls-maxc2",
+      "fixture_selector": "cls-maxc2",
+      "native_oracle": "p5.6-native-all-families/cls-maxc2",
+      "production_vector": "p5.6-production-parity/cls-maxc2",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "cls-maxqc",
+      "diagnostic_required": true,
+      "family": "cls-maxqc",
+      "fixture_selector": "cls-maxqc",
+      "native_oracle": "p5.6-native-all-families/cls-maxqc",
+      "production_vector": "p5.6-production-parity/cls-maxqc",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    },
+    {
+      "diagnostic_key": "eq-union",
+      "diagnostic_required": false,
+      "family": "owl:sameAs",
+      "fixture_selector": "owl:sameAs",
+      "native_oracle": "p5.6-native-equality/canonical-star",
+      "production_vector": "p5.6-production-parity/owl-sameAs",
+      "test_name": "all_inventoried_families_match_direct_and_sealed_manifest_results",
+      "test_target": "p5_6_production_parity"
+    }
+  ]
+}

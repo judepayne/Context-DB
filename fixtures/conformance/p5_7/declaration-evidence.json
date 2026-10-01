@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "ctxql.p5-7-declaration-evidence/v1",
+  "profile": "ctxql-ontology-profile/fluree-4.2-603974fad5c13efed9d147d214d613849fb43c73/v3-supported-subset",
+  "declaration": "owl:NamedIndividual",
+  "classification": "inference_inert_declaration",
+  "direct_reasoner_inventory": "fixtures/conformance/p5_6/direct-reasoner-inventory.json",
+  "direct_family_count": 23,
+  "profile_v2_rejection": "ontology_reserved_type_unsupported",
+  "profile_v3_direct_and_production_test": "named_individual_is_retained_but_inference_inert_direct_and_production",
+  "result": "pass"
+}

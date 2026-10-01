@@ -1,0 +1,116 @@
+{
+  "schema_version": "ctxql-poc.canonical-byte-vectors/v1",
+  "status": "accepted",
+  "execution_status": "not_executed_by_ctxql",
+  "note": "Fixed authored projections and exact expected bytes/digests for P1. Python standard-library generation/checks are not a general canonicalizer or CTXQL execution. Values deliberately use only exact integers and strings; numeric decimal rules are covered separately. All envelopes use the selected closed function domains.",
+  "manifest_utf8": "{\"name\":\"fixture/identity\",\"version\":\"1\"}",
+  "manifest_sha256": "sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba",
+  "vectors": [
+    {
+      "id": "empty-input",
+      "normalized_envelope": {
+        "domain": "ctxql.function.input",
+        "version": "ctxql-canonical/v1",
+        "payload": {
+          "name": "fixture/identity",
+          "version": "1",
+          "manifest_hash": "sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba",
+          "call_index": 0,
+          "value": {}
+        }
+      },
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input\",\"payload\":{\"call_index\":0,\"manifest_hash\":\"sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba\",\"name\":\"fixture/identity\",\"value\":{},\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:6175a10f45dc78dc3abd6faf2495bea460e5e861f83348baa590c0c83c0f8765"
+    },
+    {
+      "id": "empty-output",
+      "normalized_envelope": {
+        "domain": "ctxql.function.output",
+        "version": "ctxql-canonical/v1",
+        "payload": {
+          "name": "fixture/identity",
+          "version": "1",
+          "manifest_hash": "sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba",
+          "call_index": 0,
+          "value": {}
+        }
+      },
+      "canonical_utf8": "{\"domain\":\"ctxql.function.output\",\"payload\":{\"call_index\":0,\"manifest_hash\":\"sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba\",\"name\":\"fixture/identity\",\"value\":{},\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:1703b2f187e5b5710bc7f832520384cfe6f628527cc04f8151106536294b2a33"
+    },
+    {
+      "id": "unicode-order",
+      "normalized_envelope": {
+        "domain": "ctxql.function.input",
+        "version": "ctxql-canonical/v1",
+        "payload": {
+          "name": "fixture/identity",
+          "version": "1",
+          "manifest_hash": "sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba",
+          "call_index": 0,
+          "value": {
+            "𐀀": "supplementary",
+            "": "bmp",
+            "text": "café\n東京"
+          }
+        }
+      },
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input\",\"payload\":{\"call_index\":0,\"manifest_hash\":\"sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba\",\"name\":\"fixture/identity\",\"value\":{\"text\":\"café\\n東京\",\"\":\"bmp\",\"𐀀\":\"supplementary\"},\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:8f8e13d5eb0a39e8691bac76b986ce494190eb169c6825e7afef949bc6a6bb12"
+    },
+    {
+      "id": "ordered-array",
+      "normalized_envelope": {
+        "domain": "ctxql.function.input",
+        "version": "ctxql-canonical/v1",
+        "payload": {
+          "name": "fixture/identity",
+          "version": "1",
+          "manifest_hash": "sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba",
+          "call_index": 0,
+          "value": [
+            1,
+            2
+          ]
+        }
+      },
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input\",\"payload\":{\"call_index\":0,\"manifest_hash\":\"sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba\",\"name\":\"fixture/identity\",\"value\":[1,2],\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:3278138cb4462d1ca40127c26d7efa97deefa143a0b453122a6aa0ca2fe22d7a"
+    },
+    {
+      "id": "reversed-array",
+      "normalized_envelope": {
+        "domain": "ctxql.function.input",
+        "version": "ctxql-canonical/v1",
+        "payload": {
+          "name": "fixture/identity",
+          "version": "1",
+          "manifest_hash": "sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba",
+          "call_index": 0,
+          "value": [
+            2,
+            1
+          ]
+        }
+      },
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input\",\"payload\":{\"call_index\":0,\"manifest_hash\":\"sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba\",\"name\":\"fixture/identity\",\"value\":[2,1],\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:f2552cdd2b232103e465cc1df0415932aaf9644c5befdd3efb37f4bfbd15655d"
+    },
+    {
+      "id": "large-integer",
+      "normalized_envelope": {
+        "domain": "ctxql.function.input",
+        "version": "ctxql-canonical/v1",
+        "payload": {
+          "name": "fixture/identity",
+          "version": "1",
+          "manifest_hash": "sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba",
+          "call_index": 0,
+          "value": 9007199254740993
+        }
+      },
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input\",\"payload\":{\"call_index\":0,\"manifest_hash\":\"sha256:b60e353a0db495daa2741248915ecf03a713e50740228caae7d833773a18d0ba\",\"name\":\"fixture/identity\",\"value\":9007199254740993,\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:12fa4a120dfe5bb78eb41fc6c26fe88a4bf705a400cb6663715379549a489e08"
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "schema_version": "ctxql-poc.claim-fixture.v1",
+  "execution_status": "not_executed",
+  "representation_note": "Authored neutral fixture envelope, not an ingestion API. Literal discriminator is fixture-only; typed endpoint wire contract remains P1. claim_id is independent of assertion tuple. No computed lifecycle stored. No source digest claimed.",
+  "claims": [
+    {
+      "meta": {
+        "claim_id": "c01",
+        "subject_id": "https://example.test/A",
+        "subject_type": "https://example.test/Entity",
+        "relation": "https://example.test/link",
+        "relation_type": "https://example.test/link",
+        "object_id": "https://example.test/B",
+        "object_type": "https://example.test/Entity",
+        "claim_type": "https://example.test/SpecificClaim",
+        "confidence": 0.8,
+        "transaction_time": "2026-03-01T00:00:00Z",
+        "grounding_level": "source_lineage_available",
+        "lineage": {
+          "schema": "ctxql.lineage.v1",
+          "sources": [
+            {
+              "source_id": "doc-1",
+              "kind": "document",
+              "uri": "fixture:doc-1",
+              "version": "fixture-v1",
+              "fragment_id": "doc-1#whole"
+            }
+          ]
+        },
+        "ext": {}
+      }
+    },
+    {
+      "meta": {
+        "claim_id": "c02",
+        "subject_id": "https://example.test/A",
+        "subject_type": "https://example.test/Entity",
+        "relation": "https://example.test/link",
+        "relation_type": "https://example.test/link",
+        "object_id": "https://example.test/B",
+        "object_type": "https://example.test/Entity",
+        "claim_type": "https://example.test/SpecificClaim",
+        "confidence": 0.8,
+        "transaction_time": "2026-03-01T00:00:00Z",
+        "grounding_level": "source_lineage_available",
+        "lineage": {
+          "schema": "ctxql.lineage.v1",
+          "sources": [
+            {
+              "source_id": "doc-1",
+              "kind": "document",
+              "uri": "fixture:doc-1",
+              "version": "fixture-v1",
+              "fragment_id": "doc-1#whole"
+            }
+          ]
+        },
+        "ext": {}
+      }
+    },
+    {
+      "meta": {
+        "claim_id": "c03",
+        "subject_id": "https://example.test/B",
+        "subject_type": "https://example.test/Entity",
+        "relation": "https://example.test/link",
+        "relation_type": "https://example.test/link",
+        "object_id": "https://example.test/A",
+        "object_type": "https://example.test/Entity",
+        "claim_type": "https://example.test/SpecificClaim",
+        "confidence": 0.8,
+        "transaction_time": "2026-03-01T00:00:00Z",
+        "grounding_level": "source_lineage_available",
+        "lineage": {
+          "schema": "ctxql.lineage.v1",
+          "sources": [
+            {
+              "source_id": "doc-1",
+              "kind": "document",
+              "uri": "fixture:doc-1",
+              "version": "fixture-v1",
+              "fragment_id": "doc-1#whole"
+            }
+          ]
+        },
+        "ext": {}
+      }
+    },
+    {
+      "meta": {
+        "claim_id": "c04",
+        "subject_id": "https://example.test/B",
+        "subject_type": "https://example.test/Entity",
+        "relation": "https://example.test/link",
+        "relation_type": "https://example.test/link",
+        "object_id": "https://example.test/C",
+        "object_type": "https://example.test/Entity",
+        "claim_type": "https://example.test/SpecificClaim",
+        "confidence": 0.8,
+        "transaction_time": "2026-03-01T00:00:00Z",
+        "grounding_level": "source_lineage_available",
+        "lineage": {
+          "schema": "ctxql.lineage.v1",
+          "sources": [
+            {
+              "source_id": "doc-1",
+              "kind": "document",
+              "uri": "fixture:doc-1",
+              "version": "fixture-v1",
+              "fragment_id": "doc-1#whole"
+            }
+          ]
+        },
+        "ext": {}
+      }
+    },
+    {
+      "meta": {
+        "claim_id": "c05",
+        "subject_id": "https://example.test/A",
+        "subject_type": "https://example.test/Entity",
+        "relation": "https://example.test/link",
+        "relation_type": "https://example.test/link",
+        "object_id": "https://example.test/D",
+        "object_type": "https://example.test/Entity",
+        "claim_type": "https://example.test/SpecificClaim",
+        "confidence": 0.8,
+        "transaction_time": "2026-03-01T00:00:00Z",
+        "grounding_level": "source_lineage_available",
+        "lineage": {
+          "schema": "ctxql.lineage.v1",
+          "sources": [
+            {
+              "source_id": "doc-1",
+              "kind": "document",
+              "uri": "fixture:doc-1",
+              "version": "fixture-v1",
+              "fragment_id": "doc-1#whole"
+            }
+          ]
+        },
+        "ext": {}
+      }
+    },
+    {
+      "meta": {
+        "claim_id": "c06",
+        "subject_id": "https://example.test/C",
+        "subject_type": "https://example.test/Entity",
+        "relation": "https://example.test/link",
+        "relation_type": "https://example.test/link",
+        "object_id": "café",
+        "object_type": "https://example.test/Literal",
+        "claim_type": "https://example.test/SpecificClaim",
+        "confidence": 0.8,
+        "transaction_time": "2026-03-01T00:00:00Z",
+        "grounding_level": "source_lineage_available",
+        "lineage": {
+          "schema": "ctxql.lineage.v1",
+          "sources": [
+            {
+              "source_id": "doc-1",
+              "kind": "document",
+              "uri": "fixture:doc-1",
+              "version": "fixture-v1",
+              "fragment_id": "doc-1#whole"
+            }
+          ]
+        },
+        "ext": {
+          "nullable": null,
+          "truth": true,
+          "count": 7,
+          "effective_from": "2000-01-01T00:00:00Z"
+        }
+      }
+    },
+    {
+      "meta": {
+        "claim_id": "c07",
+        "subject_id": "https://example.test/A",
+        "subject_type": "https://example.test/Entity",
+        "relation": "https://example.test/link",
+        "relation_type": "https://example.test/link",
+        "object_id": "https://example.test/E",
+        "object_type": "https://example.test/Entity",
+        "claim_type": "https://example.test/SpecificClaim",
+        "confidence": 0.7,
+        "transaction_time": "2026-03-01T00:00:00.001Z",
+        "grounding_level": "source_lineage_available",
+        "lineage": {
+          "schema": "ctxql.lineage.v1",
+          "sources": [
+            {
+              "source_id": "doc-1",
+              "kind": "document",
+              "uri": "fixture:doc-1",
+              "version": "fixture-v1",
+              "fragment_id": "doc-1#whole"
+            }
+          ]
+        },
+        "ext": {}
+      }
+    }
+  ],
+  "lifecycle_assertions": [
+    {
+      "claim_id": "l01",
+      "subject_claim_id": "c01",
+      "relation": "ctxql:superseded_by",
+      "object_id": "c02",
+      "transaction_time": "2026-03-01T00:00:00Z"
+    },
+    {
+      "claim_id": "l02",
+      "subject_claim_id": "c01",
+      "relation": "ctxql:retracted_by",
+      "object_id": "retraction-1",
+      "transaction_time": "2026-03-01T00:00:00Z"
+    },
+    {
+      "claim_id": "l03",
+      "subject_claim_id": "c01",
+      "relation": "ctxql:contradicted_by",
+      "object_id": "c05",
+      "transaction_time": "2026-03-01T00:00:00Z"
+    }
+  ],
+  "ontology": [
+    {
+      "subject": "https://example.test/SpecificClaim",
+      "predicate": "rdfs:subClassOf",
+      "object": "https://example.test/Claim"
+    },
+    {
+      "subject": "https://example.test/link",
+      "predicate": "rdfs:subPropertyOf",
+      "object": "https://example.test/related"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "https://example.test/A",
+      "label": "A"
+    },
+    {
+      "id": "https://example.test/B",
+      "label": "B"
+    },
+    {
+      "id": "https://example.test/C",
+      "label": "C"
+    },
+    {
+      "id": "https://example.test/D",
+      "label": "D"
+    },
+    {
+      "id": "https://example.test/E",
+      "label": "E"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "doc-1",
+      "version": "fixture-v1",
+      "text": "A supplies B. café\n",
+      "note": "No canonical/hash or selector-unit decision implied."
+    }
+  ],
+  "independent_protection": [
+    {
+      "resource": "c04",
+      "kind": "bridge",
+      "required_grant": "bridge"
+    },
+    {
+      "resource": "l02",
+      "kind": "lifecycle",
+      "required_grant": "lifecycle"
+    },
+    {
+      "resource": "https://example.test/SpecificClaim",
+      "kind": "ontology",
+      "required_grant": "ontology"
+    },
+    {
+      "resource": "alias:A",
+      "kind": "identity",
+      "required_grant": "identity"
+    },
+    {
+      "resource": "label:A",
+      "kind": "label",
+      "required_grant": "labels"
+    },
+    {
+      "resource": "doc-1",
+      "kind": "source",
+      "required_grant": "source"
+    },
+    {
+      "resource": "artifact:tiny/default@1",
+      "kind": "artifact",
+      "required_grant": "artifact"
+    },
+    {
+      "resource": "run:one",
+      "kind": "run",
+      "required_grant": "run"
+    }
+  ]
+}

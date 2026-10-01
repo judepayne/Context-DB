@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctxql.example/schema/p5-7/official-agreements-closure-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "file_count", "total_authoritative_bytes", "inventory_root", "files"],
+  "properties": {
+    "schema": {"const": "ctxql.p5-7-official-agreements-closure/v1"},
+    "file_count": {"const": 20},
+    "total_authoritative_bytes": {"const": 401555},
+    "inventory_root": {"const": "sha256:f9a0255a5dbfbae1292807329d02c9d54898119f126ab82937b0abb9c75c1583"},
+    "files": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "uniqueItems": true,
+      "contains": {
+        "type": "object",
+        "required": ["path", "bytes", "sha256"],
+        "properties": {
+          "path": {"const": "fibo/FND/Agreements/Agreements.rdf"},
+          "bytes": {"const": 15669},
+          "sha256": {"const": "8f03910f2638fd6d9d0d67f85d82fb908de9e276c54f8af6eed3526c62a9e851"}
+        }
+      },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["bytes", "path", "sha256"],
+        "properties": {
+          "bytes": {"type": "integer", "minimum": 1},
+          "path": {"type": "string", "pattern": "^(commons|fibo)/.+\\.rdf$"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    }
+  }
+}

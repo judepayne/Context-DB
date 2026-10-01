@@ -1,0 +1,43 @@
+name: Context DB validation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.name }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Linux x86_64
+            os: ubuntu-24.04
+          - name: macOS Apple Silicon
+            os: macos-15
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    env:
+      CARGO_BUILD_JOBS: 1
+      CARGO_INCREMENTAL: 0
+      RUST_MIN_STACK: 33554432
+      CTXQL_CARGO_EVIDENCE: ${{ github.workspace }}/out/ci-cargo
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Install pinned Rust toolchain
+        run: rustup toolchain install 1.94.0 --profile minimal --component rustfmt --component clippy
+      - name: Resolve locked dependencies
+        run: cargo metadata --locked --all-features --format-version 1
+      - name: Format
+        run: python3 scripts/cargo_serial.py cargo fmt --all -- --check
+      - name: Clippy
+        run: python3 scripts/cargo_serial.py cargo clippy --workspace --all-targets --all-features --locked --offline -- -D warnings
+      - name: Rust tests
+        run: python3 scripts/cargo_serial.py cargo test --workspace --all-targets --all-features --locked --offline -- --test-threads=1
+      - name: Dependency and architecture boundary
+        run: python3 scripts/check_workspace.py
+      - name: Focused Python validation
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'

@@ -1,0 +1,16 @@
+{
+  "schema": "ctxql.graph-workspace-rejection-cases/v1",
+  "cases": [
+    {"id": "unknown-field", "raw_json": "{\"schema\":\"ctxql.graph-workspace/v1\",\"session_id\":\"s\",\"expected_revision\":0,\"idempotency_key\":\"k\",\"edits\":[],\"write_authoritative\":true}", "expected": "invalid_request"},
+    {"id": "duplicate-field", "raw_json": "{\"schema\":\"ctxql.graph-workspace/v1\",\"session_id\":\"s\",\"expected_revision\":0,\"expected_revision\":1,\"idempotency_key\":\"k\",\"edits\":[]}", "expected": "invalid_request"},
+    {"id": "malformed-tag", "raw_json": "{\"schema\":\"ctxql.graph-workspace/v1\",\"session_id\":\"s\",\"expected_revision\":0,\"idempotency_key\":\"k\",\"edits\":[{\"op\":\"merge_identity\"}]}", "expected": "invalid_request"},
+    {"id": "dangling-temp", "description": "An add_claim references a request-local ID not established by an earlier edit.", "expected": "unknown_temporary"},
+    {"id": "cross-session", "description": "A session-b request dereferences n1~session-a even if session-b has its own n1.", "expected": "foreign_handle"},
+    {"id": "duplicate-operation-id", "description": "Host-issued operation IDs are monotonic and unique; a replay projection containing a repeated ID at another ordinal is invalid.", "expected": "invalid_request"},
+    {"id": "idempotency-payload-conflict", "description": "The same idempotency key is reused with a different expected revision or edit payload.", "expected": "idempotency_conflict"},
+    {"id": "forged-evidence", "description": "Document evidence handle belongs to another source/session.", "expected": "foreign_evidence"},
+    {"id": "authoritative-retraction", "description": "Withdraw targets an imported claim. Draft withdrawal cannot express authoritative retraction.", "expected": "immutable_import"},
+    {"id": "dependency-pinned-release", "description": "An active claim/reference/hypothesis/question points to a record in the graph being released.", "expected": "dependency_pinned"},
+    {"id": "ambiguous-identity", "description": "Two active hypotheses target distinct existing nodes with equal labels. Both remain candidates and check reports ambiguity; neither is merged.", "expected": "check_warning:ambiguous_identity_candidates"}
+  ]
+}

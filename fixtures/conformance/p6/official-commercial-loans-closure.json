@@ -1,0 +1,373 @@
+{
+  "file_count": 73,
+  "files": [
+    {
+      "bytes": 23277,
+      "path": "commons/AnnotationVocabulary.rdf",
+      "sha256": "0f31efad729e9c5dc260d4cca8cb92c69ec25a4554ead4c866903f652e3789f7"
+    },
+    {
+      "bytes": 15719,
+      "path": "commons/BusinessAuthorizations.rdf",
+      "sha256": "603b9985b7553c49cd5e9adfd055dab8c4fb1b3d88a6db51e031d6df9cef12d3"
+    },
+    {
+      "bytes": 10348,
+      "path": "commons/Classifiers.rdf",
+      "sha256": "766312bdb13a27cdc6fe722d5be3c815135a284dbb5e6990455cc655aecad6e9"
+    },
+    {
+      "bytes": 6153,
+      "path": "commons/CodesAndCodeSets.rdf",
+      "sha256": "272ea377f588ed30759c37a2b0455a8b04643c8114ebf35ad31656c039d09150"
+    },
+    {
+      "bytes": 12677,
+      "path": "commons/Collections.rdf",
+      "sha256": "44450edbe870cad6fa406319ecb21fed6a27824904e865b1d683f8bfd2a03553"
+    },
+    {
+      "bytes": 10469,
+      "path": "commons/ContextualDesignators.rdf",
+      "sha256": "aa1c6c1d403a79b04b5f1cf65d1cd993b64d87aee51b9f7a3889ea06f01a96a8"
+    },
+    {
+      "bytes": 6488,
+      "path": "commons/ContextualIdentifiers.rdf",
+      "sha256": "c26dd75874f66ca5a7dcfff0285b0f0cb8f2c66f0de56190e7f1220c702a28f7"
+    },
+    {
+      "bytes": 32303,
+      "path": "commons/DatesAndTimes.rdf",
+      "sha256": "29f48874c004475893202d0359ca1deb9e44e87d6e1a382e12e57c0fc86f90e7"
+    },
+    {
+      "bytes": 16423,
+      "path": "commons/Designators.rdf",
+      "sha256": "6475c00a66050560c11560c91e824118aaa4f13f9e0d62e8eddaf2eb6a447eca"
+    },
+    {
+      "bytes": 17703,
+      "path": "commons/Documents.rdf",
+      "sha256": "958264c82c7011097cf6da6352464dc094a9d1cada1d37a41ff26ed763f91a5c"
+    },
+    {
+      "bytes": 6920,
+      "path": "commons/Identifiers.rdf",
+      "sha256": "c5ed5f3551ff4d0a711bd50ff6a7388383a1cf33a27bc1661e54f6bf7a75987a"
+    },
+    {
+      "bytes": 32882,
+      "path": "commons/Locations.rdf",
+      "sha256": "0d6a8eedb4461f4256ea61f03506e882bdadc8b1ca2024493eb6585b3e574c31"
+    },
+    {
+      "bytes": 32334,
+      "path": "commons/Organizations.rdf",
+      "sha256": "3a1ab7e936b656fff8aa8beb44d30ddc02aaa6f6eac5353d4157e355ef164eb7"
+    },
+    {
+      "bytes": 30432,
+      "path": "commons/PartiesAndSituations.rdf",
+      "sha256": "1c207e4f04e51fee7d06bbee1e5c53ae90f04374da3568e0470699d8f20cc1f3"
+    },
+    {
+      "bytes": 72711,
+      "path": "commons/QuantitiesAndUnits.rdf",
+      "sha256": "b1fbe90e6c4b23cd7c7485fbe06b94d373b598ece83f074c05b82b8bcc399d7f"
+    },
+    {
+      "bytes": 15727,
+      "path": "commons/RegistrationAuthorities.rdf",
+      "sha256": "38562388ef6790635abc5b09eee644a60a659544520b1f93a333ed3e50460991"
+    },
+    {
+      "bytes": 14118,
+      "path": "commons/RegulatoryAgencies.rdf",
+      "sha256": "cd309406734bb8ba01a5626d1af7b5c8dc6bb3ab3a275e3faac791e5dd460d55"
+    },
+    {
+      "bytes": 10625,
+      "path": "commons/RolesAndCompositions.rdf",
+      "sha256": "81d40576c2afa3f1a9fabd0b08f67a31e1a82bead9467782d8450d7b331275fc"
+    },
+    {
+      "bytes": 12171,
+      "path": "commons/SitesAndFacilities.rdf",
+      "sha256": "9c4672f52a8a6e1ce743af6110a0e3cd8229cd5120e8e21936f253d786fb72ac"
+    },
+    {
+      "bytes": 5976,
+      "path": "commons/TextDatatype.rdf",
+      "sha256": "d29a6e24bffb67fd6a4fe9955880fb9e8bd2f858a12d3e846fc45fd571bd8314"
+    },
+    {
+      "bytes": 23084,
+      "path": "fibo/BE/FunctionalEntities/FunctionalEntities.rdf",
+      "sha256": "57e9067f3a1d88945e24c18079ae48c54444bbbc9255fee5c804bfd4ae28f313"
+    },
+    {
+      "bytes": 14672,
+      "path": "fibo/BE/FunctionalEntities/Publishers.rdf",
+      "sha256": "52dc4fa3121b945675a09d16cf2ac667857ea974e3e8d588be8576218b9a93d6"
+    },
+    {
+      "bytes": 39790,
+      "path": "fibo/BE/GovernmentEntities/GovernmentEntities.rdf",
+      "sha256": "811c4579da9e3fe338cf3ed44acee8f282ef517d0432794e1ea9a358a941f28d"
+    },
+    {
+      "bytes": 29524,
+      "path": "fibo/BE/LegalEntities/CorporateBodies.rdf",
+      "sha256": "13bcc4c012154230cd00f775c3ec12f4cf29616e7c484f2b2b9f61f659dd3235"
+    },
+    {
+      "bytes": 22391,
+      "path": "fibo/BE/LegalEntities/FormalBusinessOrganizations.rdf",
+      "sha256": "60686e1934350885e2c1fdd78a99e7d9ad6ca49f3f4ea0b15b52e185028d6f7b"
+    },
+    {
+      "bytes": 39015,
+      "path": "fibo/BE/LegalEntities/LEIEntities.rdf",
+      "sha256": "6a24df8bfa2923512cdde5c48c725b9ab505a6d1fe0082d29c97071adf61e29e"
+    },
+    {
+      "bytes": 25138,
+      "path": "fibo/BE/LegalEntities/LegalPersons.rdf",
+      "sha256": "d55897f004e97c7ad355ca8800641805f3836338a1c9cdb58614c7b5ef5eb101"
+    },
+    {
+      "bytes": 23210,
+      "path": "fibo/BE/OwnershipAndControl/ControlParties.rdf",
+      "sha256": "4f6951000cd1170174aa5e156e7febf2fed7fb0e4dc7e61ce2b0fec9a47f2c5f"
+    },
+    {
+      "bytes": 22358,
+      "path": "fibo/BE/OwnershipAndControl/CorporateControl.rdf",
+      "sha256": "8bef1195064a29e2a15322a2773afc815f0cfd170a0d821bd49a3687a8f0e120"
+    },
+    {
+      "bytes": 20096,
+      "path": "fibo/BE/OwnershipAndControl/CorporateOwnership.rdf",
+      "sha256": "caa7cd8e61645849921ba376344ef633c90bcebf3c8775689522b9b0a896cc83"
+    },
+    {
+      "bytes": 48210,
+      "path": "fibo/BE/OwnershipAndControl/Executives.rdf",
+      "sha256": "ff46f7ca3fb1c5d7e02edd8a612679965c9444894848494d58b1fef5ed39ad1b"
+    },
+    {
+      "bytes": 24496,
+      "path": "fibo/BE/OwnershipAndControl/OwnershipParties.rdf",
+      "sha256": "05f6b0a9db27eee7ef7f4a56cb5a348b03d9bfa1b0fd72bec5b17815af3d39bf"
+    },
+    {
+      "bytes": 23047,
+      "path": "fibo/BE/Partnerships/Partnerships.rdf",
+      "sha256": "fdca04ae8217b65cdcfccf96c87010c903e8667d9c102a8d632285375d71ad70"
+    },
+    {
+      "bytes": 16223,
+      "path": "fibo/BE/PrivateLimitedCompanies/PrivateLimitedCompanies.rdf",
+      "sha256": "2f0d8b87d9db83d0726fef47222f049d990d526212b1968e54abb88d68f24341"
+    },
+    {
+      "bytes": 103624,
+      "path": "fibo/FBC/DebtAndEquities/Debt.rdf",
+      "sha256": "e0ff6864aefb7163930c3cc4d920725ef8a835c739f26da5c4b980eca08c1147"
+    },
+    {
+      "bytes": 25672,
+      "path": "fibo/FBC/DebtAndEquities/Guaranty.rdf",
+      "sha256": "0fa2feace1cb6966ce3af7002862b16336d7a5576b815e022e4c383e680d2e55"
+    },
+    {
+      "bytes": 56770,
+      "path": "fibo/FBC/FinancialInstruments/FinancialInstruments.rdf",
+      "sha256": "f12707677bb6590a80f68ee305a8cddd3a68b8b9e31f493774d864dc060229d0"
+    },
+    {
+      "bytes": 62465,
+      "path": "fibo/FBC/FunctionalEntities/BusinessRegistries.rdf",
+      "sha256": "2352370c07fff60d7d5e82ad1cc503ebcb49280172bd68638c4989ca6ebc06c2"
+    },
+    {
+      "bytes": 82365,
+      "path": "fibo/FBC/FunctionalEntities/FinancialServicesEntities.rdf",
+      "sha256": "f1047cce38f164b6f49bd6c21a340073f0168ff1b36a491e1556b79ad7d6d0da"
+    },
+    {
+      "bytes": 82924,
+      "path": "fibo/FBC/ProductsAndServices/ClientsAndAccounts.rdf",
+      "sha256": "48e1d347b97577a140785f28f6c0321950a5ab057f5e0ac5104e6d63dcf6e671"
+    },
+    {
+      "bytes": 90893,
+      "path": "fibo/FBC/ProductsAndServices/FinancialProductsAndServices.rdf",
+      "sha256": "84cfba5ccf3a9074027fd001fcfda12ef91a5a2aa7c5d9e976e7a68ee2014321"
+    },
+    {
+      "bytes": 36093,
+      "path": "fibo/FND/Accounting/CurrencyAmount.rdf",
+      "sha256": "fe5b6c81be202255d76f0ad61c7fedbcbed08a6e7bd1fcd9a491fe568db7cfce"
+    },
+    {
+      "bytes": 56638,
+      "path": "fibo/FND/AgentsAndPeople/People.rdf",
+      "sha256": "dd47a618da7e12aef0005088cba892d0cc642c7e52b9d73fb571b34aff00920e"
+    },
+    {
+      "bytes": 15669,
+      "path": "fibo/FND/Agreements/Agreements.rdf",
+      "sha256": "8f03910f2638fd6d9d0d67f85d82fb908de9e276c54f8af6eed3526c62a9e851"
+    },
+    {
+      "bytes": 73907,
+      "path": "fibo/FND/Agreements/Contracts.rdf",
+      "sha256": "d1177c7b092ae26228c5cc07f63172443e99e867b6ed8139389f7fccfb0bf65e"
+    },
+    {
+      "bytes": 7830,
+      "path": "fibo/FND/Arrangements/Arrangements.rdf",
+      "sha256": "2b7ae23dcfcceee82c07275c03388d39067d40f006a74a4bc77382f458d98a49"
+    },
+    {
+      "bytes": 25147,
+      "path": "fibo/FND/Arrangements/Assessments.rdf",
+      "sha256": "6586aa6d220aca95f048f412f351bd53f9526b5d875d2faac55e91590cbbc7f2"
+    },
+    {
+      "bytes": 7659,
+      "path": "fibo/FND/Arrangements/ClassificationSchemes.rdf",
+      "sha256": "6965fd38d09b420286fa9d3ec493e6249ad6d3234e1be7bc6eaaa530b53e80e4"
+    },
+    {
+      "bytes": 9932,
+      "path": "fibo/FND/Arrangements/Documents.rdf",
+      "sha256": "85c7e8ca07c62263c3817bf70f00ca3e1263ed20a6aba0fd3e99ab7d82c78968"
+    },
+    {
+      "bytes": 12662,
+      "path": "fibo/FND/Arrangements/IdentifiersAndIndices.rdf",
+      "sha256": "ce50105aa7bac35a8ff2f424e325b5793ef9723ce8017ea272750d7577516c68"
+    },
+    {
+      "bytes": 14476,
+      "path": "fibo/FND/Arrangements/Lifecycles.rdf",
+      "sha256": "8b81d1e6f9fa68a64a74564ae97f48f8f148a8b4da44d79959c5e957778140f9"
+    },
+    {
+      "bytes": 17482,
+      "path": "fibo/FND/Arrangements/Reporting.rdf",
+      "sha256": "859fe8b85ab507cb4e9d6b9241ea226eb8dbd51e427ea04e132afdce98397e33"
+    },
+    {
+      "bytes": 19594,
+      "path": "fibo/FND/DatesAndTimes/BusinessDates.rdf",
+      "sha256": "c959b708ac603b2b0ae7a6fc8c0a3003bf1c4139cab711e06fe9273e2ae76473"
+    },
+    {
+      "bytes": 45044,
+      "path": "fibo/FND/DatesAndTimes/FinancialDates.rdf",
+      "sha256": "9a7ad36032eca33df0c49cd592b344abd5b8f3660a69a51f24899cebfcca0531"
+    },
+    {
+      "bytes": 21054,
+      "path": "fibo/FND/DatesAndTimes/Occurrences.rdf",
+      "sha256": "ed38b6a6df233ebb667f5e2f926d1eb437274fd7b73f0fb16853f69c834d9eb9"
+    },
+    {
+      "bytes": 30110,
+      "path": "fibo/FND/GoalsAndObjectives/Objectives.rdf",
+      "sha256": "a3f8f31c1b579047f55163fdf5ff0d14c58a840cff804bed4202acd09d6fb615"
+    },
+    {
+      "bytes": 42397,
+      "path": "fibo/FND/Law/LegalCapacity.rdf",
+      "sha256": "78a290868169a7aed3e1c51202863eeda515df9e4efcd159c6bd70902774aac6"
+    },
+    {
+      "bytes": 11520,
+      "path": "fibo/FND/Law/LegalCore.rdf",
+      "sha256": "8095fdeb20b85acf31923c9067cb431fd561669e4ed0681b95ae4d6b9a3b188e"
+    },
+    {
+      "bytes": 19012,
+      "path": "fibo/FND/Organizations/FormalOrganizations.rdf",
+      "sha256": "096aa689714365c74308e35f71e0e1ccf8696e807fcee62885a568e6b018f961"
+    },
+    {
+      "bytes": 15925,
+      "path": "fibo/FND/OwnershipAndControl/Control.rdf",
+      "sha256": "c96d1a23c9db41103a87c762a65ceca6704816db9136500cb87ced8f69d7b14e"
+    },
+    {
+      "bytes": 29922,
+      "path": "fibo/FND/OwnershipAndControl/Ownership.rdf",
+      "sha256": "de5f330c61e508bfe96f83a3bab8f0de76f306bfb7371424f5f20fc078338e79"
+    },
+    {
+      "bytes": 18545,
+      "path": "fibo/FND/Parties/Parties.rdf",
+      "sha256": "6ada5986f86ad91bb506e1cdbec6cff126855d3ac44a9bf019a1e1485c4b6927"
+    },
+    {
+      "bytes": 57050,
+      "path": "fibo/FND/Places/Addresses.rdf",
+      "sha256": "b2a3b4b9f2f8bc8473e4b4714736b50ab94fff721a3d24d8fa0617a0fd4ebcb4"
+    },
+    {
+      "bytes": 16425,
+      "path": "fibo/FND/Places/RealProperty.rdf",
+      "sha256": "ca19736b2ce96a4bfbe3de6d540e0d1816b484941dc0f0ddecf44037b217446a"
+    },
+    {
+      "bytes": 15908,
+      "path": "fibo/FND/ProductsAndServices/PaymentsAndSchedules.rdf",
+      "sha256": "7f9f6645a2e8e5387cd0d4dd9f5ba28c053283acb47bd37595851d7919d75dc0"
+    },
+    {
+      "bytes": 35295,
+      "path": "fibo/FND/ProductsAndServices/ProductsAndServices.rdf",
+      "sha256": "936ef96bed298618994869b56f05e8bcc3390d25d9e03d9aeaa5e7bb01550834"
+    },
+    {
+      "bytes": 23946,
+      "path": "fibo/FND/Relations/Relations.rdf",
+      "sha256": "53e66c732bb0a593a0a976df08b2d80e3ac0e12c197aed58671c660f8cc427c5"
+    },
+    {
+      "bytes": 52098,
+      "path": "fibo/FND/Utilities/Analytics.rdf",
+      "sha256": "6d06b28f25094ffb0a2286beb4da2352f6d1c5327a7654fa5a13abe101994c06"
+    },
+    {
+      "bytes": 10870,
+      "path": "fibo/FND/Utilities/AnnotationVocabulary.rdf",
+      "sha256": "fe863cf8a5bf58a3cff8a59d8555b00acf22a02096998c3189e0ec9f912c6e71"
+    },
+    {
+      "bytes": 45350,
+      "path": "fibo/LOAN/LoansGeneral/Loans.rdf",
+      "sha256": "87024035dac38303e21738879202d87f0f37c1347a16119f9ec2b4e37e124f05"
+    },
+    {
+      "bytes": 7693,
+      "path": "fibo/LOAN/LoansSpecific/CommercialLoans.rdf",
+      "sha256": "f1368c816d6ba3e7a5b4d6e94fd76bd66df314ebe741adb7eecfc5ebbc0bcb52"
+    },
+    {
+      "bytes": 34058,
+      "path": "lcc/Countries/CountryRepresentation.rdf",
+      "sha256": "9f4cb2a7880e4d064adacd8edbf37a82d7e44016b964b60f1096f07c52584287"
+    },
+    {
+      "bytes": 50471,
+      "path": "lcc/Languages/LanguageRepresentation.rdf",
+      "sha256": "534744f6bedd336ca86702dc880bc185064b78674bd7b748752d16f6a69de7b5"
+    }
+  ],
+  "inventory_root": "sha256:b2f060abf07116b6d0c435259d0b89173f74a2a7cea06702d48c54bef974702f",
+  "schema": "ctxql.p6-official-commercial-loans-closure/v1",
+  "total_authoritative_bytes": 2141205
+}

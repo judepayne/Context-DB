@@ -1,0 +1,25 @@
+{
+  "schema": "ctxql-ontology-briefing-seeds/v1",
+  "topic": "loan-agreements",
+  "seeds": [
+    {"iri":"https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/CreditAgreement","kind":"class","priority":10},
+    {"iri":"https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/CreditFacility","kind":"class","priority":20},
+    {"iri":"https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/Borrower","kind":"class","priority":30},
+    {"iri":"https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/Lender","kind":"class","priority":40},
+    {"iri":"https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/hasBorrower","kind":"object_property","priority":50},
+    {"iri":"https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/hasLender","kind":"object_property","priority":60},
+    {"iri":"https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/WrittenContract","kind":"class","priority":70},
+    {"iri":"https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasExecutionDate","kind":"object_property","priority":80},
+    {"iri":"https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasEffectiveDate","kind":"object_property","priority":90},
+    {"iri":"https://www.omg.org/spec/Commons/DatesAndTimes/Date","kind":"class","priority":100},
+    {"iri":"https://www.omg.org/spec/Commons/DatesAndTimes/ExplicitDate","kind":"class","priority":110},
+    {"iri":"https://www.omg.org/spec/Commons/DatesAndTimes/hasDateValue","kind":"datatype_property","priority":120},
+    {"iri":"http://www.w3.org/2001/XMLSchema#boolean","kind":"datatype","priority":200},
+    {"iri":"http://www.w3.org/2001/XMLSchema#date","kind":"datatype","priority":210},
+    {"iri":"http://www.w3.org/2001/XMLSchema#dateTime","kind":"datatype","priority":220},
+    {"iri":"http://www.w3.org/2001/XMLSchema#decimal","kind":"datatype","priority":230},
+    {"iri":"http://www.w3.org/2001/XMLSchema#integer","kind":"datatype","priority":240},
+    {"iri":"http://www.w3.org/2001/XMLSchema#string","kind":"datatype","priority":250},
+    {"iri":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","kind":"datatype","priority":260}
+  ]
+}

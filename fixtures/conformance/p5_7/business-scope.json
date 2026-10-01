@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "ctxql.p5-7-business-scope/v1",
+  "selection_reason": "design_selected_poc_scope",
+  "entry_path": "fibo/FND/Agreements/Agreements.rdf",
+  "entry_ontology_iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+  "version_iri": "https://spec.edmcouncil.org/fibo/ontology/FND/20260601/Agreements/Agreements/",
+  "direct_imports": [
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "https://www.omg.org/spec/Commons/PartiesAndSituations/",
+    "https://www.omg.org/spec/Commons/RolesAndCompositions/"
+  ],
+  "meaningful_terms": {
+    "class": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/Agreement",
+    "relationship": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/hasObligation",
+    "inverse_relationship": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/isObligationOf"
+  },
+  "fallback": "fibo/FND/Agreements/Contracts.rdf"
+}

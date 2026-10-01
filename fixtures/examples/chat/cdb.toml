@@ -1,0 +1,90 @@
+# STRUCTURAL EXAMPLE ONLY — DELIBERATELY NON-RUNNABLE.
+# Context DB does not auto-provision chat. Replace every /REPLACE path, authority
+# identity and sha256 placeholder with separately provisioned, published and
+# authorized bindings before launch. The all-zero hashes are syntactically valid
+# placeholders, not published artifact or ontology identities.
+
+schema = "ctxql-instance/v3"
+projection = "/REPLACE/cdb/chat/projection"
+credential-file = "/REPLACE/cdb/chat/credentials.json"
+source-root = "/REPLACE/cdb/chat/sources"
+bind = "127.0.0.1:8080"
+
+[semantic]
+path = "/REPLACE/cdb/chat/semantic"
+ledger = "semantic:REPLACE"
+backend = "urn:ctxql:example:semantic-backend:REPLACE"
+authority = "urn:ctxql:example:semantic-authority:REPLACE"
+graph = "urn:ctxql:example:semantic-graph:REPLACE"
+
+[control]
+path = "/REPLACE/cdb/chat/control"
+ledger = "control:REPLACE"
+backend = "urn:ctxql:example:control-backend:REPLACE"
+authority = "urn:ctxql:example:control-authority:REPLACE"
+graph = "urn:ctxql:example:control-graph:REPLACE"
+
+[limits]
+max_body_bytes = 1048576
+run_bytes = 1048576
+trace_entries = 10000
+max_work = 100000
+concurrency = 8
+connections = 32
+deadline_seconds = 30
+session_ttl_seconds = 300
+
+[chat]
+pi-command = "/REPLACE/bin/pi"
+pi-bundle = "/REPLACE/cdb/assets/pi"
+# Default-off diagnostic option. This directory must be absolute and private
+# (mode 0700 on Unix). Native Pi sessions can contain sensitive content.
+# pi-session-log-dir = "/REPLACE/private/cdb-chat-logs"
+chat_model = "openrouter/deepseek/deepseek-v4.1-flash"
+thinking = "high"
+# Default-off. Set true only for a trusted single-user POC; graph-data permission
+# checks are then bypassed, while source reads and limits remain protected.
+unsafe-direct-projection = false
+query-config = { iri = "urn:ctxql:example:published-query-config:REPLACE", version = "REPLACE", hash = "sha256:0000000000000000000000000000000000000000000000000000000000000000" }
+# To select a published profile, set BOTH fields:
+# profile-selector = "REPLACE/profile-selector"
+# profile = { iri = "urn:ctxql:example:published-profile:REPLACE", version = "REPLACE", hash = "sha256:0000000000000000000000000000000000000000000000000000000000000000" }
+
+# Optional supported public ontology. Delete this table to run without ontology.
+# Keeping these placeholders makes this example intentionally non-runnable.
+[chat.ontology]
+bootstrap-path = "/REPLACE/cdb/public-ontology"
+receipt-hash = "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+
+# Defaults are shown explicitly. Operators can tighten all limits; conversation
+# context alone may also be raised, up to 67108864 bytes (64 MiB). The local demo
+# sets max-context-bytes = 8388608 (8 MiB).
+[chat.limits]
+max-input-bytes = 8192
+max-turns = 20
+max-model-rounds = 100
+turn-seconds = 300
+shutdown-seconds = 2
+max-answer-bytes = 65536
+max-rpc-record-bytes = 1048576
+max-rpc-queue-bytes = 2097152
+max-rpc-events-per-turn = 16384
+max-reported-tokens = 1000000
+max-reported-cost-micro-usd = 5000000
+host-call-seconds = 10
+max-nodes = 50
+max-claims = 100
+max-live-graphs = 3
+max-tool-calls-per-turn = 40
+max-queries-per-turn = 12
+max-tool-calls = 200
+max-queries = 60
+max-request-bytes = 32768
+max-response-bytes = 65536
+max-tool-response-bytes-per-turn = 1048576
+max-state-bytes = 2097152
+max-context-bytes = 524288
+max-source-span-bytes = 16384
+max-source-bytes-per-turn = 65536
+max-citations = 4096
+max-work = 1000000

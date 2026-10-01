@@ -1,0 +1,15 @@
+PROFILE
+CONTEXT
+  ex = "https://example.test/"
+BOUNDS
+  max_depth = 3
+  min_confidence = 0.5
+WALK outgoing
+  PREDICATE floor
+    BIND
+      c = meta:confidence
+      f = bound:min_confidence
+    KEEP c >= f
+RETURN
+  claims
+  paths

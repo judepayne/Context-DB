@@ -1,0 +1,210 @@
+{
+  "schema_version": "ctxql-poc.scenarios.v1",
+  "execution_status": "not_executed",
+  "note": "Patches and predicate operands are declarative scenarios, not standalone valid CTXQL queries. Malformed text is intentional negative input.",
+  "base": "fixtures/conformance/queries/paired.json",
+  "scenarios": {
+    "landing": [
+      {
+        "about": [
+          {
+            "from": [
+              "A"
+            ],
+            "match": "approximate"
+          },
+          {
+            "from": [
+              "https://example.test/B"
+            ],
+            "match": "exact"
+          }
+        ]
+      },
+      {
+        "about": [
+          {
+            "from": [
+              "https://example.test/A"
+            ],
+            "to": [
+              "https://example.test/C",
+              "https://example.test/D"
+            ],
+            "match": "exact"
+          }
+        ]
+      },
+      {
+        "about": [
+          {
+            "from": [
+              "missing"
+            ],
+            "match": "exact"
+          }
+        ]
+      }
+    ],
+    "directions": [
+      "outgoing",
+      "incoming",
+      "both"
+    ],
+    "validation": [
+      {
+        "bounds": {
+          "max_depth": -1
+        }
+      },
+      {
+        "about": [
+          {
+            "to": [
+              "A"
+            ]
+          }
+        ]
+      },
+      {
+        "walk": {
+          "predicates": [
+            [
+              "unknown:field",
+              "=",
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "walk": {
+          "predicates": [
+            [
+              "meta:confidence",
+              "bogus",
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "profile": "missing/profile"
+      },
+      {
+        "text": "ABOUT\n  FROM \"A\"\n"
+      },
+      {
+        "text": "QUERY\nBOUNDS\n  max_depth =\n"
+      }
+    ],
+    "operators": [
+      "=",
+      "!=",
+      ">",
+      ">=",
+      "<",
+      "<=",
+      "in",
+      "not_in",
+      "contains",
+      "contains_any",
+      "exists",
+      "isa",
+      "not_isa",
+      "subproperty_of",
+      "not_subproperty_of",
+      "contains_isa",
+      "contains_subproperty_of"
+    ],
+    "operand_distinctions": [
+      {
+        "field_absent": true,
+        "rhs": null
+      },
+      {
+        "field": null,
+        "rhs": null
+      },
+      {
+        "field": 1,
+        "rhs": "1"
+      },
+      {
+        "field": "abc",
+        "rhs": "b"
+      },
+      {
+        "field": [
+          "a",
+          "b"
+        ],
+        "rhs": [
+          "b",
+          "c"
+        ]
+      },
+      {
+        "field": "source_lineage_available",
+        "rhs": "source_spans_available"
+      }
+    ],
+    "stateful": {
+      "name": "acc",
+      "init": {
+        "acc_conf": 1.0
+      },
+      "bind": {
+        "c": "meta:confidence"
+      },
+      "let": {
+        "v": "state.acc_conf * c"
+      },
+      "next": {
+        "acc_conf": "v"
+      },
+      "keep": "next.acc_conf >= 0.7"
+    },
+    "sandbox_denials": [
+      "file",
+      "network",
+      "clock",
+      "import",
+      "unregistered function"
+    ],
+    "cap_cutoffs": {
+      "fanout_limit": [
+        1,
+        2
+      ],
+      "path_limit": [
+        1,
+        2
+      ],
+      "max_claims": [
+        1,
+        2
+      ],
+      "max_depth": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "return_selections": [
+      {
+        "claims": false,
+        "paths": false,
+        "evidence": false,
+        "explain": false
+      },
+      {
+        "claims": true,
+        "paths": true,
+        "evidence": true,
+        "explain": true
+      }
+    ]
+  }
+}

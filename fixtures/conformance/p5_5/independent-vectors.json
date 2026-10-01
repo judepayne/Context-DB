@@ -1,0 +1,195 @@
+{
+  "authorized_protected_roots": {
+    "authorized_members": [
+      "sha256:ad1fb3ac67bff8eaf53f7b731c603d042dd6db2a50472c45a6cdea1f41dc1745",
+      "sha256:fbbd264adeeadc0552774fa4c254f6320231b8eabb2181ac7edb6436b9048a42"
+    ],
+    "authorized_root": "sha256:4435735e20f848be046d211d06e6a9db28222e88aa3321c9ab694f76288a1f1e",
+    "protected_members": [
+      "sha256:05b3abf2579a5eb66403cd78be557fd860633a1fe2103c7642030defe32c657f",
+      "sha256:1900eab6c028483d7126599ee6f50de0d27907b5c65fa90524580b4b0f9852b0"
+    ],
+    "protected_root": "sha256:b5a1759b64124b072ce96f7b561938b23c25b9cef9a8b8f2419ff5697e39a18a"
+  },
+  "canonicalization": "UTF-8 JSON with sorted keys and separators comma/colon for this independent oracle only.",
+  "claim_rdf_json": {
+    "canonical_utf8": "{\"confidence\":\"0.800\",\"extensions\":{},\"graph\":\"https://example.invalid/p5-5/claims\",\"lineage\":{\"schema\":\"ctxql.lineage.v1\",\"sources\":[{\"id\":\"urn:synthetic:source\"}]},\"object\":{\"kind\":\"iri\",\"value\":\"https://example.invalid/p5-5/bob\"},\"predicate\":\"https://example.invalid/p5-5/knows\",\"reifier\":\"https://example.invalid/p5-5/claim-1\",\"subject\":{\"kind\":\"iri\",\"value\":\"https://example.invalid/p5-5/alice\"}}",
+    "sha256": "sha256:736d1de066c05345e5eda11d2888807c6c197e43c140bd5774a57a70086a701c",
+    "value": {
+      "confidence": "0.800",
+      "extensions": {},
+      "graph": "https://example.invalid/p5-5/claims",
+      "lineage": {
+        "schema": "ctxql.lineage.v1",
+        "sources": [
+          {
+            "id": "urn:synthetic:source"
+          }
+        ]
+      },
+      "object": {
+        "kind": "iri",
+        "value": "https://example.invalid/p5-5/bob"
+      },
+      "predicate": "https://example.invalid/p5-5/knows",
+      "reifier": "https://example.invalid/p5-5/claim-1",
+      "subject": {
+        "kind": "iri",
+        "value": "https://example.invalid/p5-5/alice"
+      }
+    }
+  },
+  "exact_literals": [
+    {
+      "kind": "iri",
+      "value": "https://example.invalid/p5-5/alice"
+    },
+    {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "kind": "literal",
+      "language": null,
+      "lexical": "001.2300"
+    },
+    {
+      "datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+      "kind": "literal",
+      "language": "fr",
+      "lexical": "neige"
+    }
+  ],
+  "gate_f_classification": [
+    {
+      "classification": "supported",
+      "iri": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+    },
+    {
+      "classification": "harmless",
+      "iri": "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    {
+      "classification": "unsupported",
+      "iri": "http://www.w3.org/2002/07/owl#propertyChainAxiom"
+    },
+    {
+      "classification": "malformed-or-unsupported",
+      "iri": "http://www.w3.org/2002/07/owl#Restriction"
+    }
+  ],
+  "graph_roles": {
+    "root": "sha256:68531ceb99768aecdab8722aba701c29b098eb6be7037c5d6c850c658157805f",
+    "value": {
+      "claims": [
+        "https://example.invalid/p5-5/claims"
+      ],
+      "configuration": "urn:graph:config",
+      "governed": [
+        "https://example.invalid/p5-5/claims",
+        "urn:graph:data"
+      ],
+      "infrastructure": [
+        "urn:graph:schema"
+      ]
+    }
+  },
+  "import_closure": {
+    "ordered_graphs": [
+      "urn:graph:schema",
+      "urn:graph:import-a",
+      "urn:graph:import-b"
+    ],
+    "root": "sha256:9f71fdc6d125d7ed22e5fe0da7b2d79eb1947c426365a6d9a5e927193ddd15c2"
+  },
+  "lifecycle_support": {
+    "active_support_ids": [
+      "https://example.invalid/p5-5/claim-1",
+      "https://example.invalid/p5-5/claim-2"
+    ],
+    "root": "sha256:dd799da781dc7cd265ba849564b0a233de07cc419fb485512218d3d9d89a6e66"
+  },
+  "limits": {
+    "annotation_of_annotation": "rejected",
+    "blank_node_claim_ids": "rejected",
+    "named_graph_annotation_query": "public API does not expose graph term in rdf:reifies triple; graph is bound by governed scan context"
+  },
+  "mapped_descriptor": {
+    "canonical_utf8": "{\"capture\":{\"authority\":\"semantic-authority\",\"backend\":\"semantic\",\"cid\":\"bafy-synthetic-capture\",\"ledger\":\"semantic:main\",\"t\":7},\"field\":\"risk\",\"kind\":\"stored\",\"prepared_ontology_root\":\"sha256:e8986c8395326cfda5ca9a7e208fc0856dd4a09d2f00dbd8ddc3c22aeed93dc1\",\"value_count\":2,\"value_root\":\"sha256:631ff454d5646d72e0c40afcb4c2eacc867d3472d60b34a644703a4276ddc116\"}",
+    "sha256": "sha256:0f01b242778f8660f39dd2ed7bd18cb3230d40092c6d996244b1e921e34adad8",
+    "value": {
+      "capture": {
+        "authority": "semantic-authority",
+        "backend": "semantic",
+        "cid": "bafy-synthetic-capture",
+        "ledger": "semantic:main",
+        "t": 7
+      },
+      "field": "risk",
+      "kind": "stored",
+      "prepared_ontology_root": "sha256:e8986c8395326cfda5ca9a7e208fc0856dd4a09d2f00dbd8ddc3c22aeed93dc1",
+      "value_count": 2,
+      "value_root": "sha256:631ff454d5646d72e0c40afcb4c2eacc867d3472d60b34a644703a4276ddc116"
+    }
+  },
+  "normalized_diagnostics": {
+    "root": "sha256:0e23cf84afc8f9f3b65dfb6826dba80681fcd8353769b96e0e181bae3a96b58b",
+    "value": {
+      "inferred": 2,
+      "iterations": 1,
+      "rules": [
+        "rdfs-subclass",
+        "rdfs-domain"
+      ],
+      "truncated": false
+    }
+  },
+  "oracle": "Authored synthetic inputs; expected bytes and SHA-256 values are independently recomputed by scripts/check_p5_5_evidence.py and are not copied from Rust output.",
+  "schema": "ctxql.p5-5-independent-vectors/v1",
+  "semantic_capture": {
+    "canonical_utf8": "{\"authority\":\"semantic-authority\",\"backend\":\"semantic\",\"cid\":\"bafy-synthetic-capture\",\"ledger\":\"semantic:main\",\"t\":7}",
+    "sha256": "sha256:13ee0e4dd36708e0d9f4988f68a4c92c3e757734cba2757a6dad75b0cadbb285",
+    "value": {
+      "authority": "semantic-authority",
+      "backend": "semantic",
+      "cid": "bafy-synthetic-capture",
+      "ledger": "semantic:main",
+      "t": 7
+    }
+  },
+  "v4_wire": {
+    "canonical_utf8": "{\"capture\":{\"authority\":\"semantic-authority\",\"backend\":\"semantic\",\"cid\":\"bafy-synthetic-capture\",\"ledger\":\"semantic:main\",\"t\":7},\"data_commitments\":[\"sha256:ad1fb3ac67bff8eaf53f7b731c603d042dd6db2a50472c45a6cdea1f41dc1745\",\"sha256:fbbd264adeeadc0552774fa4c254f6320231b8eabb2181ac7edb6436b9048a42\"],\"mapping\":{\"capture\":{\"authority\":\"semantic-authority\",\"backend\":\"semantic\",\"cid\":\"bafy-synthetic-capture\",\"ledger\":\"semantic:main\",\"t\":7},\"field\":\"risk\",\"kind\":\"stored\",\"prepared_ontology_root\":\"sha256:e8986c8395326cfda5ca9a7e208fc0856dd4a09d2f00dbd8ddc3c22aeed93dc1\",\"value_count\":2,\"value_root\":\"sha256:631ff454d5646d72e0c40afcb4c2eacc867d3472d60b34a644703a4276ddc116\"},\"schema\":\"ctxql-semantic-evidence/v4\",\"schema_commitments\":[\"sha256:010b0e628c9f63b9811ff16bf2d35d634b6c2ff2b0a457e9c0a73b4548601d58\"],\"visible_support_ids\":[\"https://example.invalid/p5-5/claim-1\"]}",
+    "sha256": "sha256:c04fe9bf18ffd9aa5da5a63d7a7b5cafbc752bdfad40b7586bd17e6d92fa4c6c",
+    "value": {
+      "capture": {
+        "authority": "semantic-authority",
+        "backend": "semantic",
+        "cid": "bafy-synthetic-capture",
+        "ledger": "semantic:main",
+        "t": 7
+      },
+      "data_commitments": [
+        "sha256:ad1fb3ac67bff8eaf53f7b731c603d042dd6db2a50472c45a6cdea1f41dc1745",
+        "sha256:fbbd264adeeadc0552774fa4c254f6320231b8eabb2181ac7edb6436b9048a42"
+      ],
+      "mapping": {
+        "capture": {
+          "authority": "semantic-authority",
+          "backend": "semantic",
+          "cid": "bafy-synthetic-capture",
+          "ledger": "semantic:main",
+          "t": 7
+        },
+        "field": "risk",
+        "kind": "stored",
+        "prepared_ontology_root": "sha256:e8986c8395326cfda5ca9a7e208fc0856dd4a09d2f00dbd8ddc3c22aeed93dc1",
+        "value_count": 2,
+        "value_root": "sha256:631ff454d5646d72e0c40afcb4c2eacc867d3472d60b34a644703a4276ddc116"
+      },
+      "schema": "ctxql-semantic-evidence/v4",
+      "schema_commitments": [
+        "sha256:010b0e628c9f63b9811ff16bf2d35d634b6c2ff2b0a457e9c0a73b4548601d58"
+      ],
+      "visible_support_ids": [
+        "https://example.invalid/p5-5/claim-1"
+      ]
+    }
+  }
+}

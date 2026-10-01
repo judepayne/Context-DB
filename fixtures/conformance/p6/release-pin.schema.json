@@ -1,0 +1,17 @@
+{
+  "$id": "ctxql.p6-release-pin.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "archive_media_type": {"minLength": 1, "type": "string"},
+    "archive_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "license_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "notice_sha256": {"pattern": "^[0-9a-f]{64}$", "type": ["string", "null"]},
+    "publisher_url": {"pattern": "^https://", "type": "string"},
+    "release_tag": {"minLength": 1, "type": "string"},
+    "retrieved_at": {"format": "date-time", "type": "string"},
+    "schema": {"const": "ctxql.p6-release-pin/v1"}
+  },
+  "required": ["schema", "publisher_url", "release_tag", "archive_sha256", "archive_media_type", "retrieved_at", "license_sha256", "notice_sha256"],
+  "type": "object"
+}

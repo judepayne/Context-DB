@@ -1,0 +1,66 @@
+{
+  "schema": "ctxql-structured/v1",
+  "status": "accepted",
+  "approval": "delegated_default; local-folder provider user-selected",
+  "execution_status": "not_executed",
+  "decision_ref": "docs/contracts/structured-preparation-v1.md",
+  "vectors": [
+    {
+      "id": "STR-pin",
+      "metadata": "A",
+      "data": [
+        "A.parquet"
+      ],
+      "mapping": "m1",
+      "request": "A",
+      "expected": "select retained A, never current B"
+    },
+    {
+      "id": "STR-ignored-pin",
+      "capability": "ignores_requested_snapshot",
+      "expected": "unsupported before query"
+    },
+    {
+      "id": "STR-no-archive",
+      "mode": "live_unpinned",
+      "expected": "not_replayable; no persisted result archive"
+    },
+    {
+      "id": "STR-old-time",
+      "mode": "live",
+      "as_of": "2000-01-01T00:00:00.000Z",
+      "expected": "unsupported_temporal_live_overlay"
+    },
+    {
+      "id": "STR-retry",
+      "batch": "b1",
+      "same_payload": true,
+      "expected": "same admission receipt"
+    },
+    {
+      "id": "STR-independent",
+      "batch": "b2",
+      "same_payload": true,
+      "expected": "independent immutable claims"
+    },
+    {
+      "id": "STR-duplicate",
+      "row_keys": [
+        1,
+        1
+      ],
+      "expected": "reject entire preparation"
+    },
+    {
+      "id": "STR-missing-data",
+      "retained_metadata": true,
+      "retained_data": false,
+      "expected": "not_replayable; no latest fallback"
+    },
+    {
+      "id": "STR-limit",
+      "rows": 1001,
+      "expected": "abort no partial overlay"
+    }
+  ]
+}

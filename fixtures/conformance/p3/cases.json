@@ -1,0 +1,578 @@
+{
+  "schema": "ctxql.p3-cases/v1",
+  "scope": "39 authored integration cases, not universal conformance; executable assertions remain in mapped Rust tests. P2 source expectations are unchanged.",
+  "cases": [
+    {
+      "id": "P3-Q001",
+      "source_case": "P2-E001",
+      "expected": {
+        "paths": [
+          [
+            "a"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ]
+        ],
+        "nodes": [
+          [
+            "s",
+            "u"
+          ],
+          [
+            "s",
+            "t"
+          ],
+          [
+            "s",
+            "u",
+            "t"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q002",
+      "source_case": "P2-E002",
+      "expected": {
+        "paths": [
+          [
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q003",
+      "source_case": "P2-E003",
+      "expected": {
+        "paths": [
+          [
+            "b"
+          ],
+          [
+            "c"
+          ],
+          [
+            "b",
+            "a"
+          ]
+        ],
+        "nodes": [
+          [
+            "t",
+            "u"
+          ],
+          [
+            "t",
+            "s"
+          ],
+          [
+            "t",
+            "u",
+            "s"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q004",
+      "source_case": "P2-E004",
+      "expected": {
+        "paths": [
+          [
+            "a"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "c",
+            "b"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q005",
+      "source_case": "P2-E005",
+      "expected": {
+        "paths": [
+          [
+            "a"
+          ],
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q006",
+      "source_case": "P2-E006",
+      "expected": {
+        "paths": [
+          [
+            "a"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q007",
+      "source_case": "P2-E007",
+      "expected": {
+        "paths": [
+          [
+            "a"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b",
+            "a"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q008",
+      "source_case": "P2-E008",
+      "expected": {
+        "paths": [
+          [
+            "c"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q009",
+      "source_case": "P2-E009",
+      "expected": {
+        "paths": [
+          [
+            "z"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q010",
+      "source_case": "P2-E010",
+      "expected": {
+        "paths": [
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q011",
+      "source_case": "P2-E011",
+      "expected": {
+        "paths": [
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q012",
+      "source_case": "P2-E012",
+      "expected": {
+        "paths": [
+          [
+            "a"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "blocks": [
+          0,
+          1
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q013",
+      "source_case": "P2-E013",
+      "expected": {
+        "paths": [
+          [
+            "loop"
+          ],
+          [
+            "a"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q014",
+      "source_case": "P2-E014",
+      "expected": {
+        "paths": [
+          [
+            "lit"
+          ]
+        ],
+        "nodes": [
+          [
+            "s"
+          ]
+        ],
+        "terminal_literal": true
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q015",
+      "source_case": "P2-E015",
+      "expected": {
+        "paths": []
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q016",
+      "source_case": "P2-E016",
+      "expected": {
+        "paths": [
+          [
+            "c"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q017",
+      "source_case": "P2-E017",
+      "expected": {
+        "paths": [
+          [
+            "cb"
+          ]
+        ]
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q018",
+      "source_case": "P2-E018",
+      "expected": {
+        "paths": []
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q019",
+      "source_case": "P2-E019",
+      "expected": {
+        "paths": []
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q020",
+      "source_case": "P2-E020",
+      "expected": {
+        "paths": []
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q021",
+      "source_case": "P2-E021",
+      "expected": {
+        "error": "Limit"
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q022",
+      "source_case": "P2-E022",
+      "expected": {
+        "paths": []
+      },
+      "test": "execution_cases",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/execution-cases.json"
+      ]
+    },
+    {
+      "id": "P3-Q023",
+      "source_case": "P2-H001",
+      "expected": "Exact independently authored canonical response bytes and SHA-256.",
+      "test": "independent_response_bytes",
+      "test_file": "crates/ctxql-testkit/tests/p3_conformance.rs",
+      "fixtures": [
+        "fixtures/conformance/p2/bytes-v1.json"
+      ]
+    },
+    {
+      "id": "P3-R001",
+      "expected": "Original authority receipt/time/full pin survive SIGKILL after commit before host acknowledgement.",
+      "test": "authority_and_projection_recover_after_process_kills",
+      "test_file": "crates/ctxql-testkit/tests/p3_recovery.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_recovery.rs"
+      ]
+    },
+    {
+      "id": "P3-R002",
+      "expected": "Commit without apply leaves old checkpoint; restart reconciles without any retained event.",
+      "test": "authority_and_projection_recover_after_process_kills",
+      "test_file": "crates/ctxql-testkit/tests/p3_recovery.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_recovery.rs"
+      ]
+    },
+    {
+      "id": "P3-R003",
+      "expected": "Committed apply survives SIGKILL with matching records and checkpoint.",
+      "test": "authority_and_projection_recover_after_process_kills",
+      "test_file": "crates/ctxql-testkit/tests/p3_recovery.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_recovery.rs"
+      ]
+    },
+    {
+      "id": "P3-R004",
+      "expected": "Interrupted staged rebuild before publication retains old active generation.",
+      "test": "authority_and_projection_recover_after_process_kills",
+      "test_file": "crates/ctxql-testkit/tests/p3_recovery.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_recovery.rs"
+      ]
+    },
+    {
+      "id": "P3-R005",
+      "expected": "SIGKILL after rebuild publication retains complete replacement.",
+      "test": "authority_and_projection_recover_after_process_kills",
+      "test_file": "crates/ctxql-testkit/tests/p3_recovery.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_recovery.rs"
+      ]
+    },
+    {
+      "id": "P3-R006",
+      "expected": "Real subscriber failed incremental apply is atomic and retries successfully with silence.",
+      "test": "real_subscriber_retries_failed_apply_without_another_write",
+      "test_file": "crates/ctxql-testkit/tests/p3_recovery.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_recovery.rs"
+      ]
+    },
+    {
+      "id": "P3-R007",
+      "expected": "Corrupt derived bytes fail; new derived directory rebuilds solely from unchanged authority, preserving corrupt evidence.",
+      "test": "corrupt_derived_file_is_rebuilt_from_authority_in_a_new_directory",
+      "test_file": "crates/ctxql-testkit/tests/p3_recovery.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_recovery.rs"
+      ]
+    },
+    {
+      "id": "P3-R008",
+      "expected": "In-flight real exact preparation cannot publish/apply; provider wait deadline yields Deadline and zero bytes, not an older view.",
+      "test": "real_exact_preparation_timeout_releases_no_bytes",
+      "test_file": "crates/ctxql-testkit/tests/p3_recovery.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_recovery.rs"
+      ]
+    },
+    {
+      "id": "P3-S001",
+      "expected": "Separate admissions have distinct inclusive temporal entity/label eligibility and authorization dependencies.",
+      "test": "multi_admission_entity_label_cutoff",
+      "test_file": "crates/ctxql-testkit/tests/p3_semantics.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_semantics.rs"
+      ]
+    },
+    {
+      "id": "P3-S002",
+      "expected": "A->B->A at later graph/earlier cutoff excludes newest A rather than reusing old matching hash.",
+      "test": "returned_image_is_not_backdated",
+      "test_file": "crates/ctxql-testkit/tests/p3_semantics.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_semantics.rs"
+      ]
+    },
+    {
+      "id": "P3-S003",
+      "expected": "Denied actual origin removes first candidate before seed cap; next allowed entity returns edge.",
+      "test": "required_origin_denied_before_seed_cap",
+      "test_file": "crates/ctxql-testkit/tests/p3_semantics.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_semantics.rs"
+      ]
+    },
+    {
+      "id": "P3-S004",
+      "expected": "Full retraction appears through raw/execution paths; denied support never becomes active fallback.",
+      "test": "appended_full_lifecycle_and_denied_support_never_active_fallback",
+      "test_file": "crates/ctxql-testkit/tests/p3_semantics.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_semantics.rs"
+      ]
+    },
+    {
+      "id": "P3-S005",
+      "expected": "Explicit older pin has actual identity, fixed cutoff, stale flag/notice/warning and expected path.",
+      "test": "explicit_stale_reports_actual_and_fixed_cutoff",
+      "test_file": "crates/ctxql-testkit/tests/p3_semantics.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_semantics.rs"
+      ]
+    },
+    {
+      "id": "P3-S006",
+      "expected": "Required artifact unavailable at actual old pin yields NotFound and zero bytes.",
+      "test": "stale_missing_artifact_does_not_fetch_latest",
+      "test_file": "crates/ctxql-testkit/tests/p3_semantics.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_semantics.rs"
+      ]
+    },
+    {
+      "id": "P3-S007",
+      "expected": "Current persisted revocation denies older data with zero output.",
+      "test": "old_graph_current_revocation_releases_nothing",
+      "test_file": "crates/ctxql-testkit/tests/p3_semantics.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_semantics.rs"
+      ]
+    },
+    {
+      "id": "P3-S008",
+      "expected": "Pre-interrupted exact provider/execution yields Deadline and zero bytes.",
+      "test": "default_exact_deadline_and_cancellation_release_nothing",
+      "test_file": "crates/ctxql-testkit/tests/p3_semantics.rs",
+      "fixtures": [
+        "crates/ctxql-testkit/tests/p3_semantics.rs"
+      ]
+    }
+  ]
+}

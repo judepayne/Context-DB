@@ -1,0 +1,89 @@
+{
+  "schema": "ctxql-assembly-inputs/v1",
+  "status": "accepted",
+  "approval": "delegated_default",
+  "execution_status": "not_executed",
+  "decision_ref": "docs/contracts/assembly-inputs-v1.md",
+  "ordered_inputs": [
+    {
+      "name": "primary",
+      "required": true,
+      "run_id": "run:A",
+      "response_hash": "symbolic:response:A",
+      "plan_hash": "symbolic:plan:A",
+      "as_of": "2026-03-31T00:00:00.000Z",
+      "db_time": {
+        "authority": "fixture",
+        "graph": "g",
+        "revision": "1",
+        "receipt": "symbolic:A"
+      }
+    },
+    {
+      "name": "comparison",
+      "required": true,
+      "run_id": "run:B",
+      "response_hash": "symbolic:response:B",
+      "plan_hash": "symbolic:plan:B",
+      "as_of": "2026-03-31T00:00:00.000Z",
+      "db_time": {
+        "authority": "fixture",
+        "graph": "g",
+        "revision": "2",
+        "receipt": "symbolic:B"
+      }
+    }
+  ],
+  "note": "Symbolic scenario data, not validated complete invocation or executable hashes.",
+  "vectors": [
+    {
+      "id": "ASM-order",
+      "change": "reverse input order",
+      "expected": "different product projection; unchanged individual plan hashes"
+    },
+    {
+      "id": "ASM-duplicate",
+      "names": [
+        "primary",
+        "primary"
+      ],
+      "expected": "validation error"
+    },
+    {
+      "id": "ASM-denied",
+      "required_denied": true,
+      "expected": "blocked no product; no denied IDs in public error"
+    },
+    {
+      "id": "ASM-mixed",
+      "verdicts": [
+        "reproduced",
+        "not_replayable"
+      ],
+      "expected": "replay not_replayable; no reproduction product"
+    },
+    {
+      "id": "ASM-trust",
+      "verdicts": [
+        "reproduced",
+        "reproduced_best_effort"
+      ],
+      "expected": "reproduced_best_effort graph aggregate"
+    },
+    {
+      "id": "ASM-source-loss",
+      "graph_verdicts": [
+        "reproduced",
+        "reproduced"
+      ],
+      "required_source": "missing",
+      "expected": "graph reproduced, product unavailable"
+    },
+    {
+      "id": "ASM-live-initial",
+      "mode": "initial presentation",
+      "input": "available unpinned live",
+      "expected": "allowed product with explicit not_replayable guarantee"
+    }
+  ]
+}

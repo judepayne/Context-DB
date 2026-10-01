@@ -1,0 +1,122 @@
+{
+  "schema": "ctxql-p5.6-direct-reasoner-inventory/v1",
+  "pinned_source": {
+    "repository": "https://github.com/fluree/db",
+    "git_revision": "603974fad5c13efed9d147d214d613849fb43c73",
+    "package": "fluree-db-reasoner",
+    "package_version": "4.2.0",
+    "archive_sha256": "ab6dadb35da9c08cb53695484a1ef4d67873d63c917d0ded2893dadcc6138a6c"
+  },
+  "known_rule_names": [
+    "prp-symp", "prp-trp", "prp-inv", "prp-dom", "prp-rng",
+    "prp-spo1", "prp-spo2", "prp-fp", "prp-ifp", "prp-key",
+    "cax-sco", "cax-eqc", "cax-eqc1", "cax-eqc2",
+    "cls-hv1", "cls-hv2", "cls-svf1", "cls-avf", "cls-int1",
+    "cls-int2", "cls-uni", "cls-oo", "cls-maxc2", "cls-maxqc",
+    "cls-maxqc3", "cls-maxqc4"
+  ],
+  "aliases": {
+    "cax-eqc1": "cax-eqc",
+    "cax-eqc2": "cax-eqc",
+    "cls-maxqc3": "cls-maxqc",
+    "cls-maxqc4": "cls-maxqc"
+  },
+  "always_on_equality": {
+    "diagnostic_key": "eq-union",
+    "behavior": "asserted owl:sameAs and identity-rule output are unioned before non-identity rules; output is a canonical star, not a full pairwise clique",
+    "subject_object_canonicalization": true
+  },
+  "structural_contract": {
+    "list_predicates": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+    ],
+    "facets": [
+      "http://www.w3.org/2002/07/owl#onProperty",
+      "http://www.w3.org/2002/07/owl#hasValue",
+      "http://www.w3.org/2002/07/owl#someValuesFrom",
+      "http://www.w3.org/2002/07/owl#allValuesFrom",
+      "http://www.w3.org/2002/07/owl#maxCardinality",
+      "http://www.w3.org/2002/07/owl#maxQualifiedCardinality",
+      "http://www.w3.org/2002/07/owl#onClass",
+      "http://www.w3.org/2002/07/owl#intersectionOf",
+      "http://www.w3.org/2002/07/owl#unionOf",
+      "http://www.w3.org/2002/07/owl#oneOf",
+      "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+      "http://www.w3.org/2002/07/owl#hasKey",
+      "http://www.w3.org/2002/07/owl#inverseOf"
+    ],
+    "required_shapes": [
+      "property chains use a reasoner-visible rdf:first/rdf:rest spine of at least two reference-valued members",
+      "keys use a nonempty reasoner-visible reference-valued RDF list",
+      "restrictions are rdf:type owl:Restriction and have reference-valued owl:onProperty",
+      "maxCardinality is native Long(1)",
+      "maxQualifiedCardinality is native Long(1) and has reference-valued owl:onClass",
+      "intersectionOf, unionOf, and oneOf use nonempty reasoner-visible RDF lists"
+    ],
+    "native_limits": {"max_list_length": 10000, "max_inverse_expression_depth": 10}
+  },
+  "term_restrictions": {
+    "reference_only": ["rdfs:range object", "owl:hasValue", "owl:oneOf members", "owl:hasKey values"],
+    "literal_copying": "prp-spo1 preserves the complete native FlakeValue and datatype",
+    "domain_accepts_literal_object": true,
+    "range_ignores_literal_object": true
+  },
+  "native_silent_ignore": [
+    "property chains shorter than two",
+    "empty key lists",
+    "missing or non-reference restriction facets",
+    "literal hasValue",
+    "literal members skipped by collect_list_elements",
+    "max cardinality values other than native Long(1)",
+    "malformed or unterminated lists may be consumed as a short prefix"
+  ],
+  "unsupported_neighboring_constructs": [
+    "owl:equivalentProperty", "owl:complementOf", "owl:disjointWith",
+    "owl:AllDifferent", "owl:differentFrom", "datatype reasoning",
+    "owl:minCardinality", "owl:cardinality", "max cardinality zero",
+    "max cardinality greater than one", "literal owl:hasValue",
+    "literal owl:oneOf", "literal key values"
+  ],
+  "source_files": {
+    "fluree-db-reasoner/src/lib.rs": "d03f7f6833d632fe363c4e17e30b1e30837bc67c9635b3fdc64c3ab0ac22e2bf",
+    "fluree-db-reasoner/src/fixpoint.rs": "7c5f6695a179bf7badd01e282c1d25bc4b83222b4fc13f61594f750dffa65b8b",
+    "fluree-db-reasoner/src/ontology_rl.rs": "7bc31b7755620df5bb7580a424a92681d464b6dd6765440ace0f30d7815f83de",
+    "fluree-db-reasoner/src/restrictions.rs": "f57322ac07f43aca5a01b6ffc807ace3b0110eba210116fda087b95d3c706b86",
+    "fluree-db-reasoner/src/rdf_list.rs": "8d44df30e4e6cce965ecac64437b4bfe85b5a91d3d8d511d9317eac4fddeb3f2",
+    "fluree-db-reasoner/src/compile.rs": "b9d89c974969ed175d9f4dc4973c15588141d4c1a5fc03f46bb588b13e17b305",
+    "fluree-db-reasoner/src/execute/property_rules.rs": "2ba2802d36526ce88ff20233a694cf21bbb73d267a6ee3656acc5778dee11910",
+    "fluree-db-reasoner/src/execute/class_rules.rs": "53b33f8349c4c8b386dcd2fa20ce84a15163ef68a2446e46fa04501d4d5d241d",
+    "fluree-db-reasoner/src/execute/restriction_rules.rs": "05e11fa11f0165fca0129ee3199fdb7fa7b557d2241cf530b836ee0b5a9f38a4",
+    "fluree-db-reasoner/src/execute/equality_rules.rs": "8bf2c792a72cbf6359af9e38253f54fac80c932c7da9bbc23fbfb9594b5568d3",
+    "fluree-db-reasoner/src/execute/tests/property_rule_tests.rs": "388836ba8dada07ea1892a49e84470df9d819365751ed765fb59f68ce4f9d11b",
+    "fluree-db-reasoner/src/execute/tests/class_rule_tests.rs": "992f90328c4eeb891d5a576d1fef55fd022157d9a62d42ea8f8f9a38d58a5d7f",
+    "fluree-db-reasoner/src/execute/tests/restriction_rule_tests.rs": "037defad313111bfe176543d18a07315a6af84ab14fe306c411499bd642e6434"
+  },
+  "rule_families": [
+    {"canonical":"prp-symp","construct":"owl:SymmetricProperty","native_oracle":"p5.6-native-all-families/prp-symp","production_vector":"p5.6-production-parity/prp-symp"},
+    {"canonical":"prp-trp","construct":"owl:TransitiveProperty","native_oracle":"p5.6-native-all-families/prp-trp","production_vector":"p5.6-production-parity/prp-trp"},
+    {"canonical":"prp-inv","construct":"owl:inverseOf","native_oracle":"p5.6-native-all-families/prp-inv","production_vector":"p5.6-production-parity/prp-inv"},
+    {"canonical":"prp-dom","construct":"rdfs:domain","native_oracle":"p5.6-native-all-families/prp-dom","production_vector":"p5.6-production-parity/prp-dom"},
+    {"canonical":"prp-rng","construct":"rdfs:range","native_oracle":"p5.6-native-all-families/prp-rng","production_vector":"p5.6-production-parity/prp-rng"},
+    {"canonical":"prp-spo1","construct":"rdfs:subPropertyOf","native_oracle":"p5.6-native-all-families/prp-spo1","production_vector":"p5.6-production-parity/prp-spo1"},
+    {"canonical":"prp-spo2","construct":"owl:propertyChainAxiom","native_oracle":"p5.6-native-all-families/prp-spo2","production_vector":"p5.6-production-parity/prp-spo2"},
+    {"canonical":"prp-fp","construct":"owl:FunctionalProperty","native_oracle":"p5.6-native-all-families/prp-fp","production_vector":"p5.6-production-parity/prp-fp"},
+    {"canonical":"prp-ifp","construct":"owl:InverseFunctionalProperty","native_oracle":"p5.6-native-all-families/prp-ifp","production_vector":"p5.6-production-parity/prp-ifp"},
+    {"canonical":"prp-key","construct":"owl:hasKey","native_oracle":"p5.6-native-all-families/prp-key","production_vector":"p5.6-production-parity/prp-key"},
+    {"canonical":"cax-sco","construct":"rdfs:subClassOf","native_oracle":"p5.6-native-all-families/cax-sco","production_vector":"p5.6-production-parity/cax-sco"},
+    {"canonical":"cax-eqc","aliases":["cax-eqc1","cax-eqc2"],"construct":"owl:equivalentClass","native_oracle":"p5.6-native-all-families/cax-eqc","production_vector":"p5.6-production-parity/cax-eqc"},
+    {"canonical":"cls-hv1","construct":"reference owl:hasValue backward","native_oracle":"p5.6-native-all-families/cls-hv1","production_vector":"p5.6-production-parity/cls-hv1"},
+    {"canonical":"cls-hv2","construct":"reference owl:hasValue forward","native_oracle":"p5.6-native-all-families/cls-hv2","production_vector":"p5.6-production-parity/cls-hv2"},
+    {"canonical":"cls-svf1","construct":"owl:someValuesFrom","native_oracle":"p5.6-native-all-families/cls-svf1","production_vector":"p5.6-production-parity/cls-svf1"},
+    {"canonical":"cls-avf","construct":"owl:allValuesFrom","native_oracle":"p5.6-native-all-families/cls-avf","production_vector":"p5.6-production-parity/cls-avf"},
+    {"canonical":"cls-int1","construct":"owl:intersectionOf forward","native_oracle":"p5.6-native-all-families/cls-int1","production_vector":"p5.6-production-parity/cls-int1"},
+    {"canonical":"cls-int2","construct":"owl:intersectionOf backward","native_oracle":"p5.6-native-all-families/cls-int2","production_vector":"p5.6-production-parity/cls-int2"},
+    {"canonical":"cls-uni","construct":"owl:unionOf","native_oracle":"p5.6-native-all-families/cls-uni","production_vector":"p5.6-production-parity/cls-uni"},
+    {"canonical":"cls-oo","construct":"reference owl:oneOf","native_oracle":"p5.6-native-all-families/cls-oo","production_vector":"p5.6-production-parity/cls-oo"},
+    {"canonical":"cls-maxc2","construct":"owl:maxCardinality Long(1)","native_oracle":"p5.6-native-all-families/cls-maxc2","production_vector":"p5.6-production-parity/cls-maxc2"},
+    {"canonical":"cls-maxqc","aliases":["cls-maxqc3","cls-maxqc4"],"construct":"owl:maxQualifiedCardinality Long(1) with owl:onClass","native_oracle":"p5.6-native-all-families/cls-maxqc","production_vector":"p5.6-production-parity/cls-maxqc"},
+    {"canonical":"owl:sameAs","construct":"asserted equality and canonical subject/object replacement","native_oracle":"p5.6-native-equality/canonical-star","production_vector":"p5.6-production-parity/owl-sameAs"}
+  ]
+}

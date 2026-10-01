@@ -1,0 +1,214 @@
+{
+  "schema_version": "ctxql-poc.operator-inventory.v1",
+  "execution_status": "not_executed",
+  "note": "Operand scenarios, not standalone queries. Runtime binding field chosen according to left type; fixture_missing is a harness sentinel, not a CTXQL literal.",
+  "vectors": [
+    {
+      "id": "eq",
+      "left": 1,
+      "operator": "=",
+      "right": 1,
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "ne",
+      "left": 1,
+      "operator": "!=",
+      "right": 2,
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "gt",
+      "left": 2,
+      "operator": ">",
+      "right": 1,
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "ge",
+      "left": 2,
+      "operator": ">=",
+      "right": 2,
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "lt",
+      "left": 1,
+      "operator": "<",
+      "right": 2,
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "le",
+      "left": 2,
+      "operator": "<=",
+      "right": 2,
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "in",
+      "left": "a",
+      "operator": "in",
+      "right": [
+        "a",
+        "b"
+      ],
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "not-in",
+      "left": "c",
+      "operator": "not_in",
+      "right": [
+        "a",
+        "b"
+      ],
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "contains-string",
+      "left": "abc",
+      "operator": "contains",
+      "right": "b",
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "contains-list",
+      "left": [
+        "a",
+        "b"
+      ],
+      "operator": "contains",
+      "right": "b",
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "contains-any",
+      "left": [
+        "a",
+        "b"
+      ],
+      "operator": "contains_any",
+      "right": [
+        "b",
+        "c"
+      ],
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "exists-null",
+      "left": null,
+      "operator": "exists",
+      "right": true,
+      "status": "proposed",
+      "expected": "true (present null)"
+    },
+    {
+      "id": "exists-missing",
+      "left": {
+        "fixture_missing": true
+      },
+      "operator": "exists",
+      "right": true,
+      "status": "proposed",
+      "expected": "false"
+    },
+    {
+      "id": "missing-ne",
+      "left": {
+        "fixture_missing": true
+      },
+      "operator": "!=",
+      "right": 7,
+      "status": "proposed",
+      "expected": "false, not inferred inequality"
+    },
+    {
+      "id": "null-eq",
+      "left": null,
+      "operator": "=",
+      "right": null,
+      "status": "proposed",
+      "expected": "true"
+    },
+    {
+      "id": "mixed-eq",
+      "left": 1,
+      "operator": "=",
+      "right": "1",
+      "status": "proposed",
+      "expected": "typed query/evaluation error, not true or coerced false"
+    },
+    {
+      "id": "grounding",
+      "left": "source_lineage_available",
+      "operator": ">=",
+      "right": "source_spans_available",
+      "status": "proposed",
+      "expected": "false under proposed tier registry"
+    },
+    {
+      "id": "isa",
+      "left": "https://example.test/SpecificClaim",
+      "operator": "isa",
+      "right": "https://example.test/Claim",
+      "status": "derived",
+      "expected": "true by subclass closure"
+    },
+    {
+      "id": "not-isa",
+      "left": "https://example.test/SpecificClaim",
+      "operator": "not_isa",
+      "right": "https://example.test/Claim",
+      "status": "derived",
+      "expected": "false by subclass closure"
+    },
+    {
+      "id": "subproperty",
+      "left": "https://example.test/link",
+      "operator": "subproperty_of",
+      "right": "https://example.test/related",
+      "status": "derived",
+      "expected": "true"
+    },
+    {
+      "id": "not-subproperty",
+      "left": "https://example.test/link",
+      "operator": "not_subproperty_of",
+      "right": "https://example.test/related",
+      "status": "derived",
+      "expected": "false"
+    },
+    {
+      "id": "contains-isa",
+      "left": [
+        "https://example.test/SpecificClaim"
+      ],
+      "operator": "contains_isa",
+      "right": "https://example.test/Claim",
+      "status": "derived",
+      "expected": "true"
+    },
+    {
+      "id": "contains-subproperty",
+      "left": [
+        "https://example.test/link"
+      ],
+      "operator": "contains_subproperty_of",
+      "right": "https://example.test/related",
+      "status": "derived",
+      "expected": "true"
+    }
+  ]
+}

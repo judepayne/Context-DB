@@ -1,0 +1,26 @@
+{
+  "schema": "ctxql.p2-compiler-cases/v1",
+  "oracle": "Hand-authored from execution-v1 and current JSON design, not engine output",
+  "cases": [
+    {"id":"P2-C001","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1}},"expected":{"outcome":"compiled","max_depth":1,"walk":0,"filter":0}},
+    {"id":"P2-C002","query":{"about":[{"from":["s"]}],"bounds":{"max_depth":1}},"expected":{"outcome":"Unsupported"}},
+    {"id":"P2-C003","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"predicates":[["meta:confidence","approximately",1]]}},"expected":{"outcome":"Invalid"}},
+    {"id":"P2-C004","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":0,"path_limit":0,"seed_limit":0,"fanout_limit":0,"max_claims":0}},"expected":{"outcome":"compiled","max_depth":0,"walk":0,"filter":0}},
+    {"id":"P2-C005","profile":{"bounds":{"max_depth":4},"walk":{"predicates":[{"name":"floor","where":["meta:confidence",">=",0.8]}]}},"query":{"profile":"p","about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":2},"walk":{"predicates":[{"name":"floor","where":["meta:confidence",">=",0.2]}]}},"expected":{"outcome":"compiled","max_depth":2,"walk":1,"filter":0}},
+    {"id":"P2-C006","profile":{"bounds":{"max_depth":1},"walk":{"predicates":[{"name":"future","keep":"true"}]}},"query":{"profile":"p","about":[{"from":["s"],"match":"exact"}],"walk":{"drop_predicates":["future"]}},"expected":{"outcome":"compiled","max_depth":1,"walk":0,"filter":0}},
+    {"id":"P2-C007","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"predicates":[{"keep":"true"}]}},"expected":{"outcome":"Unsupported"}},
+    {"id":"P2-C008","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"predicates":[["meta:claim_type","isa","urn:Type"]]}},"expected":{"outcome":"Unsupported"}},
+    {"id":"P2-C009","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"predicates":[["meta:claim_type","=","unknown:Type"]]}},"expected":{"outcome":"Invalid"}},
+    {"id":"P2-C010","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"predicates":[["meta:ext:namespace:key","exists",false]]}},"expected":{"outcome":"compiled","max_depth":1,"walk":1,"filter":0}},
+    {"id":"P2-C011","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"predicates":[["meta:confidence",">=","0.5"]]}},"expected":{"outcome":"Invalid"}},
+    {"id":"P2-C012","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"predicates":[["meta:confidence",">=","bound:absent"]]}},"expected":{"outcome":"Invalid"}},
+    {"id":"P2-C013","profile":{"bounds":{"max_depth":1}},"query":{"profile":"../p","about":[{"from":["s"],"match":"exact"}]},"expected":{"outcome":"Invalid"}},
+    {"id":"P2-C014","query":{"about":[{"from":["s"],"to":[],"match":"exact"}],"bounds":{"max_depth":1}},"expected":{"outcome":"Invalid"}},
+    {"id":"P2-C015","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"filter":{"predicates":[["path.meta:confidence","contains_any",[0.5,1]]]}},"expected":{"outcome":"compiled","max_depth":1,"walk":0,"filter":1}},
+    {"id":"P2-C016","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1},"walk":{"predicates":[["meta:confidence","in",[0.5,"bad"]]]}},"expected":{"outcome":"Invalid"}},
+    {"id":"P2-C017","profile":{"about":[{"from":["ignored"]}],"bounds":{"max_depth":1}},"query":{"profile":"p","about":[{"from":["s"],"match":"exact"}]},"expected":{"outcome":"compiled","max_depth":1,"walk":0,"filter":0,"notices":1}},
+    {"id":"P2-C018","query":{"@context":{"bank":"https://bank.example/"},"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":1,"type":"bank:Type"},"walk":{"predicates":[["meta:claim_type","=","bound:type"]]}},"expected":{"outcome":"compiled","max_depth":1,"walk":1,"filter":0}},
+    {"id":"P2-C019","profile":{"bounds":{"max_depth":1},"walk":{"predicates":[{"name":"future","keep":"true"},["meta:confidence",">=",0.9]]}},"query":{"profile":"p","about":[{"from":["s"],"match":"exact"}],"walk":{"predicates":[]}},"expected":{"outcome":"compiled","max_depth":1,"walk":0,"filter":0}},
+    {"id":"P2-C020","query":{"about":[{"from":["s"],"match":"exact"}],"bounds":{"max_depth":-1}},"expected":{"outcome":"Range"}}
+  ]
+}

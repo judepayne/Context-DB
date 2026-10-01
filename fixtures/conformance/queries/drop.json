@@ -1,0 +1,16 @@
+{
+  "profile": "tiny/default",
+  "about": [
+    {
+      "from": [
+        "https://example.test/A"
+      ],
+      "match": "exact"
+    }
+  ],
+  "walk": {
+    "drop_predicates": [
+      "floor"
+    ]
+  }
+}

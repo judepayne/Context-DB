@@ -1,0 +1,37 @@
+{
+  "schema": "ctxql.chat-quality-scenarios/v1",
+  "entities": {
+    "agreement": "https://ctxql.example/test/chat-quality/agreement/atlas-a",
+    "ambiguous_agreement": "https://ctxql.example/test/chat-quality/agreement/atlas-b",
+    "inaccessible_agreement": "https://ctxql.example/test/chat-quality/agreement/hidden",
+    "lender": "https://ctxql.example/test/chat-quality/party/royal-wolf-au",
+    "arranger": "https://ctxql.example/test/chat-quality/party/harbour-bank"
+  },
+  "predicates": {
+    "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "lender": "urn:ctxql:chat-quality:hasLender",
+    "arranger": "urn:ctxql:chat-quality:hasArranger",
+    "status": "urn:ctxql:chat-quality:status",
+    "provision": "urn:ctxql:chat-quality:permitsFurtherDrawings"
+  },
+  "claims": [
+    {"component":"quality#agreement-label","subject":"https://ctxql.example/test/chat-quality/agreement/atlas-a","predicate":"http://www.w3.org/2000/01/rdf-schema#label","object":{"kind":"literal","value":"Atlas Facility"}},
+    {"component":"quality#ambiguous-label","subject":"https://ctxql.example/test/chat-quality/agreement/atlas-b","predicate":"http://www.w3.org/2000/01/rdf-schema#label","object":{"kind":"literal","value":"Atlas Facility"}},
+    {"component":"quality#hidden-label","subject":"https://ctxql.example/test/chat-quality/agreement/hidden","predicate":"http://www.w3.org/2000/01/rdf-schema#label","object":{"kind":"literal","value":"Hidden Atlas Facility"}},
+    {"component":"quality#lender-label","subject":"https://ctxql.example/test/chat-quality/party/royal-wolf-au","predicate":"http://www.w3.org/2000/01/rdf-schema#label","object":{"kind":"literal","value":"Royal Wolf"}},
+    {"component":"quality#arranger-label","subject":"https://ctxql.example/test/chat-quality/party/harbour-bank","predicate":"http://www.w3.org/2000/01/rdf-schema#label","object":{"kind":"literal","value":"Harbour Bank"}},
+    {"component":"quality#type","subject":"https://ctxql.example/test/chat-quality/agreement/atlas-a","predicate":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","object":{"kind":"entity","value":"https://ctxql.example/test/chat-quality/CreditAgreement"}},
+    {"component":"quality#lender","subject":"https://ctxql.example/test/chat-quality/agreement/atlas-a","predicate":"urn:ctxql:chat-quality:hasLender","object":{"kind":"entity","value":"https://ctxql.example/test/chat-quality/party/royal-wolf-au"}},
+    {"component":"quality#arranger","subject":"https://ctxql.example/test/chat-quality/agreement/atlas-a","predicate":"urn:ctxql:chat-quality:hasArranger","object":{"kind":"entity","value":"https://ctxql.example/test/chat-quality/party/harbour-bank"}},
+    {"component":"quality#status-current","subject":"https://ctxql.example/test/chat-quality/agreement/atlas-a","predicate":"urn:ctxql:chat-quality:status","object":{"kind":"literal","value":"active"}},
+    {"component":"quality#status-conflict","subject":"https://ctxql.example/test/chat-quality/agreement/atlas-a","predicate":"urn:ctxql:chat-quality:status","object":{"kind":"literal","value":"suspended"}},
+    {"component":"quality#provision","subject":"https://ctxql.example/test/chat-quality/agreement/atlas-a","predicate":"urn:ctxql:chat-quality:permitsFurtherDrawings","object":{"kind":"literal","value":"Further drawings are permitted while no Event of Default is continuing."}},
+    {"component":"quality#hidden-lender","subject":"https://ctxql.example/test/chat-quality/agreement/hidden","predicate":"urn:ctxql:chat-quality:hasLender","object":{"kind":"entity","value":"https://ctxql.example/test/chat-quality/party/royal-wolf-au"}}
+  ],
+  "scenarios": [
+    {"id":"party-role","question":"Which agreements involve Royal Wolf as lender rather than arranger?","expected_predicate":"urn:ctxql:chat-quality:hasLender"},
+    {"id":"ambiguous-name","question":"What does the Atlas Facility provide?","expected":"multiple_visible_identities"},
+    {"id":"untyped-provision","question":"Does Atlas Facility permit further drawings?","expected_predicate":"urn:ctxql:chat-quality:permitsFurtherDrawings"},
+    {"id":"global-unsupported","question":"List every agreement in the world that permits further drawings.","expected":"unsupported_global_scope"}
+  ]
+}

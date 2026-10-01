@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "ctxql.p5-7-retained-annotation-policy/v1",
+  "profile": "ctxql-ontology-profile/fluree-4.2-603974fad5c13efed9d147d214d613849fb43c73/v3-supported-subset",
+  "annotation_policy_root": "sha256:b24d498d95a10b32a6a4e09ff7fb53393425dfcf24863cb395b09d4def8afbd4",
+  "projection": "omit_from_ontology_c0_only",
+  "shapes": [
+    "rdfs:label|string-or-langString;iri-subject",
+    "rdfs:comment|string-or-langString;iri-subject",
+    "rdfs:seeAlso|iri-or-anyURI;iri-subject",
+    "rdfs:isDefinedBy|iri;iri-subject",
+    "owl:versionInfo|iri-or-string-or-langString;iri-subject",
+    "owl:versionIRI|iri;iri-subject",
+    "owl:priorVersion|iri;iri-subject",
+    "owl:backwardCompatibleWith|iri;iri-subject",
+    "owl:incompatibleWith|iri;iri-subject",
+    "owl:deprecated|boolean;iri-subject",
+    "dcterms:source|iri-or-string-or-langString-or-anyURI;iri-subject",
+    "dcterms:abstract|string;iri-subject",
+    "dcterms:contributor|string;iri-subject",
+    "dcterms:issued|dateTime;iri-subject",
+    "dcterms:license|string-or-anyURI;iri-subject",
+    "dcterms:modified|dateTime;iri-subject",
+    "dcterms:references|iri;iri-subject",
+    "dcterms:title|string;iri-subject",
+    "skos:definition|string-or-langString;iri-subject",
+    "skos:note|string-or-langString;iri-subject",
+    "skos:changeNote|string;iri-subject",
+    "skos:example|string;iri-subject",
+    "skos:prefLabel|string;iri-subject",
+    "skos:scopeNote|string;iri-subject"
+  ]
+}

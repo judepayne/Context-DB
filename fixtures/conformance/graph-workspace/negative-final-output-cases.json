@@ -1,0 +1,26 @@
+{
+  "schema": "ctxql.graph-workspace-final-output-negative-cases/v1",
+  "parser": "ctxql-extraction-proposals/v2",
+  "cases": [
+    {
+      "id": "workspace-envelope-field",
+      "expected": "envelope_rejected_unknown_field",
+      "value": {"schema": "ctxql-extraction-proposals/v2", "no_claims": true, "entities": [], "attributes": [], "relations": [], "workspace_revision": 7}
+    },
+    {
+      "id": "graph-handle-envelope-field",
+      "expected": "envelope_rejected_unknown_field",
+      "value": {"schema": "ctxql-extraction-proposals/v2", "no_claims": true, "entities": [], "attributes": [], "relations": [], "graph_handle": "g1~session-a"}
+    },
+    {
+      "id": "playground-record-array",
+      "expected": "envelope_rejected_unknown_field",
+      "value": {"schema": "ctxql-extraction-proposals/v2", "no_claims": true, "entities": [], "attributes": [], "relations": [], "document_references": [{"handle": "r1~session-a"}]}
+    },
+    {
+      "id": "workspace-handle-component-field",
+      "expected": "component_rejected_unknown_field",
+      "value": {"schema": "ctxql-extraction-proposals/v2", "no_claims": false, "entities": [{"id": "e1", "name": "Example", "aliases": [], "known_entity": null, "evidence": [], "classes": [], "workspace_handle": "n1~session-a"}], "attributes": [], "relations": []}
+    }
+  ]
+}

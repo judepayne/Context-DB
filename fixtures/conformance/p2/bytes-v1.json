@@ -1,0 +1,10 @@
+{
+  "oracle": "Hand-derived literal path; independent Python Decimal/scalar-key ordering/hashlib",
+  "vectors": [
+    {
+      "id": "P2-H001",
+      "canonical_utf8": "{\"domain\":\"ctxql.response\",\"payload\":{\"claims\":null,\"explain\":null,\"graph_status\":\"ready\",\"notices\":[],\"paths\":[{\"block_index\":0,\"claim_ids\":[\"lit\"],\"depth\":1,\"endpoints\":[{\"kind\":\"iri\",\"value\":\"s\"},{\"datatype\":\"http://www.w3.org/2001/XMLSchema#string\",\"kind\":\"literal\",\"language\":null,\"value\":\"https://literal.example/\"}],\"node_ids\":[\"s\"],\"reached_target\":null,\"scores\":{\"accumulated_confidence\":0.125,\"grounding_level\":\"claim_only\"},\"seed_id\":\"s\"}],\"selection\":{\"claims\":false,\"evidence\":false,\"explain\":false,\"paths\":true},\"semantic_flags\":[]},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:2ac9cf920649820d1ea4cef248963458906e04a2c0cff6e3ae938371c552c5df"
+    }
+  ]
+}

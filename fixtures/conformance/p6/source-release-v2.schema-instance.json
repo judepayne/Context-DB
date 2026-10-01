@@ -1,0 +1,44 @@
+{
+  "artifacts": [
+    {
+      "classification": {"media_type": "application/rdf+xml", "role": "ontology_rdf"},
+      "hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "path": "ontology.rdf",
+      "size": 1,
+      "source_url": "https://publisher.example/spec/1/ontology.rdf"
+    }
+  ],
+  "commit": null,
+  "evidence": [
+    {"hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "kind": "license", "path": "LICENSE"},
+    {"hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "kind": "notice", "path": "NOTICE"}
+  ],
+  "immutable_source_evidence": "publisher immutable release",
+  "inventory": {
+    "classification_policy": "ctxql-artifact-classification/closed-v1",
+    "classification_root": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "entries": [
+      {
+        "classification": {"media_type": "application/rdf+xml", "role": "ontology_rdf"},
+        "hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "path": "ontology.rdf",
+        "size": 1
+      }
+    ],
+    "role_counts": {"license": 0, "notice": 0, "ontology_rdf": 1, "other": 0, "publisher_catalog": 0, "release_metadata": 0, "source_package": 0},
+    "root": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "total_bytes": 1
+  },
+  "manifest_root": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "product": "Product",
+  "publisher": "Publisher",
+  "release_form": "synthetic_artifacts",
+  "release_version": "1",
+  "retrieval_evidence": null,
+  "retrieved_at": null,
+  "safe_extraction_limits_identity": null,
+  "schema": "ctxql.p6-source-release/v2",
+  "source_release_id": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "tag": null,
+  "tree": null
+}

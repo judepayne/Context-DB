@@ -1,0 +1,44 @@
+@prefix ex: <urn:ctxql:a2:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Agreement a owl:Class ;
+  rdfs:label "Agreement" ;
+  rdfs:comment "A written agreement between parties." .
+ex:CreditAgreement a owl:Class ;
+  rdfs:label "Credit Agreement" ;
+  rdfs:comment "An agreement under which a party borrows money." .
+ex:WrittenContract a owl:Class ;
+  rdfs:label "Written Contract" ;
+  rdfs:comment "A contract recorded in writing." .
+ex:Borrower a owl:Class ;
+  rdfs:label "Borrower" ;
+  rdfs:comment "A party that borrows under an agreement." .
+ex:Lender a owl:Class ;
+  rdfs:label "Lender" ;
+  rdfs:comment "A party that lends under an agreement." .
+ex:hasBorrower a owl:ObjectProperty ;
+  rdfs:label "has borrower" ;
+  rdfs:domain ex:Agreement ;
+  rdfs:range ex:Borrower .
+ex:hasLender a owl:ObjectProperty ;
+  rdfs:label "has lender" ;
+  rdfs:domain ex:Agreement ;
+  rdfs:range ex:Lender .
+ex:executionDate a owl:DatatypeProperty ;
+  rdfs:label "execution date" ;
+  rdfs:domain ex:Agreement ;
+  rdfs:range xsd:date .
+ex:executedOn a owl:DatatypeProperty ;
+  rdfs:label "executed on" ;
+  rdfs:domain ex:CreditAgreement ;
+  rdfs:range xsd:date .
+ex:effectiveOn a owl:DatatypeProperty ;
+  rdfs:label "effective on" ;
+  rdfs:domain ex:CreditAgreement ;
+  rdfs:range xsd:date .
+ex:facilityAmount a owl:DatatypeProperty ;
+  rdfs:label "facility amount" ;
+  rdfs:domain ex:Agreement ;
+  rdfs:range xsd:decimal .

@@ -1,0 +1,43 @@
+{
+  "schema": "ctxql-evidence/v1",
+  "status": "accepted",
+  "approval": "delegated_default",
+  "execution_status": "not_executed",
+  "decision_ref": "docs/contracts/evidence-selectors-v1.md",
+  "text": "Aé🙂\n漢Z",
+  "byte_length": 12,
+  "version": "sha256:258cb1c0e9d21b45aee3b3c77aa5e993b43ea4242d1a88e6b33a0135662feeff",
+  "vectors": [
+    {
+      "id": "UTF8-han",
+      "start": 8,
+      "end": 11,
+      "expected": "漢",
+      "content_hash": "sha256:fc9f0d61dd80076ae5f0e41688aa0c3e8727b232b7a8c40c4f0671e0cd5d94c9"
+    },
+    {
+      "id": "UTF8-split",
+      "start": 2,
+      "end": 3,
+      "expected_error": "invalid_utf8_boundary"
+    },
+    {
+      "id": "UTF8-scalar-conversion",
+      "scalar_start": 2,
+      "scalar_end": 3,
+      "byte_start": 3,
+      "byte_end": 7,
+      "expected": "🙂"
+    },
+    {
+      "id": "UTF8-chunk",
+      "chunk_start": 3,
+      "chunk_end": 11,
+      "relative_start": 5,
+      "relative_end": 8,
+      "document_start": 8,
+      "document_end": 11,
+      "expected": "漢"
+    }
+  ]
+}

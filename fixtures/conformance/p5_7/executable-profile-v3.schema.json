@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctxql.example/schemas/p5-7/executable-profile-v3-v1.schema.json",
+  "title": "CTXQL P5.7 content-free executable profile manifest v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "profile",
+    "result_label",
+    "fluree_revision",
+    "selected_scope",
+    "scope_authority_root",
+    "acquisition_authority_root",
+    "selected_source_release_id",
+    "selected_source_file_id",
+    "selected_ontology_iri",
+    "source_member_root",
+    "source_closure_root",
+    "dependency_universe_root",
+    "full_bundle_root",
+    "full_bundle_count",
+    "construct_audit_root",
+    "source_entry_root",
+    "categories",
+    "annotation_policy_root",
+    "registry_root",
+    "family_root",
+    "component_projection_root",
+    "source_occurrence_root",
+    "reasoned_family_inventory_root",
+    "declaration_evidence_root",
+    "uninterpreted_non_interference_root",
+    "parity_matrix_root",
+    "final_gate3_semantic_coverage_root",
+    "caveat_set_root",
+    "ontology_c0_input_root",
+    "ontology_c0_input_count",
+    "profile_limits_identity",
+    "dependency_limits_identity"
+  ],
+  "properties": {
+    "schema": {"const": "ctxql.executable-profile-v3/v1"},
+    "profile": {"const": "ctxql-ontology-profile/fluree-4.2-603974fad5c13efed9d147d214d613849fb43c73/v3-supported-subset"},
+    "result_label": {"const": "fluree_supported_subset"},
+    "fluree_revision": {"const": "603974fad5c13efed9d147d214d613849fb43c73"},
+    "selected_scope": {
+      "enum": [
+        "FND/Relations/Relations",
+        "FND/Agreements/Agreements",
+        "FND/Agreements/Contracts"
+      ]
+    },
+    "scope_authority_root": {"$ref": "#/$defs/hash"},
+    "acquisition_authority_root": {"$ref": "#/$defs/hash"},
+    "selected_source_release_id": {"type": "string", "minLength": 1},
+    "selected_source_file_id": {"type": "string", "minLength": 1},
+    "selected_ontology_iri": {"type": "string", "minLength": 1},
+    "source_member_root": {"$ref": "#/$defs/hash"},
+    "source_closure_root": {"$ref": "#/$defs/hash"},
+    "dependency_universe_root": {"$ref": "#/$defs/hash"},
+    "full_bundle_root": {"$ref": "#/$defs/hash"},
+    "full_bundle_count": {"type": "integer", "minimum": 1},
+    "construct_audit_root": {"$ref": "#/$defs/hash"},
+    "source_entry_root": {"$ref": "#/$defs/hash"},
+    "categories": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reasoned",
+        "inference_inert_declaration",
+        "retained_annotation",
+        "retained_uninterpreted_semantic"
+      ],
+      "properties": {
+        "reasoned": {"$ref": "#/$defs/category"},
+        "inference_inert_declaration": {"$ref": "#/$defs/category"},
+        "retained_annotation": {"$ref": "#/$defs/category"},
+        "retained_uninterpreted_semantic": {"$ref": "#/$defs/category"}
+      }
+    },
+    "annotation_policy_root": {"$ref": "#/$defs/hash"},
+    "registry_root": {"$ref": "#/$defs/hash"},
+    "family_root": {"$ref": "#/$defs/hash"},
+    "component_projection_root": {"$ref": "#/$defs/hash"},
+    "source_occurrence_root": {"$ref": "#/$defs/hash"},
+    "reasoned_family_inventory_root": {"$ref": "#/$defs/hash"},
+    "declaration_evidence_root": {"$ref": "#/$defs/hash"},
+    "uninterpreted_non_interference_root": {"$ref": "#/$defs/hash"},
+    "parity_matrix_root": {"$ref": "#/$defs/hash"},
+    "final_gate3_semantic_coverage_root": {"$ref": "#/$defs/hash"},
+    "caveat_set_root": {"$ref": "#/$defs/hash"},
+    "ontology_c0_input_root": {"$ref": "#/$defs/hash"},
+    "ontology_c0_input_count": {"type": "integer", "minimum": 0},
+    "profile_limits_identity": {"$ref": "#/$defs/hash"},
+    "dependency_limits_identity": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["count", "root", "occurrence_root"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 0},
+        "root": {"$ref": "#/$defs/hash"},
+        "occurrence_root": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

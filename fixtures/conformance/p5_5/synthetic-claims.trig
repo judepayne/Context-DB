@@ -1,0 +1,19 @@
+# Synthetic CTXQL P5.5 claim corpus. CC0-1.0; no external source data.
+@prefix ctxql: <https://ctxql.example/semantic-rdf/v1/> .
+@prefix ex: <https://example.invalid/p5-5/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:claims {
+  ex:alice ex:knows ex:bob ~ ex:claim-1 {|
+    a ctxql:Claim ;
+    ctxql:relationType ex:SocialRelation ;
+    ctxql:subjectType ex:Person ;
+    ctxql:objectType ex:Person ;
+    ctxql:claimType ex:ObservedRelationship ;
+    ctxql:confidence "0.800"^^xsd:decimal ;
+    ctxql:groundingLevel ctxql:SourceLineageAvailable ;
+    ctxql:lineage "{\"schema\":\"ctxql.lineage.v1\",\"sources\":[{\"id\":\"urn:synthetic:source\"}]}"^^rdf:JSON ;
+    ctxql:extensions "{}"^^rdf:JSON
+  |} .
+}

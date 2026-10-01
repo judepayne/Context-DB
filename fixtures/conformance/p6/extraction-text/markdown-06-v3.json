@@ -1,0 +1,1464 @@
+{
+  "schema": "ctxql-extraction-proposals/v3",
+  "no_claims": false,
+  "entities": [
+    {
+      "id": "entity-agreement",
+      "name": "Dignity–Phoenix term loan facility",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:13616d74a7214e975b753a2a82efebf8cc238686fef35d9a9b8ea7060dbce235",
+          "quote": "Dignity–Phoenix term loan facility",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "credit agreement",
+                "note": "FIBO FBC/DebtAndEquities/Debt/CreditAgreement"
+              },
+              {
+                "text": "credit facility",
+                "note": "FIBO FBC/DebtAndEquities/Debt/CreditFacility"
+              },
+              {
+                "text": "written contract",
+                "note": "FIBO FND/Agreements/Contracts/WrittenContract"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:f00a2a5ff29cdbcfcc9309e8ed2fb99f9cb4aa47eac26c09a807f4d634349a18",
+              "quote": "Facility agreement",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Source describes the titled instrument as a facility agreement under which credit is made available to a borrower."
+        },
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "written contract",
+                "note": "FIBO FND/Agreements/Contracts/WrittenContract"
+              },
+              {
+                "text": "contract",
+                "note": "FIBO FND/Agreements/Contracts/Contract"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:13616d74a7214e975b753a2a82efebf8cc238686fef35d9a9b8ea7060dbce235",
+              "quote": "Dignity–Phoenix term loan facility",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "Summary is a derived quick-start summary and explicitly states it is not the governing agreement; no signature or execution evidence."
+        }
+      ]
+    },
+    {
+      "id": "entity-borrower",
+      "name": "Dignity PLC",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:2a4ae648b7eb03bd4a9cc6be28c20462adf913d3178a4ea52bede89da20a218e",
+          "quote": "Dignity PLC",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "borrower",
+                "note": "FIBO FBC/DebtAndEquities/Debt/Borrower"
+              },
+              {
+                "text": "obligor",
+                "note": "FIBO FND/Agreements/Agreements/Obligor"
+              },
+              {
+                "text": "contract party",
+                "note": "FIBO FND/Agreements/Contracts/ContractParty"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:2a4ae648b7eb03bd4a9cc6be28c20462adf913d3178a4ea52bede89da20a218e",
+              "quote": "Borrower",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Role assignment in the parties list; organization kept distinct from the role."
+        }
+      ]
+    },
+    {
+      "id": "entity-lender",
+      "name": "Phoenix UK Fund Ltd",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:43beb75bdda1983d17c50c3ff9960c0b12c8ccf1d44c43517c7e82de7073970a",
+          "quote": "Phoenix UK Fund Ltd",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "lender",
+                "note": "FIBO FBC/DebtAndEquities/Debt/Lender"
+              },
+              {
+                "text": "creditor",
+                "note": "FIBO FBC/DebtAndEquities/Debt/Creditor"
+              },
+              {
+                "text": "contract party",
+                "note": "FIBO FND/Agreements/Contracts/ContractParty"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:43beb75bdda1983d17c50c3ff9960c0b12c8ccf1d44c43517c7e82de7073970a",
+              "quote": "Lender",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Role assignment in the parties list; organization kept distinct from the role."
+        }
+      ]
+    },
+    {
+      "id": "entity-facility",
+      "name": "Sterling term loan facility",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:ff394b97f5ff2186c42e49ea4ce8d3ad84174607c9c1c5733496d6a33db615a9",
+          "quote": "Sterling term loan facility",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "credit facility",
+                "note": "FIBO FBC/DebtAndEquities/Debt/CreditFacility"
+              },
+              {
+                "text": "credit agreement",
+                "note": "FIBO FBC/DebtAndEquities/Debt/CreditAgreement"
+              },
+              {
+                "text": "loan or credit account",
+                "note": "FIBO FBC/ProductsAndServices/ClientsAndAccounts/LoanOrCreditAccount"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:ff394b97f5ff2186c42e49ea4ce8d3ad84174607c9c1c5733496d6a33db615a9",
+              "quote": "Sterling term loan facility",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Stated facility type; kept distinct from the agreement and from individual loans."
+        }
+      ]
+    },
+    {
+      "id": "entity-agreement-date",
+      "name": "6 December 2022",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:0166d10b6a7b05371831f62eeadbb0af8b847db96da8adcd6147ab4c0c549d37",
+          "quote": "6 December 2022",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "explicit date",
+                "note": "Commons DatesAndTimes/ExplicitDate"
+              },
+              {
+                "text": "date",
+                "note": "Commons DatesAndTimes/Date"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:0166d10b6a7b05371831f62eeadbb0af8b847db96da8adcd6147ab4c0c549d37",
+              "quote": "6 December 2022",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Complete calendar date; contractual role is 'agreement date', which does not by itself establish execution, effectiveness or issuance."
+        }
+      ]
+    },
+    {
+      "id": "entity-commitment-amount",
+      "name": "GBP 50,000,000",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:faf6c90efc412e28e62a677cf860507cd320f52814b364a7d278e4e73abea827",
+          "quote": "GBP 50,000,000",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "monetary amount",
+                "note": "FIBO FND/Accounting/CurrencyAmount/MonetaryAmount"
+              },
+              {
+                "text": "percentage monetary amount",
+                "note": "FIBO FND/Accounting/CurrencyAmount/PercentageMonetaryAmount"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:faf6c90efc412e28e62a677cf860507cd320f52814b364a7d278e4e73abea827",
+              "quote": "GBP 50,000,000",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "supported",
+          "fit_note": "Currency-and-amount string retained verbatim; not reducible to a bare xsd:decimal."
+        }
+      ]
+    },
+    {
+      "id": "entity-minimum-loan-amount",
+      "name": "GBP 10,000,000",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:481ff9d3bf9464925fc2b59da32df03888e16aca69413af784c6e7aae5c0382d",
+          "quote": "GBP 10,000,000",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "monetary amount",
+                "note": "FIBO FND/Accounting/CurrencyAmount/MonetaryAmount"
+              },
+              {
+                "text": "percentage monetary amount",
+                "note": "FIBO FND/Accounting/CurrencyAmount/PercentageMonetaryAmount"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:481ff9d3bf9464925fc2b59da32df03888e16aca69413af784c6e7aae5c0382d",
+              "quote": "GBP 10,000,000",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "conditional",
+          "fit": "uncertain",
+          "fit_note": "Minimum draw amount stated as a default rule subject to the exception that the available commitment may be lower."
+        }
+      ]
+    },
+    {
+      "id": "entity-interest-rate",
+      "name": "7% per annum",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:591ed438c21abd3ef0bff71d580a27ba7a59abc4065b8330496a23a5bd7f6fd6",
+          "quote": "7% per annum",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "interest rate",
+                "note": "FIBO FND/Accounting/CurrencyAmount/InterestRate"
+              },
+              {
+                "text": "fixed interest rate",
+                "note": "FIBO FBC/DebtAndEquities/Debt/FixedInterestRate"
+              },
+              {
+                "text": "variable interest rate",
+                "note": "FIBO FBC/DebtAndEquities/Debt/VariableInterestRate"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:591ed438c21abd3ef0bff71d580a27ba7a59abc4065b8330496a23a5bd7f6fd6",
+              "quote": "7% per annum",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "Stated rate; summary does not state whether the rate is fixed or variable, so the more specific subclasses stay unresolved."
+        }
+      ]
+    },
+    {
+      "id": "entity-availability-period",
+      "name": "Availability period",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:8b78c99287c1479d9e520a1176cecc6a638bb827ecfa1a875925c676e69376b7",
+          "quote": "Availability period",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "date period",
+                "note": "Commons DatesAndTimes/DatePeriod"
+              },
+              {
+                "text": "time interval",
+                "note": "Commons DatesAndTimes/TimeInterval"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:8b78c99287c1479d9e520a1176cecc6a638bb827ecfa1a875925c676e69376b7",
+              "quote": "From the agreement date through the date falling 12 months after the agreement date",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "Bounded window whose end is expressed relatively to the agreement date; end date not converted to a calendar date."
+        }
+      ]
+    },
+    {
+      "id": "entity-termination-provision",
+      "name": "Termination date",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:eecfc841450d714146dd3eac5a891a81bf777d90b3b9ce89d682caa47b27d838",
+          "quote": "Termination date",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "contractual element",
+                "note": "FIBO FND/Agreements/Contracts/ContractualElement"
+              },
+              {
+                "text": "contractual commitment",
+                "note": "FIBO FND/Agreements/Contracts/ContractualCommitment"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:eecfc841450d714146dd3eac5a891a81bf777d90b3b9ce89d682caa47b27d838",
+              "quote": "Three years after the date of the first utilisation request, unless the lender and borrower agree another date in writing",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "conditional",
+          "fit": "uncertain",
+          "fit_note": "Relative termination rule; no calendar date calculated. Override by written agreement retained as a qualifier."
+        }
+      ]
+    },
+    {
+      "id": "entity-utilisation-conditions",
+      "name": "Utilisation conditions",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:07976cc2dede430bc8cc97a69e18c688d3a2e75f7140bba1fea754970d29e410",
+          "quote": "Utilisation requires satisfaction of the stated conditions, including that no default is continuing or would result and that the repeating representations remain true in all material respects",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "contractual element",
+                "note": "FIBO FND/Agreements/Contracts/ContractualElement"
+              },
+              {
+                "text": "contractual commitment",
+                "note": "FIBO FND/Agreements/Contracts/ContractualCommitment"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:07976cc2dede430bc8cc97a69e18c688d3a2e75f7140bba1fea754970d29e410",
+              "quote": "Utilisation requires satisfaction of the stated conditions, including that no default is continuing or would result and that the repeating representations remain true in all material respects",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "conditional",
+          "fit": "uncertain",
+          "fit_note": "Conditions precedent to utilisation; conditions not restated as affirmative facts about any party."
+        }
+      ]
+    },
+    {
+      "id": "entity-repayment-provision",
+      "name": "Repayment on the termination date",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:ccfb23e852453e317dba7a5e63300968848a0d364d2a5f56abff8cacfc870ee4",
+          "quote": "Each loan is repayable on the termination date",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "contractual element",
+                "note": "FIBO FND/Agreements/Contracts/ContractualElement"
+              },
+              {
+                "text": "contractual commitment",
+                "note": "FIBO FND/Agreements/Contracts/ContractualCommitment"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:ccfb23e852453e317dba7a5e63300968848a0d364d2a5f56abff8cacfc870ee4",
+              "quote": "Each loan is repayable on the termination date",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "Repayment obligation scoped to each loan; distinct from the termination rule itself."
+        }
+      ]
+    },
+    {
+      "id": "entity-no-reborrowing-provision",
+      "name": "No reborrowing of repaid or prepaid amounts",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:3b8cb2fccc607803118c648ae30f3daab8380431a92e0a52f4367612ea80243f",
+          "quote": "Repaid or prepaid amounts cannot be reborrowed",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "contractual element",
+                "note": "FIBO FND/Agreements/Contracts/ContractualElement"
+              },
+              {
+                "text": "contractual commitment",
+                "note": "FIBO FND/Agreements/Contracts/ContractualCommitment"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:3b8cb2fccc607803118c648ae30f3daab8380431a92e0a52f4367612ea80243f",
+              "quote": "Repaid or prepaid amounts cannot be reborrowed",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "negative",
+          "fit": "uncertain",
+          "fit_note": "Provision expresses a prohibition; not converted into an affirmative permission or a revolving feature."
+        }
+      ]
+    },
+    {
+      "id": "entity-interest-capitalisation-provision",
+      "name": "Interest capitalisation at end of each interest period",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:42f711ef488a347cd6b88e7b2d217656fce60b4973ea9c89c6c6b2dde55a52f8",
+          "quote": "Interest is automatically capitalised at the end of each interest period and added to principal",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "contractual element",
+                "note": "FIBO FND/Agreements/Contracts/ContractualElement"
+              },
+              {
+                "text": "contractual commitment",
+                "note": "FIBO FND/Agreements/Contracts/ContractualCommitment"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:42f711ef488a347cd6b88e7b2d217656fce60b4973ea9c89c6c6b2dde55a52f8",
+              "quote": "Interest is automatically capitalised at the end of each interest period and added to principal",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "Capitalisation triggered at the end of each interest period; no interest-payment-frequency term verified."
+        }
+      ]
+    },
+    {
+      "id": "entity-maximum-loans-provision",
+      "name": "Maximum of five loans outstanding",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:d0836ac20b87b0b53655d6a074c63715d076fee5bb369e3c2e1828c7f924c4c7",
+          "quote": "No more than five loans may be outstanding",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "contractual element",
+                "note": "FIBO FND/Agreements/Contracts/ContractualElement"
+              },
+              {
+                "text": "contractual commitment",
+                "note": "FIBO FND/Agreements/Contracts/ContractualCommitment"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:d0836ac20b87b0b53655d6a074c63715d076fee5bb369e3c2e1828c7f924c4c7",
+              "quote": "No more than five loans may be outstanding",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "Limit on the number of outstanding loans; the numeral 'five' is not normalized to an integer value."
+        }
+      ]
+    },
+    {
+      "id": "entity-minimum-draw-provision",
+      "name": "Minimum loan amount rule",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:481ff9d3bf9464925fc2b59da32df03888e16aca69413af784c6e7aae5c0382d",
+          "quote": "A proposed loan must ordinarily be at least GBP 10,000,000, unless the available commitment is lower",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "contractual element",
+                "note": "FIBO FND/Agreements/Contracts/ContractualElement"
+              },
+              {
+                "text": "contractual commitment",
+                "note": "FIBO FND/Agreements/Contracts/ContractualCommitment"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:481ff9d3bf9464925fc2b59da32df03888e16aca69413af784c6e7aae5c0382d",
+              "quote": "A proposed loan must ordinarily be at least GBP 10,000,000, unless the available commitment is lower",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "conditional",
+          "fit": "uncertain",
+          "fit_note": "Default minimum subject to an express exception; exception retained as a qualifier."
+        }
+      ]
+    },
+    {
+      "id": "entity-purpose-provision",
+      "name": "Purpose",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:39482f9d1504c62f400485e3b599c3298169247832f03a5868cc5c9e15f8f8ff",
+          "quote": "Providing equity support to the borrower's whole-business securitisation through share subscription, subordinated debt, or both",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "contractual element",
+                "note": "FIBO FND/Agreements/Contracts/ContractualElement"
+              },
+              {
+                "text": "contractual commitment",
+                "note": "FIBO FND/Agreements/Contracts/ContractualCommitment"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:39482f9d1504c62f400485e3b599c3298169247832f03a5868cc5c9e15f8f8ff",
+              "quote": "Providing equity support to the borrower's whole-business securitisation through share subscription, subordinated debt, or both",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "Purpose of the financing retained as a provision; no verified datatype property with a compatible domain was established."
+        }
+      ]
+    },
+    {
+      "id": "entity-governing-law",
+      "name": "English law",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [
+        {
+          "range": "sha256:53dee202596d414cd4720e238e2a40bbcee760a0358b181b02d4b13aa26ed51e",
+          "quote": "English law",
+          "occurrence": 0
+        }
+      ],
+      "classes": [
+        {
+          "term": {
+            "suggestions": [
+              {
+                "text": "jurisdiction",
+                "note": "Commons RegulatoryAgencies/Jurisdiction"
+              },
+              {
+                "text": "context",
+                "note": "Commons ContextualDesignators/Context"
+              }
+            ],
+            "selected": 0
+          },
+          "evidence": [
+            {
+              "range": "sha256:53dee202596d414cd4720e238e2a40bbcee760a0358b181b02d4b13aa26ed51e",
+              "quote": "English law",
+              "occurrence": 0
+            }
+          ],
+          "source_mode": "affirmative",
+          "fit": "uncertain",
+          "fit_note": "Governing law stated; available jurisdiction term was not verified against a definition for a legal system."
+        }
+      ]
+    }
+  ],
+  "attributes": [
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement-date"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has date value",
+            "note": "Commons DatesAndTimes/hasDateValue"
+          },
+          {
+            "text": "has date",
+            "note": "Commons DatesAndTimes/hasDate"
+          }
+        ],
+        "selected": 0
+      },
+      "value": {
+        "lexical": "2022-12-06",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "xsd:string",
+              "note": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+              "text": "rdf:langString",
+              "note": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:0166d10b6a7b05371831f62eeadbb0af8b847db96da8adcd6147ab4c0c549d37",
+          "quote": "6 December 2022",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": "Unambiguous complete calendar date normalized from '6 December 2022' to ISO 2022-12-06; hasDateValue declares xsd:string but requires ISO date text, so the normalized lexical is used with xsd:string. Quote left unmodified."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-interest-rate"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has numeric value",
+            "note": "Commons QuantitiesAndUnits/hasNumericValue"
+          },
+          {
+            "text": "has quantity value",
+            "note": "Commons QuantitiesAndUnits/hasQuantityValue"
+          }
+        ],
+        "selected": 0
+      },
+      "value": {
+        "lexical": "7",
+        "datatype": {
+          "suggestions": [
+            {
+              "text": "xsd:decimal",
+              "note": "http://www.w3.org/2001/XMLSchema#decimal"
+            },
+            {
+              "text": "xsd:integer",
+              "note": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            {
+              "text": "xsd:string",
+              "note": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "selected": 0
+        }
+      },
+      "evidence": [
+        {
+          "range": "sha256:591ed438c21abd3ef0bff71d580a27ba7a59abc4065b8330496a23a5bd7f6fd6",
+          "quote": "7% per annum",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [
+        "7% per annum"
+      ],
+      "fit": "uncertain",
+      "fit_note": "'7' is the complete source-exact numeric value; the percent unit and per-annum basis are preserved in the qualifier. Property kind/range for hasNumericValue could not be verified within budget."
+    }
+  ],
+  "relations": [
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has borrower",
+            "note": "FIBO FBC/DebtAndEquities/Debt/hasBorrower"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-borrower"
+      },
+      "evidence": [
+        {
+          "range": "sha256:2a4ae648b7eb03bd4a9cc6be28c20462adf913d3178a4ea52bede89da20a218e",
+          "quote": "- **Borrower:** Dignity PLC",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": "Role direction as stated; borrower is a party to the agreement."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has lender",
+            "note": "FIBO FBC/DebtAndEquities/Debt/hasLender"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-lender"
+      },
+      "evidence": [
+        {
+          "range": "sha256:43beb75bdda1983d17c50c3ff9960c0b12c8ccf1d44c43517c7e82de7073970a",
+          "quote": "- **Lender:** Phoenix UK Fund Ltd",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": "Role direction as stated; lender is a party to the agreement."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has monetary amount",
+            "note": "FIBO FND/Accounting/CurrencyAmount/hasMonetaryAmount"
+          },
+          {
+            "text": "has quantity value",
+            "note": "Commons QuantitiesAndUnits/hasQuantityValue"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-commitment-amount"
+      },
+      "evidence": [
+        {
+          "range": "sha256:faf6c90efc412e28e62a677cf860507cd320f52814b364a7d278e4e73abea827",
+          "quote": "- **Commitment:** GBP 50,000,000",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Commitment amount recorded at facility level as listed; domain of hasMonetaryAmount was not exposed, so the subject scope stays advisory."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has interest rate",
+            "note": "FIBO FBC/DebtAndEquities/Debt/hasInterestRate"
+          },
+          {
+            "text": "has quantity value",
+            "note": "Commons QuantitiesAndUnits/hasQuantityValue"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-interest-rate"
+      },
+      "evidence": [
+        {
+          "range": "sha256:591ed438c21abd3ef0bff71d580a27ba7a59abc4065b8330496a23a5bd7f6fd6",
+          "quote": "- **Interest rate:** 7% per annum",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": "Stated rate attached to the facility; rate may apply to loans under it."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-facility"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has date period",
+            "note": "Commons DatesAndTimes/hasDatePeriod"
+          },
+          {
+            "text": "has time",
+            "note": "Commons DatesAndTimes/hasTime"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-availability-period"
+      },
+      "evidence": [
+        {
+          "range": "sha256:8b78c99287c1479d9e520a1176cecc6a638bb827ecfa1a875925c676e69376b7",
+          "quote": "- **Availability period:** From the agreement date through the date falling 12 months after the agreement date",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Availability window attached to the facility; end expressed relatively, no calendar end date asserted."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-availability-period"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has start date",
+            "note": "Commons DatesAndTimes/hasStartDate"
+          },
+          {
+            "text": "has start",
+            "note": "Commons DatesAndTimes/hasStart"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-agreement-date"
+      },
+      "evidence": [
+        {
+          "range": "sha256:8b78c99287c1479d9e520a1176cecc6a638bb827ecfa1a875925c676e69376b7",
+          "quote": "From the agreement date",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Availability begins on the agreement date; domain/range of hasStartDate was not verified within budget."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has date",
+            "note": "Commons DatesAndTimes/hasDate"
+          },
+          {
+            "text": "has date value",
+            "note": "Commons DatesAndTimes/hasDateValue"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-agreement-date"
+      },
+      "evidence": [
+        {
+          "range": "sha256:0166d10b6a7b05371831f62eeadbb0af8b847db96da8adcd6147ab4c0c549d37",
+          "quote": "- **Agreement date:** 6 December 2022",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Generic date link only; 'agreement date' is not equated with execution, effective or issuance date."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has contractual element",
+            "note": "FIBO FND/Agreements/Contracts/hasContractualElement"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-utilisation-conditions"
+      },
+      "evidence": [
+        {
+          "range": "sha256:07976cc2dede430bc8cc97a69e18c688d3a2e75f7140bba1fea754970d29e410",
+          "quote": "Utilisation requires satisfaction of the stated conditions, including that no default is continuing or would result and that the repeating representations remain true in all material respects",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "conditional",
+      "qualifiers": [
+        "including that no default is continuing or would result",
+        "that the repeating representations remain true in all material respects"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Conditions precedent retained conditionally; hasContractualElement domain/range not verified."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has contractual element",
+            "note": "FIBO FND/Agreements/Contracts/hasContractualElement"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-termination-provision"
+      },
+      "evidence": [
+        {
+          "range": "sha256:eecfc841450d714146dd3eac5a891a81bf777d90b3b9ce89d682caa47b27d838",
+          "quote": "- **Termination date:** Three years after the date of the first utilisation request, unless the lender and borrower agree another date in writing",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "conditional",
+      "qualifiers": [
+        "Three years after the date of the first utilisation request",
+        "unless the lender and borrower agree another date in writing"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Relative termination rule with written-agreement override; not promoted to an absolute calendar date."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has contractual element",
+            "note": "FIBO FND/Agreements/Contracts/hasContractualElement"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-repayment-provision"
+      },
+      "evidence": [
+        {
+          "range": "sha256:ccfb23e852453e317dba7a5e63300968848a0d364d2a5f56abff8cacfc870ee4",
+          "quote": "Each loan is repayable on the termination date",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Repayment obligation scoped to each loan; kept separate from the termination-date rule."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has contractual element",
+            "note": "FIBO FND/Agreements/Contracts/hasContractualElement"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-no-reborrowing-provision"
+      },
+      "evidence": [
+        {
+          "range": "sha256:3b8cb2fccc607803118c648ae30f3daab8380431a92e0a52f4367612ea80243f",
+          "quote": "Repaid or prepaid amounts cannot be reborrowed",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "negative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Provision is a prohibition; not weakened into an affirmative permission."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has contractual element",
+            "note": "FIBO FND/Agreements/Contracts/hasContractualElement"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-interest-capitalisation-provision"
+      },
+      "evidence": [
+        {
+          "range": "sha256:42f711ef488a347cd6b88e7b2d217656fce60b4973ea9c89c6c6b2dde55a52f8",
+          "quote": "Interest is automatically capitalised at the end of each interest period and added to principal",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [
+        "at the end of each interest period"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Capitalisation trigger retained; no compounding-frequency entity was asserted."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has contractual element",
+            "note": "FIBO FND/Agreements/Contracts/hasContractualElement"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-maximum-loans-provision"
+      },
+      "evidence": [
+        {
+          "range": "sha256:d0836ac20b87b0b53655d6a074c63715d076fee5bb369e3c2e1828c7f924c4c7",
+          "quote": "No more than five loans may be outstanding",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Limit on outstanding loan count recorded as a provision; numeral not converted."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has contractual element",
+            "note": "FIBO FND/Agreements/Contracts/hasContractualElement"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-minimum-draw-provision"
+      },
+      "evidence": [
+        {
+          "range": "sha256:481ff9d3bf9464925fc2b59da32df03888e16aca69413af784c6e7aae5c0382d",
+          "quote": "A proposed loan must ordinarily be at least GBP 10,000,000, unless the available commitment is lower",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "conditional",
+      "qualifiers": [
+        "unless the available commitment is lower"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Default minimum draw rule with the stated exception retained."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-minimum-draw-provision"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has monetary amount",
+            "note": "FIBO FND/Accounting/CurrencyAmount/hasMonetaryAmount"
+          },
+          {
+            "text": "has quantity value",
+            "note": "Commons QuantitiesAndUnits/hasQuantityValue"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-minimum-loan-amount"
+      },
+      "evidence": [
+        {
+          "range": "sha256:481ff9d3bf9464925fc2b59da32df03888e16aca69413af784c6e7aae5c0382d",
+          "quote": "GBP 10,000,000",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "conditional",
+      "qualifiers": [
+        "must ordinarily be at least",
+        "unless the available commitment is lower"
+      ],
+      "fit": "uncertain",
+      "fit_note": "Minimum threshold linked to its provision; not distributed across individual loans as a fixed amount."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "has contractual element",
+            "note": "FIBO FND/Agreements/Contracts/hasContractualElement"
+          },
+          {
+            "text": "has contract party",
+            "note": "FIBO FND/Agreements/Contracts/hasContractParty"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-purpose-provision"
+      },
+      "evidence": [
+        {
+          "range": "sha256:39482f9d1504c62f400485e3b599c3298169247832f03a5868cc5c9e15f8f8ff",
+          "quote": "Providing equity support to the borrower's whole-business securitisation through share subscription, subordinated debt, or both",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Purpose retained as a provision node; no datatype property with compatible domain was verified."
+    },
+    {
+      "subject": {
+        "kind": "local",
+        "id": "entity-agreement"
+      },
+      "predicate": {
+        "suggestions": [
+          {
+            "text": "is governed by",
+            "note": "Commons RegulatoryAgencies/isGovernedBy"
+          },
+          {
+            "text": "is recognized in",
+            "note": "Commons RegulatoryAgencies/isRecognizedIn"
+          }
+        ],
+        "selected": 0
+      },
+      "object": {
+        "kind": "local",
+        "id": "entity-governing-law"
+      },
+      "evidence": [
+        {
+          "range": "sha256:53dee202596d414cd4720e238e2a40bbcee760a0358b181b02d4b13aa26ed51e",
+          "quote": "- **Governing law:** English law",
+          "occurrence": 0
+        }
+      ],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "uncertain",
+      "fit_note": "Governing law designation; property semantics were not verified within the host budget."
+    }
+  ]
+}

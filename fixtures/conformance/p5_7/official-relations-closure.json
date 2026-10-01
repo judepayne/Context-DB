@@ -1,0 +1,103 @@
+{
+  "file_count": 19,
+  "files": [
+    {
+      "bytes": 23277,
+      "path": "commons/AnnotationVocabulary.rdf",
+      "sha256": "0f31efad729e9c5dc260d4cca8cb92c69ec25a4554ead4c866903f652e3789f7"
+    },
+    {
+      "bytes": 15719,
+      "path": "commons/BusinessAuthorizations.rdf",
+      "sha256": "603b9985b7553c49cd5e9adfd055dab8c4fb1b3d88a6db51e031d6df9cef12d3"
+    },
+    {
+      "bytes": 10348,
+      "path": "commons/Classifiers.rdf",
+      "sha256": "766312bdb13a27cdc6fe722d5be3c815135a284dbb5e6990455cc655aecad6e9"
+    },
+    {
+      "bytes": 6153,
+      "path": "commons/CodesAndCodeSets.rdf",
+      "sha256": "272ea377f588ed30759c37a2b0455a8b04643c8114ebf35ad31656c039d09150"
+    },
+    {
+      "bytes": 12677,
+      "path": "commons/Collections.rdf",
+      "sha256": "44450edbe870cad6fa406319ecb21fed6a27824904e865b1d683f8bfd2a03553"
+    },
+    {
+      "bytes": 10469,
+      "path": "commons/ContextualDesignators.rdf",
+      "sha256": "aa1c6c1d403a79b04b5f1cf65d1cd993b64d87aee51b9f7a3889ea06f01a96a8"
+    },
+    {
+      "bytes": 32303,
+      "path": "commons/DatesAndTimes.rdf",
+      "sha256": "29f48874c004475893202d0359ca1deb9e44e87d6e1a382e12e57c0fc86f90e7"
+    },
+    {
+      "bytes": 16423,
+      "path": "commons/Designators.rdf",
+      "sha256": "6475c00a66050560c11560c91e824118aaa4f13f9e0d62e8eddaf2eb6a447eca"
+    },
+    {
+      "bytes": 17703,
+      "path": "commons/Documents.rdf",
+      "sha256": "958264c82c7011097cf6da6352464dc094a9d1cada1d37a41ff26ed763f91a5c"
+    },
+    {
+      "bytes": 6920,
+      "path": "commons/Identifiers.rdf",
+      "sha256": "c5ed5f3551ff4d0a711bd50ff6a7388383a1cf33a27bc1661e54f6bf7a75987a"
+    },
+    {
+      "bytes": 32882,
+      "path": "commons/Locations.rdf",
+      "sha256": "0d6a8eedb4461f4256ea61f03506e882bdadc8b1ca2024493eb6585b3e574c31"
+    },
+    {
+      "bytes": 32334,
+      "path": "commons/Organizations.rdf",
+      "sha256": "3a1ab7e936b656fff8aa8beb44d30ddc02aaa6f6eac5353d4157e355ef164eb7"
+    },
+    {
+      "bytes": 30432,
+      "path": "commons/PartiesAndSituations.rdf",
+      "sha256": "1c207e4f04e51fee7d06bbee1e5c53ae90f04374da3568e0470699d8f20cc1f3"
+    },
+    {
+      "bytes": 72711,
+      "path": "commons/QuantitiesAndUnits.rdf",
+      "sha256": "b1fbe90e6c4b23cd7c7485fbe06b94d373b598ece83f074c05b82b8bcc399d7f"
+    },
+    {
+      "bytes": 14118,
+      "path": "commons/RegulatoryAgencies.rdf",
+      "sha256": "cd309406734bb8ba01a5626d1af7b5c8dc6bb3ab3a275e3faac791e5dd460d55"
+    },
+    {
+      "bytes": 10625,
+      "path": "commons/RolesAndCompositions.rdf",
+      "sha256": "81d40576c2afa3f1a9fabd0b08f67a31e1a82bead9467782d8450d7b331275fc"
+    },
+    {
+      "bytes": 5976,
+      "path": "commons/TextDatatype.rdf",
+      "sha256": "d29a6e24bffb67fd6a4fe9955880fb9e8bd2f858a12d3e846fc45fd571bd8314"
+    },
+    {
+      "bytes": 23946,
+      "path": "fibo/FND/Relations/Relations.rdf",
+      "sha256": "53e66c732bb0a593a0a976df08b2d80e3ac0e12c197aed58671c660f8cc427c5"
+    },
+    {
+      "bytes": 10870,
+      "path": "fibo/FND/Utilities/AnnotationVocabulary.rdf",
+      "sha256": "fe863cf8a5bf58a3cff8a59d8555b00acf22a02096998c3189e0ec9f912c6e71"
+    }
+  ],
+  "inventory_root": "sha256:d1a3bfb36743cc745b12f48bcdd2bfe01ba359643362682b04444ea36fc9b51d",
+  "schema": "ctxql.p5-7-official-relations-closure/v1",
+  "total_authoritative_bytes": 385886
+}

@@ -1,0 +1,55 @@
+{
+  "oracle": "Python Decimal/plain-token + scalar sorted keys + hashlib; independently authored",
+  "vectors": [
+    {
+      "id": "plan",
+      "canonical_utf8": "{\"domain\":\"ctxql.plan\",\"payload\":{\"artifacts\":{\"config\":{\"hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"iri\":\"ctxql:fixture/config\",\"version\":\"1\"},\"profile\":null,\"query\":null},\"as_of\":\"1969-12-31T23:59:59.999Z\",\"config\":{\"defaults\":{\"fanout_limit\":4,\"max_claims\":16,\"path_limit\":8,\"seed_limit\":2},\"external_functions\":{},\"fields\":{\"meta:ext:threshold\":{\"value\":0.125}},\"name\":\"fixture/config\",\"runtime\":{\"candidate_order\":[\"ctxql:order/v1\"],\"cycle_policy\":\"no_repeated_claim\",\"path_ranking\":[\"ctxql:rank/v1\"]},\"version\":\"1\"},\"query\":{\"about\":[{\"from\":[\"urn:seed\"],\"match\":\"exact\",\"to\":null}],\"bounds\":{\"as_of\":\"1969-12-31T23:59:59.999Z\",\"fanout_limit\":4,\"max_claims\":16,\"max_depth\":3,\"path_limit\":8,\"seed_limit\":2},\"filter\":{\"predicates\":[]},\"return\":{\"claims\":true,\"evidence\":false,\"explain\":false,\"paths\":true},\"walk\":{\"direction\":\"outgoing\",\"predicates\":[]}}},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:d2f92b518cccafd9593278dcc6e0b08427bbc452a04cb1b6f2bf97e45660f527"
+    },
+    {
+      "id": "response",
+      "canonical_utf8": "{\"domain\":\"ctxql.response\",\"payload\":{\"claims\":[],\"explain\":null,\"graph_status\":\"ready\",\"notices\":[],\"paths\":[],\"selection\":{\"claims\":true,\"evidence\":false,\"explain\":false,\"paths\":true},\"semantic_flags\":[]},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:17489b4f791a43e0a36b1af79ea9eacd60e7ecbfda760516503be24ca0dba55a"
+    },
+    {
+      "id": "input-root",
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input-root\",\"payload\":{\"hashes\":[],\"manifest_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"name\":\"fixture/f\",\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:06cd48f6e6e690c031343ffa8031e6086edbb38c2798e453d886a40234286701"
+    },
+    {
+      "id": "output-root",
+      "canonical_utf8": "{\"domain\":\"ctxql.function.output-root\",\"payload\":{\"hashes\":[],\"manifest_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"name\":\"fixture/f\",\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:82c45df71af443a729906c74bd164b283bd471cdacd860dad6eb0ed910210b3b"
+    },
+    {
+      "id": "decimal-input",
+      "canonical_utf8": "{\"domain\":\"ctxql.function.input\",\"payload\":{\"call_index\":0,\"manifest_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"name\":\"fixture/f\",\"value\":0.1000000000000000000000000001,\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:00d38c254e7e6ada138988d376e7c6f77a81f5d39db18e4fecfea155c013a95f"
+    },
+    {
+      "id": "decimal-output",
+      "canonical_utf8": "{\"domain\":\"ctxql.function.output\",\"payload\":{\"call_index\":0,\"manifest_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"name\":\"fixture/f\",\"value\":0.1000000000000000000000000001,\"version\":\"1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:77dff5d6162e87f5a337a7c177a08d395d636a67663cb74559080a431c14e9e5"
+    },
+    {
+      "id": "structured-product",
+      "canonical_utf8": "{\"domain\":\"ctxql.product.structured\",\"payload\":{\"assembly\":{\"hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"iri\":\"ctxql:fixture/assembly\",\"name\":\"fixture/assembly\",\"version\":\"1\"},\"citations\":[],\"content\":{\"decimal\":123.00000000000000000001},\"inputs\":[{\"as_of\":\"1969-12-31T23:59:59.999Z\",\"availability\":\"present\",\"claim_ids\":[],\"db_time\":{\"authority\":\"memory:fixture\",\"graph\":\"g\",\"receipt\":\"receipt0\",\"revision\":\"r0\"},\"name\":\"primary\",\"plan_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"profile\":null,\"query\":null,\"response_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"run_id\":\"run-1\"}],\"notices\":[],\"product_type\":\"structured\",\"sources\":[]},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:985202aa02e24be45fc7425b690b5b59a146da0da89e8f20b3d40045407c3f29"
+    },
+    {
+      "id": "text-product",
+      "canonical_utf8": "{\"domain\":\"ctxql.product.text\",\"payload\":{\"assembly\":{\"hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"iri\":\"ctxql:fixture/assembly\",\"name\":\"fixture/assembly\",\"version\":\"1\"},\"citations\":[],\"content\":\"café\\n東京\\n\",\"inputs\":[{\"as_of\":\"1969-12-31T23:59:59.999Z\",\"availability\":\"present\",\"claim_ids\":[],\"db_time\":{\"authority\":\"memory:fixture\",\"graph\":\"g\",\"receipt\":\"receipt0\",\"revision\":\"r0\"},\"name\":\"primary\",\"plan_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"profile\":null,\"query\":null,\"response_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"run_id\":\"run-1\"}],\"notices\":[],\"product_type\":\"text\",\"sources\":[]},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:cec3178032a9aa0d12820c0d67b0eafa8822c5a56284ccd051bda29b20f220ac"
+    },
+    {
+      "id": "structured-claim",
+      "canonical_utf8": "{\"domain\":\"ctxql.structured-claim\",\"payload\":{\"mapping_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"mode\":\"live\",\"occurrence\":null,\"row_key\":[{\"datatype\":\"http://www.w3.org/2001/XMLSchema#integer\",\"language\":null,\"value\":9007199254740993}],\"slot\":{\"name\":\"relation\",\"ordinal\":0},\"snapshot\":{\"files\":[{\"hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"path\":\"data/part.parquet\",\"size\":42}],\"mapping_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"metadata_hash\":\"sha256:f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d\",\"provider_version\":\"1\",\"schema_id\":1,\"snapshot_id\":\"42\",\"table_uuid\":\"table-1\"},\"source_id\":\"source-1\"},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:e0f57c2cc07f367dfd7709689bc7d772903cad0035b95111277be2427755c003"
+    },
+    {
+      "id": "literal-response",
+      "canonical_utf8": "{\"domain\":\"ctxql.response\",\"payload\":{\"claims\":[{\"meta\":{\"claim_id\":\"claim-α\",\"claim_type\":\"urn:Claim\",\"confidence\":0.125,\"ext\":{\"ctxql.core.temporal/v1\":{\"source_observed_at\":\"1969-12-31T23:59:59.999Z\"}},\"grounding_level\":\"claim_only\",\"lifecycle_state\":\"contradicted\",\"lineage\":{\"schema\":\"ctxql.lineage.v1\",\"sources\":[]},\"object_id\":{\"datatype\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString\",\"kind\":\"literal\",\"language\":\"fr-CA\",\"value\":\"café\"},\"object_type\":\"urn:Text\",\"relation\":\"urn:relation\",\"relation_type\":\"urn:Relation\",\"subject_id\":\"urn:seed\",\"subject_type\":\"urn:Subject\",\"transaction_time\":\"1969-12-31T23:59:59.999Z\"}}],\"explain\":{\"evaluation_context\":{\"as_of\":\"1969-12-31T23:59:59.999Z\",\"bounds\":{\"as_of\":\"1969-12-31T23:59:59.999Z\",\"fanout_limit\":4,\"max_claims\":16,\"max_depth\":3,\"path_limit\":8,\"seed_limit\":2},\"db_time\":{\"authority\":\"memory:fixture\",\"graph\":\"g\",\"receipt\":\"receipt0\",\"revision\":\"r0\"},\"profile\":null},\"lifecycle\":[{\"claim_id\":\"claim-α\",\"rule\":\"ctxql-execution/v1:lifecycle\",\"state\":\"contradicted\",\"supporting_ids\":[\"event-1\"]}],\"ontology_resolution\":[{\"matched\":[\"urn:Type\"],\"operator\":\"isa\",\"predicate_index\":0,\"requested\":\"urn:Type\",\"rule\":\"ctxql:ontology/v1\"}],\"seeds\":[{\"anchor\":\"urn:seed\",\"block_index\":0,\"id\":\"urn:seed\",\"role\":\"from\",\"score\":1}],\"traversal_stats\":{\"eligible\":1,\"examined\":1,\"returned_paths\":1,\"traversed\":1,\"unique_traversed\":1}},\"graph_status\":\"ready_with_warnings\",\"notices\":[{\"code\":\"live_source\",\"details\":{\"source_id\":\"source-1\"}}],\"paths\":[{\"block_index\":0,\"claim_ids\":[\"claim-α\"],\"depth\":1,\"endpoints\":[{\"kind\":\"iri\",\"value\":\"urn:seed\"},{\"datatype\":\"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString\",\"kind\":\"literal\",\"language\":\"fr-CA\",\"value\":\"café\"}],\"node_ids\":[\"urn:seed\"],\"reached_target\":null,\"scores\":{\"accumulated_confidence\":0.125,\"grounding_level\":\"claim_only\"},\"seed_id\":\"urn:seed\"}],\"selection\":{\"claims\":true,\"evidence\":false,\"explain\":true,\"paths\":true},\"semantic_flags\":[\"observed\"]},\"version\":\"ctxql-canonical/v1\"}",
+      "sha256": "sha256:53b1904a79e6b653bacfcd946e1054db317f15ba87b1613007b10627e3a09bd6"
+    }
+  ]
+}

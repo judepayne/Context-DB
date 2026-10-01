@@ -1,0 +1,52 @@
+{
+  "analyzer_report": {
+    "canonical_utf8": "{\"fibo_claim\":\"not evaluated\",\"ledger\":\"not opened\",\"network\":\"prohibited\",\"parser\":\"conformant rdf:first/rdf:rest\",\"serialization\":[\"turtle\"]}",
+    "sha256": "sha256:61f4efaaa4ce3b89796e2f4db3e22e3e655b947015cfaf8bfec08e904f780f76",
+    "value": {
+      "fibo_claim": "not evaluated",
+      "ledger": "not opened",
+      "network": "prohibited",
+      "parser": "conformant rdf:first/rdf:rest",
+      "serialization": [
+        "turtle"
+      ]
+    }
+  },
+  "exact_inferred_literal": {
+    "canonical_utf8": "{\"datatype\":\"http://www.w3.org/2001/XMLSchema#decimal\",\"language\":null,\"lexical\":\"001.2300\"}",
+    "sha256": "sha256:c17c8c9e975ddbfd1c3bb4ab5dd444876ac3d0a7b72eb05eec0b45e62cc6f209",
+    "value": {
+      "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+      "language": null,
+      "lexical": "001.2300"
+    }
+  },
+  "oracle": "independently recomputed canonical JSON and SHA-256 vectors",
+  "prepared_descriptor": {
+    "canonical_utf8": "{\"budget_identity\":\"sha256:7777777777777777777777777777777777777777777777777777777777777777\",\"full_ontology_bundle_root\":\"sha256:1111111111111111111111111111111111111111111111111111111111111111\",\"materialization_limits_identity\":\"sha256:5555555555555555555555555555555555555555555555555555555555555555\",\"ontology_profile\":\"ctxql-ontology-profile/fluree-4.2-603974fad5c13efed9d147d214d613849fb43c73/v2\",\"ontology_profile_result_root\":\"sha256:2222222222222222222222222222222222222222222222222222222222222222\",\"profile_limits_identity\":\"sha256:4444444444444444444444444444444444444444444444444444444444444444\",\"reasoner_input_root\":\"sha256:3333333333333333333333333333333333333333333333333333333333333333\",\"reasoning_limits_identity\":\"sha256:6666666666666666666666666666666666666666666666666666666666666666\",\"structural_mapping_algorithm\":\"ctxql-sandbox-structural-node/sha256-v1\"}",
+    "sha256": "sha256:5bb442756c269e3eb91a7eeab373eff8e57c6e9a716184aa92eb746894839f7c",
+    "value": {
+      "budget_identity": "sha256:7777777777777777777777777777777777777777777777777777777777777777",
+      "full_ontology_bundle_root": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "materialization_limits_identity": "sha256:5555555555555555555555555555555555555555555555555555555555555555",
+      "ontology_profile": "ctxql-ontology-profile/fluree-4.2-603974fad5c13efed9d147d214d613849fb43c73/v2",
+      "ontology_profile_result_root": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+      "profile_limits_identity": "sha256:4444444444444444444444444444444444444444444444444444444444444444",
+      "reasoner_input_root": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+      "reasoning_limits_identity": "sha256:6666666666666666666666666666666666666666666666666666666666666666",
+      "structural_mapping_algorithm": "ctxql-sandbox-structural-node/sha256-v1"
+    }
+  },
+  "schema": "ctxql.p5-6-independent-vectors/v1",
+  "structural_mapping": {
+    "canonical_utf8": "{\"output_prefix\":\"urn:ctxql:sandbox-struct:sha256:\",\"recorded_raw_map\":false,\"source_graph\":\"urn:graph:schema\",\"source_kind\":\"scoped_blank_node\",\"source_label\":\"_:fdb-example\"}",
+    "sha256": "sha256:3bd4156d872e63b0b8ffffb491fce43adb952ae1e9ba93c8c72b91aa9c438c2a",
+    "value": {
+      "output_prefix": "urn:ctxql:sandbox-struct:sha256:",
+      "recorded_raw_map": false,
+      "source_graph": "urn:graph:schema",
+      "source_kind": "scoped_blank_node",
+      "source_label": "_:fdb-example"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "ctxql-extraction-proposals/v2",
+  "no_claims": false,
+  "entities": [
+    {
+      "id": "agreement",
+      "name": "Atlas Facility",
+      "aliases": [],
+      "known_entity": null,
+      "evidence": [{"range": "{{LINE_RANGE_1}}", "quote": "Atlas Facility", "occurrence": 0}],
+      "classes": []
+    }
+  ],
+  "attributes": [
+    {
+      "id": "provision",
+      "subject": {"kind": "local", "id": "agreement"},
+      "predicate": {
+        "suggestions": [{"text": "urn:ctxql:chat-quality:permitsFurtherDrawings", "note": "Document-local provision predicate"}],
+        "selected": 0
+      },
+      "value": {
+        "lexical": "Further drawings are permitted while no Event of Default is continuing.",
+        "datatype": {
+          "suggestions": [{"text": "http://www.w3.org/2001/XMLSchema#string", "note": "Source-exact text"}],
+          "selected": 0
+        }
+      },
+      "evidence": [{"range": "{{LINE_RANGE_1}}", "quote": "permits further drawings while no Event of Default is continuing", "occurrence": 0}],
+      "source_mode": "affirmative",
+      "qualifiers": [],
+      "fit": "supported",
+      "fit_note": "The source expressly states the condition."
+    }
+  ],
+  "relations": []
+}
