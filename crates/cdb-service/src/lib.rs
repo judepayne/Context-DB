@@ -31,6 +31,7 @@ mod ontology_mapping;
 mod passage_context;
 pub mod predicates;
 pub mod runtime;
+pub mod semantic_bootstrap;
 mod semantic_vocabulary;
 pub mod service;
 pub mod source_target;

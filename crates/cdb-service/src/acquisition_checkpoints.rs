@@ -58,6 +58,7 @@ impl WorkCheckpoints {
                 | "graph_capability"
                 | "graph_capture"
                 | "party_seed"
+                | "structured_import"
         ) {
             return Err(Error::invalid("unknown acquisition checkpoint stage"));
         }

@@ -17,6 +17,7 @@ pub mod current_reasoning_profile;
 mod exact_term;
 pub mod executable_profile_v3;
 pub mod execution_authorization;
+pub mod fresh_semantic;
 mod hints;
 mod history;
 mod journal;

@@ -1,4 +1,6 @@
-//! Bounded helper for loading the checked-in party-background fixture.
+//! Compatibility helper for loading the pinned party-background fixture.
+//! New scripted datasets should use the generic `cdb import` command; this
+//! example retains the historical fixture identity until demo callers migrate.
 use cdb_backend_fluree::runs::Operation as ControlOperation;
 use cdb_core::{Error, ErrorKind, Limits, Result};
 use cdb_service::{

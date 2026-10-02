@@ -5,6 +5,7 @@
 //! review records, and a final current Control authority release.
 
 mod party_seed;
+mod structured_import;
 
 use crate::{
     acquisition::{load_current_catalog, AcquisitionService, WaitPoint},
@@ -199,6 +200,28 @@ impl AuthorizedAcquisition {
     /// raw ontology ledger.
     pub async fn seed_party_background(self: &Arc<Self>, token: &str, request: &[u8]) -> Result<V> {
         party_seed::admit(self, token, request).await
+    }
+
+    /// Admit a bounded, administrator-authored structured claim import through
+    /// normal ontology verification, semantic admission, and projection.
+    pub async fn import_structured_claims(
+        self: &Arc<Self>,
+        token: &str,
+        request: &[u8],
+    ) -> Result<V> {
+        self.import_structured_claims_cancellable(token, request, Arc::new(AtomicBool::new(false)))
+            .await
+    }
+
+    /// Cooperatively cancel between fenced native operations. An in-flight
+    /// commit is awaited rather than abandoned; identical input can resume it.
+    pub async fn import_structured_claims_cancellable(
+        self: &Arc<Self>,
+        token: &str,
+        request: &[u8],
+        cancellation: Arc<AtomicBool>,
+    ) -> Result<V> {
+        structured_import::admit(self, token, request, cancellation).await
     }
 
     /// Closed request wrapper used by local CLI and embedders.

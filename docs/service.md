@@ -19,11 +19,26 @@ Stateful commands require an explicit absolute `--config` path. Authenticated co
 A current `ctxql-instance/v4` configuration identifies separate Semantic and Control authorities, redb projection, private source storage, credentials, finite service limits, and acquisition settings. Optional chat settings can coexist with acquisition. Paths are resolved and checked before enabled work. Secrets remain separate from semantic configuration and provider credentials.
 
 ```sh
-cdb init --config /absolute/path/cdb.toml --secret-file /absolute/path/bootstrap.secret
-cdb provision --config /absolute/path/cdb.toml --secret-file /absolute/path/bootstrap.secret --request-file /absolute/path/provision.json
+cdb init --config /absolute/path/cdb.toml \
+  --principal urn:example:owner --secret-file /absolute/path/owner.secret
+cdb provision --config /absolute/path/cdb.toml \
+  --principal urn:example:reader --secret-file /absolute/path/reader.secret
 ```
 
-`init` creates Control-side instance state and a bootstrap credential; it does not create or reset an acquisition Semantic ledger. Provisioning publishes explicit principals, roles, policies, query configurations, and profiles. Startup never silently repairs authority or restores revoked policy.
+`provision` is an operator-local credential/Control-role operation; `--admin` is
+explicit opt-in. It neither grants Semantic policy access nor publishes query
+artifacts, and its secret-file destination must be new.
+
+`init` creates Control-side instance state and a bootstrap credential; it does not create or reset an acquisition Semantic ledger. For a new independent ontology-v2 instance, create the configured Semantic authority first:
+
+```sh
+cdb semantic bootstrap --config /absolute/path/cdb.toml
+cdb init --config /absolute/path/cdb.toml \
+  --principal 'the configured acquisition principal' \
+  --secret-file /absolute/path/owner.secret
+```
+
+Semantic bootstrap refuses every existing destination (including symlinks), creates only `[semantic].path` as private owner state, configures the declared claim/review/infrastructure graph roles with reasoning disabled, and installs deny-by-default native policy with explicit view/modify access for the configured acquisition principal. It installs no fixture ontology or domain claims. Exact prerequisites and receipt fields are in [`semantic-bootstrap-v1`](contracts/semantic-bootstrap-v1.md). Provisioning publishes explicit principals, roles, policies, query configurations, and profiles. Startup never silently repairs authority or restores revoked policy.
 
 ## Query, publication, recording, and replay
 
@@ -67,6 +82,21 @@ Live acquisition uses `protocol = "ontology-v2"`, exact `extractor_model` and se
 PDF input invokes only the explicitly configured converter executable after identity verification. Original and extracted representations, converter identity/options, and source-relative evidence coordinates remain distinct. Conversion extracts embedded text; no OCR is supplied.
 
 Replay accepts only registered supported captures and verifies retained source, ontology, context, model, bundle, request, response, and protocol commitments before evaluation. A hash is an identifier, not permission. See [`recording-replay-v4`](contracts/recording-replay-v4.md), [`graph-context-capture-v1`](contracts/graph-context-capture-v1.md), and [`source-representations-v1`](contracts/source-representations-v1.md).
+
+## Curated structured import
+
+```sh
+cdb import --config /absolute/path/cdb.toml \
+  --token-file /absolute/path/admin.secret \
+  --input /absolute/path/claims.json
+```
+
+Import is an Admin-authorized, model-free path for bounded curated datasets. It
+validates declared entities, source/evidence references, datatypes and approved
+ontology vocabulary, then uses ordinary claim-centric admission and projection.
+It is not a raw RDF or ledger-write API. Imports commit in bounded batches, so a
+later failure can leave earlier batches committed; retry the identical input to
+resume safely. See [`structured-claim-import-v1`](contracts/structured-claim-import-v1.md).
 
 ## Terminal chat
 

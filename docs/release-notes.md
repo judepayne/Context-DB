@@ -1,13 +1,25 @@
-# Context DB 0.1.0 — initial alpha
+# Context DB 0.1.1 — scripted import and fresh-instance setup
 
 Evidence-backed claim acquisition, CTXQL query execution, recording/replay, and
 bounded read-only chat, with embedded Fluree authority and derived redb traversal.
 No separate Fluree server is required.
 
+## Changes
+
+- Built-in `cdb import` for versioned, administrator-curated structured claims,
+  with native authorization, ontology checks, typed literals and retained provenance.
+- Bounded 64-claim admission batches with deterministic retry and restart recovery;
+  the whole input is not one atomic transaction. External citations remain declared,
+  not independently verified evidence.
+- Optional entity type metadata preserves genuinely untyped reference records
+  without fabricating classification claims.
+- Fresh Semantic bootstrap is separate from Control initialization; see
+  `cdb --help` and `docs/service.md` for the supported setup flow.
+
 ## Downloads
 
-- Apple Silicon: `cdb-0.1.0-aarch64-apple-darwin.tar.gz` (macOS 15 baseline).
-- Linux x86-64: `cdb-0.1.0-x86_64-unknown-linux-gnu.tar.gz`
+- Apple Silicon: `cdb-0.1.1-aarch64-apple-darwin.tar.gz` (macOS 15 baseline).
+- Linux x86-64: `cdb-0.1.1-x86_64-unknown-linux-gnu.tar.gz`
   (Ubuntu 24.04 / glibc 2.39 baseline; not a static binary).
 - Each archive has a SHA-256 checksum file. Packages are unsigned; macOS packages
   are not notarized.

@@ -13,6 +13,7 @@ use cdb_service::{
     config::{AcquisitionAssertionPolicy, BoundedFileRead, InstanceConfig},
     http,
     ingest::{ingest, IngestMode, IngestWait, OntologyMode},
+    semantic_bootstrap,
     source_target::SourceTarget,
     Service,
 };
@@ -29,8 +30,10 @@ use tokio::{net::TcpListener, sync::watch};
 
 const HELP: &str = "cdb <serve|init|provision|publish|query|run|replay|status|source> [--config /absolute/cdb.toml]
 cdb chat [--config /absolute/cdb.toml] [--token-file /absolute/private-secret]
+cdb import [--config /absolute/cdb.toml] [--token-file /absolute/private-secret] --input /absolute/claims.json
 cdb ingest <start|inspect|artifact|resume|replay> --help
 cdb ontology bootstrap --cache /absolute/pinned-fibo-cache --output /absolute/new-ledger-directory [--scope agreements|certified-agreements|commercial-loans|party-background]
+cdb semantic bootstrap --config /absolute/cdb.toml
 init/provision: --principal ID --secret-file /absolute/new-secret [--admin (provision only)]
 data commands: --token-file /absolute/private-secret --request-file /absolute/request.json
 status may omit --request-file. No command-line bearer tokens are accepted.
@@ -38,6 +41,8 @@ For commands that use them, --config overrides CDB_CONFIG and --token-file overr
 Use cdb ingest --help for document ingestion. Top-level replay replays queries; ingest replay reprocesses saved extraction captures.";
 const CHAT_HELP: &str = "cdb chat [--config /absolute/cdb.toml] [--token-file /absolute/private-secret]
 Explicit flags override CDB_CONFIG and CDB_TOKEN_FILE independently. Selected paths must be absolute. Chat requires terminal input and output.";
+const IMPORT_HELP: &str = "cdb import [--config /absolute/cdb.toml] [--token-file /absolute/private-secret] --input /absolute/claims.json
+Admits a bounded ctxql-structured-claim-import/v1 document as curated assertions through normal Admin authorization, ontology verification, semantic admission, and projection. No model is called. Identical canonical input resumes safely; batches already committed before a later failure remain committed. Selected paths must be absolute.";
 const INGEST_HELP: &str = "cdb ingest <start|inspect|artifact|resume|replay>
   start     Extract from a file, HTTPS URL or non-recursive folder; optionally admit claims.
   inspect   Inspect retained ingestion outcomes.
@@ -104,6 +109,47 @@ fn output(bytes: &[u8]) -> Result<()> {
         .and_then(|_| stdout.write_all(b"\n"))
         .map_err(|_| Error::new(ErrorKind::Backend, "output failed"))
 }
+fn semantic_bootstrap_command(mut argv: impl Iterator<Item = String>) -> Result<()> {
+    if argv.next().as_deref() != Some("bootstrap") {
+        return Err(invalid());
+    }
+    let mut args = BTreeMap::new();
+    while let Some(key) = argv.next() {
+        if key != "--config" {
+            return Err(invalid());
+        }
+        let value = argv.next().ok_or_else(invalid)?;
+        if args.insert(key, value).is_some() {
+            return Err(invalid());
+        }
+    }
+    let config_path = path(&mut args, "--config")?;
+    if !args.is_empty() {
+        return Err(invalid());
+    }
+    let config = InstanceConfig::load(&config_path)?;
+    let receipt = std::thread::Builder::new()
+        .name("cdb-semantic-bootstrap".into())
+        .stack_size(64 * 1024 * 1024)
+        .spawn(move || {
+            tokio::runtime::Builder::new_current_thread()
+                .enable_all()
+                .build()
+                .map_err(|error| error.to_string())?
+                .block_on(async {
+                    let receipt = semantic_bootstrap::bootstrap(config)
+                        .await
+                        .map_err(|error| error.to_string())?;
+                    serde_json::to_vec_pretty(&receipt).map_err(|error| error.to_string())
+                })
+        })
+        .map_err(|error| Error::new(ErrorKind::Backend, error.to_string()))?
+        .join()
+        .map_err(|_| Error::new(ErrorKind::Backend, "Semantic bootstrap worker panicked"))?
+        .map_err(|error| Error::new(ErrorKind::Backend, error))?;
+    output(&receipt)
+}
+
 fn ontology_bootstrap(mut argv: impl Iterator<Item = String>) -> Result<()> {
     if argv.next().as_deref() != Some("bootstrap") {
         return Err(invalid());
@@ -439,6 +485,61 @@ async fn ingest_replay_args(argv: impl Iterator<Item = String>) -> Result<()> {
     output(&response)
 }
 
+async fn import_command(argv: impl Iterator<Item = String>) -> Result<()> {
+    let values = argv.collect::<Vec<_>>();
+    if values == ["--help"] || values == ["-h"] {
+        println!("{IMPORT_HELP}");
+        return Ok(());
+    }
+    let mut argv = values.into_iter();
+    let mut args = BTreeMap::new();
+    while let Some(key) = argv.next() {
+        if !["--config", "--token-file", "--input"].contains(&key.as_str()) {
+            return Err(invalid());
+        }
+        let value = argv.next().ok_or_else(invalid)?;
+        if args.insert(key, value).is_some() {
+            return Err(invalid());
+        }
+    }
+    let config = InstanceConfig::load(&selected_path(&mut args, "--config", "CDB_CONFIG")?)?;
+    let token_path = selected_path(&mut args, "--token-file", "CDB_TOKEN_FILE")?;
+    let input_path = path(&mut args, "--input")?;
+    if !args.is_empty() {
+        return Err(invalid());
+    }
+    let token = load_token(&config, &token_path)?;
+    let input = BoundedFileRead::new(config.limits.max_body_bytes, false)?.read(&input_path)?;
+    let max_output = config.limits.run_bytes;
+    let access = AuthorizedAcquisition::open_authenticated(
+        config,
+        &token,
+        ControlOperation::Admin,
+        auth::Operation::Admin,
+    )
+    .await?;
+    let cancellation = Arc::new(AtomicBool::new(false));
+    let import = access.import_structured_claims_cancellable(&token, &input, cancellation.clone());
+    tokio::pin!(import);
+    let result = tokio::select! {
+        result = &mut import => result,
+        _ = tokio::signal::ctrl_c() => {
+            cancellation.store(true, Ordering::Release);
+            // Never abandon an already-started native commit or drop its fence.
+            let _ = import.await;
+            Err(Error::new(ErrorKind::Deadline, "cancelled"))
+        },
+    };
+    let closed = access.shutdown().await;
+    let response = result?;
+    closed?;
+    let bytes = response.canonical_bytes(Limits::default())?;
+    if bytes.len() > max_output {
+        return Err(Error::limit());
+    }
+    output(&bytes)
+}
+
 async fn chat_command(argv: impl Iterator<Item = String>) -> Result<()> {
     let values = argv.collect::<Vec<_>>();
     if values == ["--help"] || values == ["-h"] {
@@ -479,11 +580,17 @@ async fn execute() -> Result<()> {
     if command == "ontology" {
         return ontology_bootstrap(argv);
     }
+    if command == "semantic" {
+        return semantic_bootstrap_command(argv);
+    }
     if command == "ingest" {
         return ingest_command(argv).await;
     }
     if command == "chat" {
         return chat_command(argv).await;
+    }
+    if command == "import" {
+        return import_command(argv).await;
     }
     if ![
         "serve",

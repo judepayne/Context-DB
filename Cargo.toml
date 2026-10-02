@@ -7,7 +7,7 @@ default-members = ["crates/cdb-core", "crates/cdb-engine", "crates/cdb-testkit",
 edition = "2021"
 rust-version = "1.94"
 publish = false
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT"
 
 [workspace.dependencies]

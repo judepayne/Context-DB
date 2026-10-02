@@ -584,14 +584,14 @@ dependencies = [
 
 [[package]]
 name = "cdb-acquisition"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "cdb-core",
 ]
 
 [[package]]
 name = "cdb-backend-fluree"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "cdb-acquisition",
  "cdb-core",
@@ -614,7 +614,7 @@ dependencies = [
 
 [[package]]
 name = "cdb-core"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "chrono",
  "num-bigint",
@@ -628,14 +628,14 @@ dependencies = [
 
 [[package]]
 name = "cdb-engine"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "cdb-core",
 ]
 
 [[package]]
 name = "cdb-projection-redb"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "cdb-core",
  "cdb-engine",
@@ -647,7 +647,7 @@ dependencies = [
 
 [[package]]
 name = "cdb-provider-pi"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "cdb-acquisition",
  "cdb-core",
@@ -658,7 +658,7 @@ dependencies = [
 
 [[package]]
 name = "cdb-service"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "cdb-acquisition",
  "cdb-backend-fluree",
@@ -688,7 +688,7 @@ dependencies = [
 
 [[package]]
 name = "cdb-source-store"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "cdb-core",
  "tempfile",
@@ -696,7 +696,7 @@ dependencies = [
 
 [[package]]
 name = "cdb-testkit"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "cdb-backend-fluree",
  "cdb-core",
